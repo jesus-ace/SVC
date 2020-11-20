@@ -1,0 +1,1071 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: rgba(34, 18, 41, 0.137);
+    width: 100%;
+    max-width: 1670px;
+}
+body.active{
+    background-color: rgb(255, 255, 255);
+}
+/*Estilos Nav*/
+nav{
+    background-color: #fff;
+    /*position: fixed;*/
+    top: 0;
+    width: 100%;
+    transition: top 0.3s
+}
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: 48px;
+    background-color: #fff;
+}
+.navbar-header{
+    background-color: rgb(109,51,129);
+    height: 60px; 
+    padding-top: 10px;
+}
+.logo-menu{
+    width: 200px;
+    margin-left: 100px;
+    padding: 5px;
+}
+.logo-menu:hover{
+    cursor:pointer;
+    width: 210px;
+}
+.enlaces{
+    color: #fff;
+    float: right;
+    height: 30px;
+    margin-right: 100px;
+}
+.nav-item{
+    float: left;
+    margin-inline: 10px;
+}
+.enlaces a{
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    border-bottom:none;
+}
+/*.enlaces a:hover{
+    cursor: pointer;
+    font-size: 18px;
+    border-bottom: solid 5px #ffff;
+    border-radius: 0px 0px 3px 3px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(110, 51, 129, 0.472);
+}*/
+.hoverL.active{
+    font-size: 18px;
+    border-bottom: solid 5px #ffff;
+    border-radius: 0px 0px 3px 3px;
+}
+.fa-sort-down,
+.fa-plus
+{
+    font-size: 20px;
+    margin-inline: 2px;
+}
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+  
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(109,51,129);
+    border-radius: 0px 0px 3px 3px;
+    min-width: 160px;
+    top: 40px;
+    z-index: 2;
+}
+.dropdown-content a {
+    width: 160px;
+    color: #ffff ;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    border-bottom: solid 5px #ffff;
+    border-radius: 0px 0px 3px 3px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*Estilos del login*/
+.container-login{
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    background-color: #ffff;
+    margin:10%  auto;
+    border-radius: 20px 22px 22px 20px;
+    display: flex;
+}
+.container-login.active{
+    display: none;
+}
+.form-login{
+    width: 505px;
+    position: relative;
+    top: -40px;
+    padding: 10px;
+    margin-top: 80px;
+    justify-content: center;
+}
+.ingresar{
+    width: 25%;
+    position: relative;
+    top: -10px;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    background-color: rgb(163, 53, 90);
+    color: #fff;
+}
+.ingresar:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+    font-size: 16px;
+}
+.lateralL{
+    width: 400px;
+    border-radius:0 20px 20px 0px;
+    background: rgb(109,51,129);
+    background: linear-gradient(0deg, rgba(109,51,129,0.92) 0%, rgba(87,69,226,1) 100%);
+    color:#fff;
+}
+.textoL{
+    margin-top: 150px;
+    position: relative;
+    z-index: 1;
+}
+.imagen-fondoL{
+    margin: auto;
+    position: relative;
+    left: 25px;
+    top: -155px;
+    color: rgba(34, 18, 41, 0.137);
+}
+.fa-address-card{
+    font-size: 220px;
+}
+/*Estilos de Bienvenida*/
+.lateral{
+    width: 505px;
+    border-radius:0 20px 20px 0px;
+    background: rgb(109,51,129);
+    background: linear-gradient(0deg, rgba(109,51,129,0.92) 0%, rgba(87,69,226,1) 100%);
+    color:#fff;
+}
+.bienvenida{
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    background: rgb(109,51,129);
+    background: linear-gradient(0deg, rgba(109,51,129,0.92) 0%, rgba(87,69,226,1) 100%);
+    margin:70px  auto;
+    border-radius: 20px;
+}
+.bienvenida:hover{
+    box-shadow: 0px 0px 10px 0px rgb(52, 0, 95);
+}
+.bienvenida.active{
+    display: none;
+}
+.imagen-bienvenida{
+    margin: 120px 238px 0 200px;
+}
+.texto-bienvenida{
+    margin: 10px 238px 0 200px;
+}
+.texto-bienvenida h1{
+    height: 40px;
+}
+.ensa{
+    width: 210px;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: 330px;
+    border-radius: 50px;
+    background: rgb(109,51,129);
+    background: linear-gradient(0deg, rgba(109,51,129,0.92) 0%, rgba(87,69,226,1) 150%);
+    border:  none;
+    color: #fff;
+}
+.ensa:hover{
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+}
+
+/*.s{
+    display: none;
+}*/
+.bienvenida{ 
+    animation: entradaBienvenida .6s ease-in .4s both; 
+}
+@keyframes entradaBienvenida {
+	from {
+		opacity: 0;
+		transform: scaleX(-50px);
+	}
+
+	to {
+		transform: scaleX(5px);
+		opacity: 1;
+	}
+}
+/*Estilos de  lista de los ultimos ingresos y salida*/
+.entrada-salida{
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    margin: auto;
+    border-radius: 20px;
+    justify-content: center;
+    display: flex;
+}
+.entrada{
+    width: 505px;
+    color:#fff;
+}
+.ENTRA{
+    width: 100%;
+    max-width: 400px;
+    height: 80px;
+    margin: 10px auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 50px;
+    background-color: rgba(73, 184, 97, 0.596);
+}
+.foto img{
+
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    float: left;
+    margin-left: 12px;
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0.192);
+    border-radius: 10px 2px 10px 2px ;
+}
+.salir{
+    width: 505px;
+    color:#fff;
+}
+.SALI{
+    width: 100%;
+    max-width: 400px;
+    height: 80px;
+    margin: 10px auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 50px;
+    background-color: rgba(255, 8, 0, 0.507);
+    
+}
+h6{
+    position: relative;
+    padding: 15px;
+    font-size: 18px;
+    text-align: justify;
+    left: 10px;
+}
+
+/*Estilos Registro Vigilante*/
+.container-login1{
+    width: 100%;
+    max-width: 900px;
+    height: 590px;
+    background-color: #ffff;
+    margin:70px  auto;
+    border-radius: 20px;
+    display: flex;
+}
+/*.container-login1.active{
+    display: flex;
+}*/
+.form-registroV{
+    width: 505px;
+    padding: 10px;
+    margin-top: 8%;
+    justify-content: center;
+}
+
+.texto{
+    margin-top: 200px;
+    position: relative;
+    z-index: 1;
+}
+h1,
+h2,
+h5{
+    text-align: center;
+    color: rgba(235, 226, 226, 0.863)
+}
+.imagen-fondo{
+    margin: auto;
+    position: relative;
+    left: 60px;
+    top: -184px;
+    color: rgba(34, 18, 41, 0.137);
+}
+.fa-users{
+    font-size: 240px;
+}
+.container-login1{
+    animation: entradaBienvenida .6s ease-in .4s both; 
+}
+/*Estilos listado vigilante*/
+.list-vigilante{
+    width: 100%;
+    height: 300px;
+    max-width: 1100px;
+    background-color: #ffff;
+    border-radius:15px;
+    margin:75px auto;
+    padding: 5px;
+    display: none;
+}
+.list-vigilante.active{
+    display: block;
+}
+.regisV{
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-left:95px;
+    float: left;
+    font-size: 14px;
+    background-color: rgb(163, 53, 90);
+    color: #fff;   
+}
+.regisV:hover{
+    cursor: pointer;
+    height: 32px;
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+    font-size: 16px;
+}
+.regisE{
+    width: 250px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right:95px;
+    float: right;
+    font-size: 15px;
+    background-color: rgb(163, 53, 90);
+    color: #fff;  
+    display: none;
+}
+.regisE:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+    font-size: 18px;
+}
+.regisE.active{
+    display: block;
+}
+.regisNE{
+    width: 250px;
+    position: relative;
+    top: -47px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right:95px;
+    float: right;
+    font-size: 15px;
+    background-color: rgb(236, 78, 64);
+    color: #fff;  
+    display: none;
+}
+.regisNE:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+    font-size: 18px;
+}
+.regisNE.active{
+    display: block;
+}
+.fa-user-friends{
+    font-size: 160px;
+    color: rgba(122, 69, 144, 0.137);
+}
+.Editar{
+    position: relative;
+    top: 30px;
+    width: 250px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(250, 196, 80);
+    margin-inline: 5px;
+}
+.Editar:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+    font-size: 18px;
+}
+.Editar.active{
+    background-color: rgb(245, 205, 120);
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+    font-size: 18px;
+}
+.Eliminar{
+    position: relative;
+    top: 30px;
+    margin-top: 5px;
+    width: 250px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color:  rgb(236, 78, 64);
+    margin-inline: 5px;
+}
+.Eliminar:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+}
+.list-vigilante{
+    animation: entradaBienvenida .6s ease-in .4s both; 
+}
+/*Estilos Registro de visitante*/
+.container{
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    background-color: #ffff;
+    border-radius:15px;
+    margin-top:70px;
+    padding: 5px;
+    display: none;
+}
+.container.active{
+    display: block;
+}
+.container-lista-vistante{
+    width: 100%;
+    max-width: 1100px;
+    background-color: #ffff;
+    border-radius:15px;
+    margin: auto;
+    margin-top:70px;
+    padding: 5px;
+    display: none;
+}
+.container-lista-vistante.active{
+    display: block;
+}
+
+.registro{
+    border: rgb(107, 55, 125) solid 2px;
+    width: 80%;
+    border-radius:15px;
+    margin: 20px auto;
+    padding: 10px;
+}
+h3{
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    color: rgba(41, 40, 41, 0.541);
+}
+.formulario{
+    width: 100%;
+    max-width: 900px;
+    padding: 5px;
+    margin: auto;
+    /*border: lightcoral solid 2px;*/
+    display: flex;
+}
+
+.inputs{
+    width: 480px;
+    padding: 15px;
+    margin: auto;
+    float: left;
+}
+.input-group{
+    background: rgb(107, 55, 125);
+    border-radius: 5px;
+}
+.input-group-text{
+    width: 150px;
+    background-color: rgb(107, 55, 125);
+    border: solid 1px rgb(107, 55, 125);
+    color: #ffff;
+}
+input[type=text]{
+    border: solid rgb(107, 55, 125) 1px;
+    padding: 2px;
+}
+input[type=number]{
+    border: solid rgb(107, 55, 125) 1px;
+    padding: 2px;
+}
+input[type=password]{
+    border: solid rgb(107, 55, 125) 1px;
+    padding: 2px;
+}
+.domi{
+    border: solid rgb(107, 55, 125)1px;
+    padding: 3px;
+}
+.select{
+    border: solid rgb(107, 55, 125) 1px;
+    padding: 3px;
+}
+.box-photo{
+    width: 360px;
+    margin-top: 10px;
+}
+.photo img{
+    width: 260px;
+    height:260px;
+    margin-right: 10px;
+    border-radius: 100px 5px 100px 5px; 
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.tfoto{
+    margin: 20px auto;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+.tfoto:hover{
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+    color: black;
+}
+.fa-camera,
+.fa-save,
+.fa-user,
+.fa-unlock-alt,
+.fa-tools,
+.fa-laptop,
+.fa-eye-slash,
+.fa-sign-in-alt,
+.fa-edit,
+.fa-user-slash,
+.fa-ban{
+    font-size: 15px;
+    margin: 4px auto;
+    margin-inline: 4px;
+}
+.save{
+    width: 25%;
+    margin:auto;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    background-color: rgb(163, 53, 90);
+    color: #fff;
+}
+.save:hover{
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+}
+.btn-success {
+    margin-top: 4px; 
+}
+
+/*Listado visitante*/
+
+table{
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.lista{
+    border: solid 2px rgb(107, 55, 125);
+}
+thead{
+    text-align: center;text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    color: rgba(41, 40, 41, 0.541);
+    color: rgba(12, 12, 12, 0.753);
+}
+th,
+td{
+    width:auto;
+    height: 20px;
+    text-align: center;
+    border: solid 1px rgb(107, 55, 125);
+    padding: 5px;
+}
+th{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*Estilos que se repiten*/
+.fa-eye{
+    font-size: 20px;
+    color: rgba(107, 55, 125, 0.472);
+}
+.fa-eye:hover{
+    font-size: 22px;
+    color: rgb(107, 55, 125);
+}
+.paginacion {
+	margin:20px 0;
+}
+ 
+.paginacion ul {
+	list-style:none;
+	text-align: center;
+}
+ 
+.paginacion ul li {
+	display:inline-block;
+
+}
+ 
+.paginacion ul li a {
+	display:block;
+	padding:5px 10px;
+	color:#fff;
+	background:rgb(107, 55, 125);
+	text-decoration: none;
+}
+ 
+.paginacion ul li a:hover {
+	background:rgba(118, 63, 136, 0.657);
+}
+ 
+.paginacion ul li .active {
+	background:rgba(118, 63, 136, 0.657);
+	font-weight:bold;
+}
+/*Modal*/
+.overlay {
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: hidden;
+}
+
+.overlay.active {
+	visibility: visible;
+}
+
+.popup {
+	background: #F8F8F8;
+	box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 15px;
+	text-align: center;
+	width: auto;
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+}
+
+.popup .btn-cerrar-popup {
+	font-size: 16px;
+	line-height: 16px;
+	display: block;
+	text-align: right;
+	transition: .3s ease all;
+	color: #BBBBBB;
+}
+
+.popup .btn-cerrar-popup:hover {
+	color: #000;
+}
+
+.popup h3 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 5px;
+	opacity: 0;
+}
+
+
+.popup.active {	transform: scale(1); opacity: 1; }
+.popup.active h3 { 
+    animation: entradaTitulo .8s ease .8s forwards; 
+}
+
+@keyframes entradaTitulo {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+.info{
+    width: 400px;
+}
+.box-photo1{
+    width: 260px;
+}
+.photo1 img{
+    width: 180px;
+    height:200px;
+    margin-top: 5px;
+    margin:auto;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+}
+.acomodar{
+    display: flex;
+}
+.salida{
+    margin-top: 5px;
+    width: 360px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(248, 204, 108);
+}
+.salida:hover{
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+}
+/*------------*/
+
+
+.icono-users{
+    width: 260px;
+    height:260px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.RE{
+    float: left;
+    width: 50%;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    color: cornsilk;
+    border: solid 1px rgb(107, 55, 125); 
+    background-color: rgb(107, 55, 125);
+}
+.RE:hover{
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+}
+.RE.active{
+    display: none;
+}
+.CL{
+    float: left;
+    width: 45%;
+    margin:5px auto ;
+    margin-inline: 2px;
+    display: none;
+    justify-content: center;
+    font-size: 15px;
+    color: cornsilk;
+    border: solid 1px rgb(236, 78, 64); 
+    background-color:  rgb(236, 78, 64);
+}
+.CL:hover{
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+}
+.CL.active{
+    display: block;
+}
+.oculto{
+    display: none;
+    border: rgb(107, 55, 125) solid 1px;
+    border-radius: 5px;
+    padding: 5px;
+    /*visibility: hidden;*/
+}
+.oculto.active{
+    display: block;
+}
+legend{
+    width: auto;
+    color: rgb(107, 55, 125);
+}
+
+/*Estilos de la pagina de ingreso*/
+
+@media screen and (max-width:814px ) {
+    .container-login1{
+        width: 100%;
+        height: 500px;
+        background-color: #ffff;
+        margin:40px  auto;
+        border-radius: 20px;
+        display: none;
+    }
+    .lateral{
+        width: 50%;
+    }
+    .inputs{
+        width: 100%;
+    }
+    .logo-menu{
+        width: 140px;
+        margin-left: 30px;
+        padding: 5px;
+    }
+    .imagen-fondo{
+        position: relative;
+        left: 5px;
+        top: -82px;
+        width: 80%;
+    }
+    .imagen-bienvenida{
+        margin: 110px 119px 0 200px;
+    }
+    .texto-bienvenida{
+        margin: 5px 200px 0 100px;
+    }
+   
+    .fondo{
+        display: none;
+    }
+    .fa-users{
+       visibility: hidden;
+    }
+    .input-group {
+        width: 200px;
+        font-size: 12px;    
+    }
+    .ingresar{
+        width: 45%;
+        margin:auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right:95px;
+        float: right;
+        font-size: 12px;
+        background-color: rgb(163, 53, 90);
+        color: #fff;   
+    }
+    .regisV{
+        display: none;
+    }
+    .fa-save{
+        font-size: 10px;
+    }
+    h5{
+        display: none;
+    }
+    .s{
+        display: block;
+        margin-left:20px;
+    }
+    .list-vigilante{
+        overflow-x: hidden;
+        overflow-x: scroll;
+    }
+    .paginacion{
+        position: relative;
+        left: -10px;
+    }
+	
+}
+#hora{
+    width: 100px;
+    font-family: Helvetica;
+    text-align: center;
+    position: relative;
+    float: left;
+    left: 1585px;
+    top: -28px;
+}
+.horaocl{
+    visibility: hidden;
+}
+.horaocl.active{
+    visibility: visible;
+}
+
+/*-------------------------------------*/
+
+.entra{
+    background-color: rgba(73, 184, 97, 0.26);
+    width: 110px;
+    height: 50px;
+    margin-top: 5px;
+}
+/*.fa-times:hover{
+    font-size: 18px;
+}*/
+.EN-SA{
+    margin-top: 0;
+    border: none;
+    width: 300px;
+    height: 30px;
+    padding: 0;
+}
+.EN-SA_thead{
+    border: none;
+    width: 20px;
+    height: 10px;
+}
+.EN-SA_tbody{
+    border: none;
+    width: 20px;
+    height: 10px;
+}
+.EN-SA_td,
+.EN-SA_th{
+    border: none;
+}
+.buscador{
+    width: 260px;
+    height: 33px;
+    border-radius: 4px 20px 4px 22px ;
+    float: right;
+    margin-right: 50px;
+}
+.busca{
+    width: 200px;
+    height: 30px;
+    border-radius: 4px 0 0 20px;
+    padding: 5px;
+    padding-left: 6px;
+    border: solid 1px rgb(107, 55, 125);
+    font-size: 14px;
+}
+.buscar{
+    background-color: rgb(107, 55, 125);
+    border: none;
+    width: 50px;
+    border-radius: 50px;
+    padding: 3px;
+}
+.input-group-btn{
+    width:20px;
+}
+.fa-search{
+    font-size: 15px;
+    text-align: center;
+}
+.newregis{
+    width: 25%;
+    height: 30px
+    ;
+    margin-bottom: 8px;
+    justify-content: center;
+    font-size: 15px;
+    background-color: rgb(163, 53, 90);
+    color: #fff;
+    float: right;
+    margin-right: 50px;
+}
+.mostrarlista{
+    position:  relative;
+    left: -170px;
+    top: 20px;
+    z-index: 1;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-left:95px;
+    float: left;
+    font-size: 14px;
+    background-color: rgb(163, 53, 90);
+    color: #fff;  
+}
+.mostrarlista:hover{
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+    height: 32px;
+}
+.cambiocontra{
+    width: 150px;
+    height: 20px;
+    position: relative;
+    top: -25px;
+    left: 345px;
+    color: rgb(107, 55, 125);
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+.cambiocontra:hover{
+    cursor: pointer;
+    color: rgb(52, 0, 95);
+    left: 335px;
+    text-decoration: none;
+}
+.container-contra{
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    background-color: #ffff;
+    margin:10%  auto;
+    border-radius: 20px 22px 22px 20px;
+    display: none;
+}
+.container-contra.active{
+    display: flex;
+}
+.titulo-cambio{
+    margin-top: 10px;
+}
+.form-cambio{
+    width: 505px;
+    padding: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+.fa-arrow-left{
+    font-size: 30px;
+    color:rgba(107, 55, 125, 0.411) ;
+}
+.fa-arrow-left:hover{
+    cursor: pointer;
+    color: rgb(107, 55, 125);
+}
+.roleBack{
+    position: relative;
+    width: 80px;
+    top: -550px;
+    left: 465px;
+    display: none;
+}
+.roleBack.active{
+    display : block
+}
+.fa-key{
+    font-size: 220px;
+}
