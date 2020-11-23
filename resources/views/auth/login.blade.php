@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
@@ -12,9 +12,10 @@
     <title>Login</title>
 </head>
 <body class="body">
+
     <div class="container-login" id="login">
-        <form action="registro_vigilante.html" class="form-login">
-            {{csrf_field()}}
+        <form method="POST" action="{{ route('login') }}" class="form-login">
+            {{csrf_field ()}}
             <h3>Ingreso</h3>
             <div class="inputs">
                 <div class="input-group mb-3 ilogin">
@@ -45,7 +46,7 @@
         </div>
     </div>
     <div class="container-contra" id="div-contra">
-        <form action="menu_modulos.html" class="form-cambio">
+        <form  class="form-cambio">
             {{ csrf_field() }}
             <h3 class="titulo-cambio">Cambio de contrase&ntildea</h3>
             <div class="inputs">
@@ -65,7 +66,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"> Verificar Password <i class="fas fa-unlock-alt"></i> </span> 
                     </div>
-                    <input type="password" name="contra" id="name" class="form-control" required>
+                    <input type="password" name="contra" class="form-control" required>
                 </div>
             </div>
             <button type="submit" class="btn ingresar">Acceptar<i class="fas fa-save"></i></button>
@@ -99,5 +100,6 @@
                 volver.classList.remove('active');
             }
     </script>
+
 </body>
-</html>
+</html-->

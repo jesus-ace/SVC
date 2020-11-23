@@ -16,7 +16,7 @@ class usuarios extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'us_nombre', 'us_apellido', 'us_cedula', 'us_user', 'us_correo', 'us_password',
+        'us_nombre', 'us_apellido', 'us_cedula', 'us_user', 'us_correo', 'us_password', 
     ];
 
     /**
@@ -25,7 +25,7 @@ class usuarios extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'us_password', 'remember_token',
+        'us_password',
     ];
 
 }

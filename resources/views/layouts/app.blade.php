@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title></title>
 
     <!-- Styles -->
     <!--link href="{{ asset('css/app.css') }}" rel="stylesheet"-->
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body  onload="mostrarHora();">
+@guest
     <nav id="navbar">
         <img src="image/logo-minci.jpg" class="navbar-left img-responsive mppci">
         <p id="hora" class="horaocl"></p>
@@ -34,6 +35,7 @@
     </nav>
     <div class="contenedor">
     @yield('content')
+        @else
         <div class="side-bar" id="br-lateral">
             <div class="bar-profile">
                 <img src="image/prueba3.jpg" alt="Foto de perfil">
@@ -78,14 +80,19 @@
                 </ul>
             </div>
             <div class=" log">
-                <a href="login.html" class="no-oculto">Logout<i class="fas fa-sign-out-alt"></i></a>
+                <a href="{{ route('logout') }}"  
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                Logout<i class="fas fa-sign-out-alt"></i>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
             </div>
             <button id="ocultar" onclick="ocultar();"><span class="material-icons">keyboard_tab</span></button> 
         </div>
     </div>
-        
-
-
+@endguest
     <!-- Scripts -->
     <script>
         function mostrarHora() {
@@ -99,6 +106,7 @@
         }
     </script>
     <!--script src="{{ asset('js/app.js') }}"></script-->
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="/js/script.js"></script>
     <script src="/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>

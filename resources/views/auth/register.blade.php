@@ -10,36 +10,31 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text">Nombres</span>
                         </div>
-                        <input type="text" name="us_nombre"  class="form-control" required>
+                        <input type="text" name="us_nombre"  class="form-control" value="{{ old('us_nombre') }}" required>
                     </div>
                     <div class="input-group mb-3 ">
                         <div class="input-group-prepend">
                           <span class="input-group-text">Apellidos</span> 
                         </div>
-                        <input type="text" name="us_apellido" class="form-control" required>
+                        <input type="text" name="us_apellido" class="form-control" value="{{ old('us_apellido') }}"required>
                     </div>
                     <div class="input-group mb-3 ilogin">
                         <div class="input-group-prepend">
                           <span class="input-group-text">C&eacute;dula</span> 
                         </div>
-                        <input type="text" name="us_cedula" class="form-control" required>
+                        <input type="text" name="us_cedula" class="form-control" value="{{ old('us_cedula') }}"required>
                     </div>
                     <div class="input-group mb-3 ilogin">
                         <div class="input-group-prepend">
                           <span class="input-group-text">Correo</span> 
                         </div>
-                        <input type="text" name="us_correo"  class="form-control" required>
+                        <input type="text" name="us_correo"  class="form-control" value="{{ old('us_correo') }}" required>
                     </div>
-                    @if ($errors->has('email'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
-                    @endif
                     <div class="input-group mb-3 ilogin">
                         <div class="input-group-prepend">
                           <span class="input-group-text">User Name</span> 
                         </div>
-                        <input type="text" name="us_user"  class="form-control" required>
+                        <input type="text" name="us_user"  class="form-control" value="{{ old('us_user') }}"required>
                     </div>
                     <div class="input-group mb-3 ilogin">
                       <div class="input-group-prepend">
