@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class usuarios extends Authenticatable
 {
+    protected $primaryKey = 'us_id';
     use Notifiable;
     
     /**
@@ -15,7 +16,7 @@ class usuarios extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user', 'email', 'password',
+        'us_nombre', 'us_apellido', 'us_cedula', 'us_user', 'us_correo', 'us_password',
     ];
 
     /**
@@ -24,7 +25,7 @@ class usuarios extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'us_password', 'remember_token',
     ];
 
 }
