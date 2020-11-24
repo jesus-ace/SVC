@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body  onload="mostrarHora();">
-@guest
     <nav id="navbar">
         <img src="image/logo-minci.jpg" class="navbar-left img-responsive mppci">
         <p id="hora" class="horaocl"></p>
@@ -35,13 +34,13 @@
     </nav>
     <div class="contenedor">
     @yield('content')
-        @else
+    @auth
         <div class="side-bar" id="br-lateral">
             <div class="bar-profile">
                 <img src="image/prueba3.jpg" alt="Foto de perfil">
             </div>
             <div class="user-name">
-                <p>@fulanito1</p>
+                <p> {{ Auth::user()->us_user }}</p>
             </div>
             <div class="dashboard-view">
                 <a id="btn-dashboard">Dashboard <i class="fas fa-tachometer-alt"></i></a>
@@ -91,8 +90,8 @@
             </div>
             <button id="ocultar" onclick="ocultar();"><span class="material-icons">keyboard_tab</span></button> 
         </div>
+        @endauth
     </div>
-@endguest
     <!-- Scripts -->
     <script>
         function mostrarHora() {

@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="/css/style2.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
     <title>Login</title>
 </head>
 <body class="body">
-
     <div class="container-login" id="login">
         <form method="POST" action="{{ route('login') }}" class="form-login">
             {{csrf_field ()}}
@@ -22,14 +22,24 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text">Usuario <i class="fas fa-user"></i></span>
                     </div>
-                    <input type="text" name="User_name" id="name" class="form-control" required>
+                    <input type="text" name="us_user" id="us_user" class="form-control" required>
                 </div>
+                @if($errors -> has('us_user'))
+                    <span class="help-block">
+                        <strong>{{$errors -> first('us_user')}}</strong>
+                    </span>
+                @endif
                 <div class="input-group mb-3 ilogin">
                     <div class="input-group-prepend">
                       <span class="input-group-text">Password <i class="fas fa-unlock-alt"></i> </span> 
                     </div>
-                    <input type="password" name="contra" id="name" class="form-control" required>
+                    <input type="password" name="us_password" id="us_password" class="form-control" required>
                 </div>
+                @if($errors -> has('us_password'))
+                    <span class="help-block">
+                        <strong>{{$errors -> first('us_password')}}</strong>
+                    </span>
+                @endif
             </div>
             <!--<div class="cambiocontra">-->
                 <a id="cambioC" class="cambiocontra">forgot password?</a>
@@ -100,6 +110,6 @@
                 volver.classList.remove('active');
             }
     </script>
-
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
-</html-->
+</html>
