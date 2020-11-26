@@ -153,9 +153,25 @@ button{
     cursor: pointer;
     background: rgba(187, 176, 176, 0.329);
 }
+.dashboard-btn{
+    text-decoration: none;
+    color: #fff;
+}
+.dashboard-btn:hover{
+    text-decoration: none;
+    color: #fff;
+}
 .log:hover{
     cursor: pointer;
     background: rgba(187, 176, 176, 0.329);
+}
+.log-btn{
+    text-decoration: none;
+    color: #fff;
+}
+.log-btn:hover{
+    text-decoration: none;
+    color: #fff;
 }
 .fa-grip-lines-vertical,
 .fa-bars,
@@ -250,11 +266,9 @@ button{
     overflow-y: scroll;
 }
 .dashboard{
-    display: none;
-}
-.dashboard.active1{
     display: block;
 }
+
 .dashboard.active::-webkit-scrollbar{
     width: 10px;
 }

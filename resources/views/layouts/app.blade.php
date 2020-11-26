@@ -43,7 +43,7 @@
                 <p> {{ Auth::user()->us_user }}</p>
             </div>
             <div class="dashboard-view">
-                <a id="btn-dashboard">Dashboard <i class="fas fa-tachometer-alt"></i></a>
+                <a href="{{ url('/dashboard') }}" class='dashboard-btn'>Dashboard <i class="fas fa-tachometer-alt"></i></a>
             </div>
             <div class="moduloe">
                 Estad&iacute;sticas
@@ -63,8 +63,12 @@
             <div class=" list">
                 Listados<i class="fas fa-list"></i>
                 <ul class="ul">
+                @if(Auth:: user()->us_rol_id==1)
                     <li><a id="list-vigilant" class="opc">Vigilantes<i class="fas fa-user-shield"></i></a></li>
                     <li><a id="list-visitors" class="opc">Visitantes<i class="fas fa-walking"></i></a></li>
+                    @else
+                    <li><a id="list-visitors" class="opc">Visitantes<i class="fas fa-walking"></i></a></li>
+                @endif
                 </ul>
             </div>
             <div class="log">
@@ -72,14 +76,18 @@
             </div>
             <div class="moduloc">Configuraci&oacute;n<i class="fas fa-cog"></i>
                 <ul class="ul">
+                @if(Auth:: user()->us_rol_id==1)
                     <li><a id="btnuser" class="opc">Usuario<i class="fas fa-user"></i></a></li>
                     <li><a id="roles" class="opc">Roles <i class="fas fa-users-cog"></i></a></li>
                     <li><a id="audi" class="opc">Auditor&iacute;a <i class="fas fa-user-tag"></i></a></li>
                     <li><a id="roles" href="{{ route('register') }}" class="opc" id="new-user">Nuevo usuario <i class="fas fa-user-plus"></i></a></li>
+                    @else
+                    <li><a id="btnuser" class="opc">Usuario<i class="fas fa-user"></i></a></li>
+                @endif
                 </ul>
             </div>
             <div class=" log">
-                <a href="{{ route('logout') }}"  
+                <a href="{{ route('logout') }}"  class="log-btn" 
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                 Logout<i class="fas fa-sign-out-alt"></i>

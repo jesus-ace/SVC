@@ -4,18 +4,14 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\Request;
 
 class usuarios extends Authenticatable
 {
     use Notifiable;
-
     protected $table = 'usuarios';
     protected $primaryKey = 'us_id';
 
-    public function getAuthPassword()
-    {
-        return $this->us_password;
-    }
     
     /**
      * The attributes that are mass assignable.
@@ -23,7 +19,7 @@ class usuarios extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'us_nombre', 'us_apellido', 'us_cedula', 'us_user', 'us_correo', 'us_password', 
+        'us_nombre', 'us_apellido', 'us_cedula', 'us_user', 'us_correo', 'us_password',
     ];
 
     /**
@@ -36,6 +32,8 @@ class usuarios extends Authenticatable
         'us_password', 'remember_token',
     ];
 
-    
-
+    public function getAuthPassword()
+    {
+        return $this->us_password;
+    }
 }
