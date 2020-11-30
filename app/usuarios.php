@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class usuarios extends Authenticatable
 {
@@ -36,4 +37,11 @@ class usuarios extends Authenticatable
     {
         return $this->us_password;
     }
+
+    public function roles()
+    {
+        return $this->belongsTo('App\rol');
+    }
+
+    
 }

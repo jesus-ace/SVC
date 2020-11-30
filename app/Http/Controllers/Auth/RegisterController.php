@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -29,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/list-vigilante';
 
     /*
      Create a new controller instance.
@@ -75,6 +74,12 @@ class RegisterController extends Controller
             'us_user' => $data['us_user'],
             'us_password' => bcrypt($data['us_password']),
         ]);
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth' );
+        $this->middleware('rolAdmin');
     }
 
     

@@ -13,11 +13,21 @@ var btnabrir = document.getElementById('abrir'),
         btnabrir.classList.add('hover');
         brrLateral.classList.add('active');
         btnolcultar.classList.add('active');
-        statistics.classList.add('active');
+        //statistics.classList.add('active');
         dashboard.classList.add('active');
-        fieldsetG.classList.add('active');
-        byarea.classList.add('active');
+        //fieldsetG.classList.add('active');
+        //byarea.classList.add('active');
         upbars.classList.add('active');
+    });
+    btnabrir.addEventListener("click", function(){
+        btnabrir.classList.add('hover');
+        brrLateral.classList.add('active');
+        btnolcultar.classList.add('active');
+        //statistics.classList.add('active');
+        //dashboard.classList.add('active');
+        //fieldsetG.classList.add('active');
+        //byarea.classList.add('active');
+        //upbars.classList.add('active');
     });
     function ocultar(){
         //statistics.classList.remove('active');
@@ -32,7 +42,7 @@ var btnabrir = document.getElementById('abrir'),
         btnabrir.classList.remove('hover');
     }
 //---------------------------------------------------Ventanas--------------------------------------------------------------------------------//
-var btnuser = document.getElementById('btnuser'),
+/*var btnuser = document.getElementById('btnuser'),
     user = document.getElementById('user');
     
 btnuser.addEventListener("click", function (){
@@ -236,7 +246,7 @@ var btnroles = document.getElementById('roles'),
         dashboard.classList.remove('active1');
         listvisitors.classList.remove('active');
         registrovisitante.classList.remove('active');
-    });
+    });*/
 //----------------------------------------------Perfil se usuario------------------------------------------------------------------------------//
 
 var btnpi2 = document.getElementById('pi2'),

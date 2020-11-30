@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    body{
+        background: #fff;
+    }
+</style> 
 <div class="dashboard" id="dashboard">
             <div class="statistics" id="statistics">
                 <fieldset class="fieldset">

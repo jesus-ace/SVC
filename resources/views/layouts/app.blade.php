@@ -11,21 +11,26 @@
     <title></title>
 
     <!-- Styles -->
-    <!--link href="{{ asset('css/app.css') }}" rel="stylesheet"-->
+
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/editor.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style3.css">
+
     <!--iconos-->
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+    <!--jquery-->
+    <script src="/js/jquery-1.12.0.js"></script>
 </head>
 <body  onload="mostrarHora();">
     <nav id="navbar">
         <img src="image/logo-minci.jpg" class="navbar-left img-responsive mppci">
         <p id="hora" class="horaocl"></p>
         <div class="navbar-header">
-        <a  class="home" onclick="retro();">
+        <a  class="home" href="{{ url('/welcome') }}">
             <img src="image/logo-vive-evoluciona.png" alt="Vive Tv" class="logo-menu">
         </a>
         <div class="enlaces">
@@ -37,7 +42,7 @@
     @auth
         <div class="side-bar" id="br-lateral">
             <div class="bar-profile">
-                <img src="image/prueba3.jpg" alt="Foto de perfil">
+                <img src="imagenes/{{ Auth::user()->us_photo }}" alt="Foto de perfil">
             </div>
             <div class="user-name">
                 <p> {{ Auth::user()->us_user }}</p>
@@ -64,7 +69,7 @@
                 Listados<i class="fas fa-list"></i>
                 <ul class="ul">
                 @if(Auth:: user()->us_rol_id==1)
-                    <li><a id="list-vigilant" class="opc">Vigilantes<i class="fas fa-user-shield"></i></a></li>
+                    <li><a href="{{ url('/list-vigilante') }}" id="list-vigilant" class="opc">Vigilantes<i class="fas fa-user-shield"></i></a></li>
                     <li><a id="list-visitors" class="opc">Visitantes<i class="fas fa-walking"></i></a></li>
                     @else
                     <li><a id="list-visitors" class="opc">Visitantes<i class="fas fa-walking"></i></a></li>
@@ -72,12 +77,12 @@
                 </ul>
             </div>
             <div class="log">
-                <a  class="no-oculto" id="visitante" onclick="regisvisitante();">Agregar Visitante<i class="fas fa-walking"></i></a>
+                <a href="{{ url('/new-visitor') }}" class="no-oculto" id="visitante">Agregar Visitante<i class="fas fa-walking"></i></a>
             </div>
             <div class="moduloc">Configuraci&oacute;n<i class="fas fa-cog"></i>
                 <ul class="ul">
                 @if(Auth:: user()->us_rol_id==1)
-                    <li><a id="btnuser" class="opc">Usuario<i class="fas fa-user"></i></a></li>
+                    <li><a id="btnuser" class="opc" href="{{ url('/user-profiel') }}">Usuario<i class="fas fa-user"></i></a></li>
                     <li><a id="roles" class="opc">Roles <i class="fas fa-users-cog"></i></a></li>
                     <li><a id="audi" class="opc">Auditor&iacute;a <i class="fas fa-user-tag"></i></a></li>
                     <li><a id="roles" href="{{ route('register') }}" class="opc" id="new-user">Nuevo usuario <i class="fas fa-user-plus"></i></a></li>
@@ -100,22 +105,13 @@
         </div>
         @endauth
     </div>
+    <div>
+        @yield('modal')
+    </div>
     <!-- Scripts -->
-    <script>
-        function mostrarHora() {
-            var fecha = new Date()
-            var hora = fecha.getHours(); 
-            var minutos = fecha.getMinutes();
-            var segundos= fecha.getSeconds();
-            document.getElementById('hora').innerHTML = hora +":" + minutos +":"+ segundos;
-            document.getElementById('hora1').innerHTML = hora +":" + minutos +":"+ segundos;
-            setTimeout("mostrarHora()",1000) 
-        }
-    </script>
-    <!--script src="{{ asset('js/app.js') }}"></script-->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="/js/script.js"></script>
+    <!--script src="/js/script.js"></script-->
     <script src="/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

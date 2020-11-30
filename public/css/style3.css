@@ -49,7 +49,7 @@ button{
 .side-bar{
     background: rgb(110, 51, 129);
     width: 180px;
-    height: auto;
+    height: 900px;
     color: #fff;
     float: right;
     display: none;
@@ -64,6 +64,7 @@ button{
     width: 80px;
     height: 80px;
     border-radius: 20px 5px 20px 5px; 
+    border: 1px solid black;
 }
 .bar-profile,
 .user-name{
@@ -311,11 +312,11 @@ button{
     top: -80px;
 }
 .user{
-    display: none;
-}
-.user.active{
     display: block;
 }
+/*.user.active{
+    display: block;
+}*/
 .head{
     width: 1664px;
     height: 180px;
