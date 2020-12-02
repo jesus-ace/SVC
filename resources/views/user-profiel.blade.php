@@ -11,7 +11,7 @@
         <h2>Sistema de control de entrada y salida de visitantes</h2>
     </div>
     <div class="photo-profile">
-        <img src="/image/prueba3.jpg" alt="Foto de perfil">
+        <img src="/imagenes/{{ Auth::user()->us_photo }}" alt="Foto de perfil">
     </div>
     <div class="name-lastname">
         <h4 class="nombre">{{ Auth::user()->us_nombre }} {{ Auth::user()->us_apellido }}</h4>

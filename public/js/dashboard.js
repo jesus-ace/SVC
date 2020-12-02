@@ -1,46 +1,68 @@
 var btnabrir = document.getElementById('abrir'),
+    brrLateral = document.getElementById('br-lateral'),
 	btnolcultar = document.getElementById('ocultar'),
-	brrLateral = document.getElementById('br-lateral'),
-    statistics = document.getElementById('statistics'),
     dashboard = document.getElementById('dashboard'),
+    upbars= document.getElementById('head');
+    statistics = document.getElementById('statistics'),
     byarea = document.getElementById('by-area'),
     bydays = document.getElementById('by-days'),
     fieldsetG = document.getElementById('fieldsetG'),
     bymonth = document.getElementById('by-month'),
-    upbars= document.getElementById('head');
+   
 
-    btnabrir.addEventListener("click", function(){
-        btnabrir.classList.add('hover');
+    /*btnabrir.addEventListener("click", function(){
         brrLateral.classList.add('active');
-        btnolcultar.classList.add('active');
-        //statistics.classList.add('active');
-        dashboard.classList.add('active');
-        //fieldsetG.classList.add('active');
-        //byarea.classList.add('active');
         upbars.classList.add('active');
-    });
+        dashboard.classList.add('active');
+        btnabrir.classList.add('hover');
+        btnolcultar.classList.add('active');
+        statistics.classList.add('active');
+        fieldsetG.classList.add('active');
+        byarea.classList.add('active');
+        
+    });*/
+    /*Modulo de dashboard*/
     btnabrir.addEventListener("click", function(){
         btnabrir.classList.add('hover');
         brrLateral.classList.add('active');
-        btnolcultar.classList.add('active');
-        //statistics.classList.add('active');
-        //dashboard.classList.add('active');
-        //fieldsetG.classList.add('active');
-        //byarea.classList.add('active');
-        //upbars.classList.add('active');
+        dashboard.classList.add('active');
+        statistics.classList.add('active');
+        fieldsetG.classList.add('active');
     });
     function ocultar(){
+        btnabrir.classList.remove('hover');
+        brrLateral.classList.remove('active');
+        dashboard.classList.remove('active');
+        statistics.classList.remove('active');
+        fieldsetG.classList.remove('active');
+    }
+
+    /*Modulo Perfil de usuario*/
+    btnabrir.addEventListener("click", function(){
+        btnabrir.classList.add('hover');
+        brrLateral.classList.add('active');
+        upbars.classList.add('active');
+    
+    });
+    function ocultar(){
+        btnabrir.classList.remove('hover');
+        brrLateral.classList.remove('active');
+        upbars.classList.remove('active');
+    }
+    /*Modulo lista de Vigilantes*/
+
+    /*function ocultar(){
         //statistics.classList.remove('active');
         btnabrir.classList.remove('hover');
         brrLateral.classList.remove('active');
         btnabrir.classList.remove('active');
         btnolcultar.classList.remove('active');
         dashboard.classList.remove('active');
+        upbars.classList.remove('active');
         fieldsetG.classList.remove('active');
         byarea.classList.remove('active');
-        upbars.classList.remove('active');
         btnabrir.classList.remove('hover');
-    }
+    }*/
 //---------------------------------------------------Ventanas--------------------------------------------------------------------------------//
 /*var btnuser = document.getElementById('btnuser'),
     user = document.getElementById('user');
@@ -302,3 +324,13 @@ var btnRE = document.getElementById('RE'),
 	    btnocultar.classList.remove('active');
 	    btnRE.classList.remove('active');
     });
+
+function eliminar(){
+    var FormEditar= document.getElementById('formeditar');
+        FormEliminar= document.getElementById('formeliminar');
+        btnaceptar = document.getElementById('btnRA');
+
+        FormEditar.classList.add('active');
+        FormEliminar.classList.add('active');
+        btnaceptar.classList.add('active');
+}

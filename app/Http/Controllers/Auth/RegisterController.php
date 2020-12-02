@@ -72,6 +72,7 @@ class RegisterController extends Controller
             'us_cedula' => $data['us_cedula'],
             'us_correo' => $data['us_correo'],
             'us_user' => $data['us_user'],
+            'us_estatus' => $data['us_estatus'],
             'us_password' => bcrypt($data['us_password']),
         ]);
     }

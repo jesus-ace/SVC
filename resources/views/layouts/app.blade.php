@@ -11,11 +11,12 @@
     <title></title>
 
     <!-- Styles -->
-
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/editor.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style3.css">
+
+    
 
     <!--iconos-->
 
@@ -23,7 +24,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
     <!--jquery-->
-    <script src="/js/jquery-1.12.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </head>
 <body  onload="mostrarHora();">
     <nav id="navbar">
@@ -87,7 +89,7 @@
                     <li><a id="audi" class="opc">Auditor&iacute;a <i class="fas fa-user-tag"></i></a></li>
                     <li><a id="roles" href="{{ route('register') }}" class="opc" id="new-user">Nuevo usuario <i class="fas fa-user-plus"></i></a></li>
                     @else
-                    <li><a id="btnuser" class="opc">Usuario<i class="fas fa-user"></i></a></li>
+                    <li><a href="{{ url('/user-profiel') }} id="btnuser" class="opc">Usuario<i class="fas fa-user"></i></a></li>
                 @endif
                 </ul>
             </div>
@@ -111,7 +113,6 @@
     <!-- Scripts -->
     <!--script src="/js/script.js"></script-->
     <script src="/js/dashboard.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

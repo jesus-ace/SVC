@@ -22,6 +22,7 @@ class CreateUsuariosTable extends Migration
             $table->string('us_correo')->unique();
             $table->string('us_user')->unique();
             $table->string('us_password');
+            $table->string('us_estatus')->nullable();
             $table->string('us_photo')->nullable();
             $table->integer('us_rol_id')->nullable();
             $table->integer('us_tu_id')->nullable();

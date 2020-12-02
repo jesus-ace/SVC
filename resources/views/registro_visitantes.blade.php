@@ -146,18 +146,21 @@
         var btnRE = document.getElementById('RE'),
         mostrar = document.getElementById('oculto'),
         btnocultar = document.getElementById('oculto2');
+        container= document.getElementById('registro-visitor')
 
         btnRE.addEventListener('click', function(){
   	      mostrar.classList.add('active');
 	        btnocultar.classList.add('active');
-	        btnRE.classList.add('active');
+          btnRE.classList.add('active');
+          container.classList.add('active');
         })
 
         btnocultar.addEventListener('click', function(e){
 	        e.preventDefault();
 	        mostrar.classList.remove('active');
 	        btnocultar.classList.remove('active');
-	        btnRE.classList.remove('active');
+          btnRE.classList.remove('active');
+          container.classList.remove('active');
         });	
 
     </script>

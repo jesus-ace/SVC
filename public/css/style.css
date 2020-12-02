@@ -9,7 +9,12 @@ html {
 body{
     background-color: rgba(34, 18, 41, 0.137);
     width: 100%;
-    max-width: 1670px;
+    height: 100%;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
 }
 body.active{
     background-color: rgb(255, 255, 255);
@@ -17,9 +22,9 @@ body.active{
 /*Estilos Nav*/
 nav{
     background-color: #fff;
-    /*position: fixed;*/
     top: 0;
     width: 100%;
+    max-width: auto;
     transition: top 0.3s
 }
 .img-responsive{
@@ -464,15 +469,17 @@ h5{
 .container{
     width: 100%;
     max-width: 1100px;
+    height: 790px;
     background-color: #ffff;
     border-radius:15px;
     margin-top:70px;
     padding: 5px;
     display: block;
+    overflow-x: hidden;
 }
-/*.container.active{
-    display: block;
-}*/
+.container.active{
+    height: 990px;
+}
 .container-lista-vistante{
     width: 100%;
     max-width: 1100px;
@@ -640,35 +647,76 @@ th{
     font-size: 22px;
     color: rgb(107, 55, 125);
 }
-.paginacion {
-	margin:20px 0;
+section{
+    position: relative;
+    left: 95px;
+    top: -10px;
 }
- 
-.paginacion ul {
-	list-style:none;
-	text-align: center;
+.pagination{
+	display: inline-block;
+  	padding-left: 0;
+  	margin: 10px 0;
+  	border-radius: 4px;
 }
- 
-.paginacion ul li {
-	display:inline-block;
+.pagination >li{
+   background-color: #ffff;
+    display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+position: relative;
+float: left;
+padding: 6px 12px;
+margin-left: -1px;
+line-height: 1.428571429;
+color: rgb(107, 55, 125);
+text-decoration: none;
+background-color: #fff;
+border: 1px solid rgb(107, 55, 125);
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+margin-left: 0;
+border-top-left-radius: 4px;
+border-bottom-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+border-top-right-radius: 4px;
+border-bottom-right-radius: 4px;
+}
 
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+	color: rgb(107, 55, 125);
+	background-color: #eee;
+	border-color:  rgb(107, 55, 125);
 }
- 
-.paginacion ul li a {
-	display:block;
-	padding:5px 10px;
-	color:#fff;
-	background:rgb(107, 55, 125);
-	text-decoration: none;
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+	z-index: 2;
+	color: #fff;
+	cursor: default;
+	background-color:rgb(107, 55, 125);
+	border-color: rgb(107, 55, 125);
 }
- 
-.paginacion ul li a:hover {
-	background:rgba(118, 63, 136, 0.657);
-}
- 
-.paginacion ul li .active {
-	background:rgba(118, 63, 136, 0.657);
-	font-weight:bold;
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+	color: #999;
+	cursor: not-allowed;
+	background-color: #fff;
+	border-color: #ddd;
 }
 /*Modal*/
 .modal{

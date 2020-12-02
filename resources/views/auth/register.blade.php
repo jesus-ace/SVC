@@ -5,6 +5,7 @@
             <form method="POST" action="{{ route('register') }}" class="form-registroV">
             {{ csrf_field() }}
                 <h3>Registro de vigilantes</h3>
+                <input type="hidden" name="us_estatus"  class="form-control" value="1" required>
                 <div class="inputs">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
