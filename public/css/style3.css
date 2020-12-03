@@ -690,3 +690,40 @@ canvas{
 .Eliminar-usuario.active{
     display: block;
 }
+
+/*para que se muestre el la camara*/
+.radio_check {
+	width: 49% !important;
+	text-align: center;
+}
+
+.video_container {
+	width: 100%;
+	padding: 25px;
+}
+
+.none {
+	display: none;
+}
+.btnFoto{
+    width: 250px;
+    margin:auto;
+    justify-content: center;
+    font-size: 15px;
+    border: solid 1px rgb(107, 55, 125);
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    top: 15px ;
+    background-color: rgb(107, 55, 125)
+}
+.btnFoto:hover{
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+}
+.form-check-label{
+    width: 50px;
+    margin: auto;
+}
+.form-check-input{
+    display: none;
+}

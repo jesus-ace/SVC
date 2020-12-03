@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/sweetalert.css">
     <link rel="stylesheet" href="/css/editor.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style3.css">
@@ -24,13 +25,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
     <!--jquery-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 </head>
-<body  onload="mostrarHora();">
+<body  onload="mostrarHora();" class="modal-open">
     <nav id="navbar">
         <img src="image/logo-minci.jpg" class="navbar-left img-responsive mppci">
-        <p id="hora" class="horaocl"></p>
+        <!--p id="hora" class="horaocl"></p-->
         <div class="navbar-header">
         <a  class="home" href="{{ url('/welcome') }}">
             <img src="image/logo-vive-evoluciona.png" alt="Vive Tv" class="logo-menu">
@@ -72,9 +73,9 @@
                 <ul class="ul">
                 @if(Auth:: user()->us_rol_id==1)
                     <li><a href="{{ url('/list-vigilante') }}" id="list-vigilant" class="opc">Vigilantes<i class="fas fa-user-shield"></i></a></li>
-                    <li><a id="list-visitors" class="opc">Visitantes<i class="fas fa-walking"></i></a></li>
+                    <li><a href="{{ url('/list-visitor') }}" id="list-visitors" class="opc">Visitantes<i class="fas fa-walking"></i></a></li>
                     @else
-                    <li><a id="list-visitors" class="opc">Visitantes<i class="fas fa-walking"></i></a></li>
+                    <li><a id="list-visitors" href="{{ url('/list-visitor') }}"  class="opc">Visitantes<i class="fas fa-walking"></i></a></li>
                 @endif
                 </ul>
             </div>
@@ -89,7 +90,7 @@
                     <li><a id="audi" class="opc">Auditor&iacute;a <i class="fas fa-user-tag"></i></a></li>
                     <li><a id="roles" href="{{ route('register') }}" class="opc" id="new-user">Nuevo usuario <i class="fas fa-user-plus"></i></a></li>
                     @else
-                    <li><a href="{{ url('/user-profiel') }} id="btnuser" class="opc">Usuario<i class="fas fa-user"></i></a></li>
+                    <li><a href="{{ url('/user-profiel') }}" id="btnuser" class="opc">Usuario<i class="fas fa-user"></i></a></li>
                 @endif
                 </ul>
             </div>
@@ -113,6 +114,9 @@
     <!-- Scripts -->
     <!--script src="/js/script.js"></script-->
     <script src="/js/dashboard.js"></script>
+    <script src="/js/validaciones.js"></script>
+    <script src="/js/sweetalert.js"></script>
+    <script src="/js/camara.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

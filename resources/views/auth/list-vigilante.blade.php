@@ -15,7 +15,6 @@
         </div>
         <a class="btn regisV" id="btnRV"  href="{{ route('register') }}" >Vigilante<i class="fas fa-plus"></i></a>
         <thead>
-            <th>#</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>c&eacute;dula</th>
@@ -24,9 +23,8 @@
             <th>acciones</th>
         </thead>
         <tbody>
-            @foreach( $user as $usuario)
+            @foreach( $users as $usuario)
                 <tr>
-                    <td>{{$usuario->us_id}}</td>
                     <td>{{$usuario->us_nombre}}</td>
                     <td>{{$usuario->us_apellido}}</td>
                     <td>{{$usuario->us_cedula}}</td>
@@ -40,7 +38,7 @@
         </tbody>
     </table>
     <section class="paginacion">
-        {!!$user->render()!!}
+        {!!$users->render()!!}
     </section>
 </div> 
 

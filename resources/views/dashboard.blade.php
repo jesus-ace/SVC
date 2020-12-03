@@ -41,49 +41,55 @@
                         <div class="entrada">
                           <h3>Entrada</h3>
                           <div class="ENTRA">
-                            <div class="foto"><img class="fotus" src="image/pruebas2.jpeg" alt=""></div>
-                              <table class="EN-SA">
-                                <thead class="EN-SA_thead">
-                                  <th class="EN-SA_th">Nro carnet</th>
-                                  <th class="EN-SA_th">Entrada</th>
-                                  <th class="EN-SA_th">Restante</th>
-                                </thead>
-                                <tbody class="EN-SA_td">
-                                  <td class="EN-SA_td">21</td>
-                                  <td class="EN-SA_td">09:05</td>
-                                  <td class="EN-SA_td"> 50min</td>
-                                </tbody>
-                              </table>
+                            <div class="foto">
+                              <img class="fotus" src="image/pruebas2.jpeg" alt="">
+                            </div>
+                            <table class="EN-SA">
+                              <thead class="EN-SA_thead">
+                                <th class="EN-SA_th">Nro carnet</th>
+                                <th class="EN-SA_th">Hora Entrada</th>
+                                <th class="EN-SA_th">Hora Slida</th>
+                              </thead>
+                              <tbody class="EN-SA_td">
+                                <td class="EN-SA_td">21</td>
+                                <td class="EN-SA_td">09:05</td>
+                                <td class="EN-SA_td">50min</td>
+                              </tbody>
+                            </table>
                           </div>
                           <div class="ENTRA">
-                            <div class="foto"><img class="fotus" src="image/pruebas2.jpeg" alt=""></div>
-                              <table class="EN-SA">
-                                <thead class="EN-SA_thead">
-                                  <th class="EN-SA_th">Nro carnet</th>
-                                  <th class="EN-SA_th">Entrada</th>
-                                  <th class="EN-SA_th">Restante</th>
-                                </thead>
-                                <tbody class="EN-SA_td">
-                                  <td class="EN-SA_td">21</td>
-                                  <td class="EN-SA_td">09:05</td>
-                                  <td class="EN-SA_td"> 50min</td>
-                                </tbody>
-                              </table>
+                            <div class="foto">
+                              <img class="fotus" src="image/pruebas2.jpeg" alt="">
+                            </div>
+                            <table class="EN-SA">
+                              <thead class="EN-SA_thead">
+                                <th class="EN-SA_th">Nro carnet</th>
+                                <th class="EN-SA_th">Hora Entrada</th>
+                                <th class="EN-SA_th">Hora Slida</th>
+                              </thead>
+                              <tbody class="EN-SA_td">
+                                <td class="EN-SA_td">21</td>
+                                <td class="EN-SA_td">09:05</td>
+                                <td class="EN-SA_td">50min</td>
+                              </tbody>
+                            </table>
                           </div>
                           <div class="ENTRA">
-                            <div class="foto"><img class="fotus" src="image/pruebas2.jpeg" alt=""></div>
-                              <table class="EN-SA">
-                                <thead class="EN-SA_thead">
-                                  <th class="EN-SA_th">Nro carnet</th>
-                                  <th class="EN-SA_th">Entrada</th>
-                                  <th class="EN-SA_th">Restante</th>
-                                </thead>
-                                <tbody class="EN-SA_td">
-                                  <td class="EN-SA_td">21</td>
-                                  <td class="EN-SA_td">09:05</td>
-                                  <td class="EN-SA_td">50min</td>
-                                </tbody>
-                              </table>
+                            <div class="foto">
+                              <img class="fotus" src="image/pruebas2.jpeg" alt="">
+                            </div>
+                            <table class="EN-SA">
+                              <thead class="EN-SA_thead">
+                                <th class="EN-SA_th">Nro carnet</th>
+                                <th class="EN-SA_th">Hora Entrada</th>
+                                <th class="EN-SA_th">Hora Slida</th>
+                              </thead>
+                              <tbody class="EN-SA_td">
+                                <td class="EN-SA_td">21</td>
+                                <td class="EN-SA_td">09:05</td>
+                                <td class="EN-SA_td">50min</td>
+                              </tbody>
+                            </table>
                           </div>
                         </div>
                       <div class="salir">

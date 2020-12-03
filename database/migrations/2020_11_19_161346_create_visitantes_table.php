@@ -20,11 +20,13 @@ class CreateVisitantesTable extends Migration
             $table->integer('vi_cedula')->unique();
             $table->string('vi_telefono');
             $table->string('vi_domicilio');
+            $table->integer('vi_dep_id');
             $table->string('vi_responsable');
             $table->integer('vi_mt_id');
             $table->integer('vi_eq_id', null);
             $table->foreign('vi_mt_id')->references('mt_id')->on('motivos');
             $table->foreign('vi_eq_id')->references('eq_id')->on('equipos');
+            $table->foreign('vi_dep_id')->references('dep_id')->on('departamentos');
             $table->timestamps();
         });
     }
