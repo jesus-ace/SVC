@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title></title>
+    <title>{{ config('app.SCESV', 'SCESV')}}</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -28,7 +28,7 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
 </head>
-<body  onload="mostrarHora();" class="modal-open">
+<body  onload="mostrarHora();">
     <nav id="navbar">
         <img src="image/logo-minci.jpg" class="navbar-left img-responsive mppci">
         <!--p id="hora" class="horaocl"></p-->
@@ -86,9 +86,9 @@
                 <ul class="ul">
                 @if(Auth:: user()->us_rol_id==1)
                     <li><a id="btnuser" class="opc" href="{{ url('/user-profiel') }}">Usuario<i class="fas fa-user"></i></a></li>
-                    <li><a id="roles" class="opc">Roles <i class="fas fa-users-cog"></i></a></li>
-                    <li><a id="audi" class="opc">Auditor&iacute;a <i class="fas fa-user-tag"></i></a></li>
-                    <li><a id="roles" href="{{ route('register') }}" class="opc" id="new-user">Nuevo usuario <i class="fas fa-user-plus"></i></a></li>
+                    <li><a href="{{url('/permits')}}" id="roles" class="opc">Roles <i class="fas fa-users-cog"></i></a></li>
+                    <li><a id="audi" href="{{url('/Auditoria')}}" class="opc">Auditor&iacute;a <i class="fas fa-user-tag"></i></a></li>
+                    <li><a id="new_user" href="{{ route('register') }}" class="opc" id="new-user">Nuevo usuario <i class="fas fa-user-plus"></i></a></li>
                     @else
                     <li><a href="{{ url('/user-profiel') }}" id="btnuser" class="opc">Usuario<i class="fas fa-user"></i></a></li>
                 @endif
@@ -112,7 +112,7 @@
         @yield('modal')
     </div>
     <!-- Scripts -->
-    <!--script src="/js/script.js"></script-->
+    <script src="/js/script.js"></script>
     <script src="/js/dashboard.js"></script>
     <script src="/js/validaciones.js"></script>
     <script src="/js/sweetalert.js"></script>

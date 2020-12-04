@@ -33,15 +33,12 @@ class usuarios extends Authenticatable
         'us_password', 'remember_token',
     ];
 
-    public function getAuthPassword()
-    {
+    public function getAuthPassword(){
         return $this->us_password;
     }
 
-    public function roles()
-    {
+    public function rol(){
         return $this->belongsTo('App\rol');
     }
 
-    
 }

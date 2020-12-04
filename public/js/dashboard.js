@@ -10,7 +10,7 @@ var btnabrir = document.getElementById('abrir'),
     bymonth = document.getElementById('by-month'),
    
 
-    /*btnabrir.addEventListener("click", function(){
+    btnabrir.addEventListener("click", function(){
         brrLateral.classList.add('active');
         upbars.classList.add('active');
         dashboard.classList.add('active');
@@ -20,7 +20,7 @@ var btnabrir = document.getElementById('abrir'),
         fieldsetG.classList.add('active');
         byarea.classList.add('active');
         
-    });*/
+    });
     /*Modulo de dashboard*/
     btnabrir.addEventListener("click", function(){
         btnabrir.classList.add('hover');
@@ -63,212 +63,7 @@ var btnabrir = document.getElementById('abrir'),
         byarea.classList.remove('active');
         btnabrir.classList.remove('hover');
     }*/
-//---------------------------------------------------Ventanas--------------------------------------------------------------------------------//
-/*var btnuser = document.getElementById('btnuser'),
-    user = document.getElementById('user');
-    
-btnuser.addEventListener("click", function (){
-    dashboard.classList.remove('active1');
-    body.classList.remove('active');
-    user.classList.add('active');
-    newuser.classList.remove('active');
-    welcome.classList.add('active');
-    tablaVigilante.classList.remove('active');
-    auditar.classList.remove('active');
-    registrovisitante.classList.remove('active');
-    seereports.classList.remove('active');
-    permits.classList.remove('active');
-    createrepote.classList.remove('active');
-    listvisitors.classList.remove('active');
-    area.classList.remove('active');
-});
 
-var buttonDashboard = document.getElementById('btn-dashboard'),
-    body= document.getElementById('body');
-    welcome = document.getElementById('welcome');
-
-    buttonDashboard.addEventListener("click", function() {
-        dashboard.classList.add('active1');
-        body.classList.add('active');
-        user.classList.remove('active');
-        newuser.classList.remove('active');
-        welcome.classList.add('active')
-        tablaVigilante.classList.remove('active');
-        listvisitors.classList.remove('active');
-        auditar.classList.remove('active');
-        createrepote.classList.remove('active');
-        registrovisitante.classList.remove('active');
-        seereports.classList.remove('active');
-        permits.classList.remove('active');
-        area.classList.remove('active');
-    });
-
-var newuser = document.getElementById('FormR');
-
-     function newUser() {
-        dashboard.classList.remove('active1');
-        body.classList.remove('active');
-        newuser.classList.add('active');
-        user.classList.remove('active');
-        welcome.classList.add('active');
-        tablaVigilante.classList.remove('active');
-        listvisitors.classList.remove('active');
-        registrovisitante.classList.remove('active');
-        auditar.classList.remove('active');
-        createrepote.classList.remove('active');
-        seereports.classList.remove('active');
-        registrovisitante.classList.remove('active');
-        permits.classList.remove('active');
-        area.classList.remove('active');
-    }
-var listVigilant = document.getElementById('list-vigilant'),
-    tablaVigilante =document.getElementById('list-vigilante');
-
-    listVigilant.addEventListener('click', function(){
-        tablaVigilante.classList.add('active');
-        body.classList.remove('active');
-        newuser.classList.remove('active');
-        user.classList.remove('active');
-        welcome.classList.add('active');
-        dashboard.classList.remove('active1');
-        listvisitors.classList.remove('active');
-        registrovisitante.classList.remove('active');
-        auditar.classList.remove('active');
-        createrepote.classList.remove('active');
-        seereports.classList.remove('active');
-        permits.classList.remove('active');
-        area.classList.remove('active');
-    });
-
-var btnlistvisitors = document.getElementById('list-visitors'),
-    listvisitors = document.getElementById('listVistors');
-
-    btnlistvisitors.addEventListener( 'click', function () {
-        listvisitors.classList.add('active');
-        body.classList.remove('active');
-        welcome.classList.add('active');
-        tablaVigilante.classList.remove('active');
-        newuser.classList.remove('active');
-        user.classList.remove('active');
-        dashboard.classList.remove('active1');
-        registrovisitante.classList.remove('active');
-        auditar.classList.remove('active');
-        createrepote.classList.remove('active');
-        seereports.classList.remove('active');
-        permits.classList.remove('active');
-        area.classList.remove('active');
-    });
-
-var btnregistrovisitante = document.getElementById('visitantte'),
-    registrovisitante = document.getElementById('registro-visitor'); 
-
-    function regisvisitante(){
-        registrovisitante.classList.add('active');
-        body.classList.remove('active');
-        welcome.classList.add('active');
-        tablaVigilante.classList.remove('active');
-        newuser.classList.remove('active');
-        user.classList.remove('active');
-        dashboard.classList.remove('active1');
-        listvisitors.classList.remove('active');
-        auditar.classList.remove('active');
-        createrepote.classList.remove('active');
-        seereports.classList.remove('active');
-        permits.classList.remove('active');
-        area.classList.remove('active');
-    };
-
-var btnauditar = document.getElementById('audi'),
-    auditar= document.getElementById('auditar');
-
-    btnauditar.addEventListener('click', function() {
-        auditar.classList.add('active');
-        body.classList.remove('active');
-        welcome.classList.add('active');
-        tablaVigilante.classList.remove('active');
-        newuser.classList.remove('active');
-        user.classList.remove('active');
-        dashboard.classList.remove('active1');
-        listvisitors.classList.remove('active');
-        registrovisitante.classList.remove('active');
-        createrepote.classList.remove('active');
-        seereports.classList.remove('active');
-        permits.classList.remove('active');
-        area.classList.remove('active');
-    });
-
-var btnreporte = document.getElementById('reporte'),
-    createrepote = document.getElementById('Text');
-
-    btnreporte.addEventListener('click', function() {
-        createrepote.classList.add('active');
-        body.classList.remove('active');
-        auditar.classList.remove('active');
-        welcome.classList.add('active');
-        tablaVigilante.classList.remove('active');
-        newuser.classList.remove('active');
-        user.classList.remove('active');
-        dashboard.classList.remove('active1');
-        listvisitors.classList.remove('active');
-        registrovisitante.classList.remove('active');
-        seereports.classList.remove('active');
-        permits.classList.remove('active');
-        area.classList.remove('active');
-    });
-var btnseereports = document.getElementById('see-reports'),
-    seereports = document.getElementById('reports');
-
-    btnseereports.addEventListener('click', function() {
-        seereports.classList.add('active');
-        body.classList.remove('active');
-        createrepote.classList.remove('active');
-        auditar.classList.remove('active');
-        welcome.classList.add('active');
-        tablaVigilante.classList.remove('active');
-        newuser.classList.remove('active');
-        user.classList.remove('active');
-        dashboard.classList.remove('active1');
-        listvisitors.classList.remove('active');
-        registrovisitante.classList.remove('active');
-        permits.classList.remove('active');
-        area.classList.remove('active');
-    });
-var btnroles = document.getElementById('roles'),
-    permits = document.getElementById('permits');
-
-    btnroles.addEventListener('click', function() {
-        permits.classList.add('active');
-        seereports.classList.remove('active');
-        body.classList.remove('active');
-        createrepote.classList.remove('active');
-        auditar.classList.remove('active');
-        welcome.classList.add('active');
-        tablaVigilante.classList.remove('active');
-        newuser.classList.remove('active');
-        user.classList.remove('active');
-        dashboard.classList.remove('active1');
-        listvisitors.classList.remove('active');
-        registrovisitante.classList.remove('active');
-        area.classList.remove('active');
-    });
-    var btnxarea = document.getElementById('xareas'),
-        area = document.getElementById('area');
-
-    btnxarea.addEventListener('click', function() {
-        area.classList.add('active');
-        permits.classList.remove('active');
-        seereports.classList.remove('active');
-        body.classList.remove('active');
-        createrepote.classList.remove('active');
-        auditar.classList.remove('active');
-        welcome.classList.add('active');
-        tablaVigilante.classList.remove('active');
-        newuser.classList.remove('active');
-        user.classList.remove('active');
-        dashboard.classList.remove('active1');
-        listvisitors.classList.remove('active');
-        registrovisitante.classList.remove('active');
-    });*/
 //----------------------------------------------Perfil se usuario------------------------------------------------------------------------------//
 
 var btnpi2 = document.getElementById('pi2'),

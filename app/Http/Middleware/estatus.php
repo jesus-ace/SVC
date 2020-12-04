@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class rolAdmin
+class estatus
 {
     /**
      * Handle an incoming request.
@@ -14,10 +14,10 @@ class rolAdmin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next )
     {
-        if($request->user()->us_rol_id > 1){
-            return redirect('/welcome');
+        if($request->user()->us_estatus == 0){
+            return redirect('/');
         }
         return $next($request);
     }

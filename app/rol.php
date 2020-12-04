@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class rol extends Model
 {
     //
-    public function user()
-{
-    //return $this->belongsTo(User::class);
-    return $this->belongsTo('App\usuarios');
-}
+    protected $table = 'rols';
+    protected $primaryKey = 'rol_id';
+
+    /*public function user()
+    {
+        return $this->belongsTo('App\usuarios');
+    }*/
 }

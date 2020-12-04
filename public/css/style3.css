@@ -601,11 +601,11 @@ font-size: 24px;
     margin: 100px auto;
     border-radius: 20px;
     padding: 5px;
-    display: none;
-}
-.permisos.active{
     display: block;
 }
+/*.permisos.active{
+    display: block;
+}*/
 .search-user-role{
     width: 850px;
     margin: auto;
