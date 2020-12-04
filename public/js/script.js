@@ -41,39 +41,6 @@ listadoV = document.getElementById('list-vigilante'),
 formularioV =document.getElementById('FormR');
 hora = document.getElementById('hora'),
 
-/*btnRE.addEventListener('click', function()
-{
-	listadoV.classList.add('active');
-	formularioV.classList.remove('active');
-	bienvenida.classList.add('active');
-	hora.classList.add('active')
-	btnRE.classList.add('active');
-	entrada_salida.classList.remove('active');
-});
-
-btnrv.addEventListener('click', function(e)
-{
-	e.preventDefault();
-	listadoV.classList.remove('active');
-	formularioV.classList.add('active');
-	btnRE.classList.remove('active');
-});
-function retro()
-{
-	bienvenida.classList.remove('active');
-	formularioV.classList.remove('active');
-	listadoV.classList.remove('active');
-	hora.classList.remove('active');
-	btnRE.classList.remove('active');
-	entrada_salida.classList.remove('active');
-}
-var btnES = document.getElementById('ES'),
-	entrada_salida = document.getElementById('es');
-	btnES.addEventListener('click', function(){
-	entrada_salida.classList.add('active');
-	bienvenida.classList.add('active');
-	hora.classList.add('active')
-});*/
 //habilitando campos para editar
 function activar()
 {
@@ -88,8 +55,6 @@ function activar()
 function desactivar()
 {
 	document.getElementById('cedula').disabled = true;
-	document.getElementById('contac').disabled = true;
-	document.getElementById('direc').disabled = true;
 	document.getElementById('user-n').disabled = true;
 	document.getElementById('btnRE').classList.remove('active');
 	document.getElementById('btnRNE').classList.remove('active');

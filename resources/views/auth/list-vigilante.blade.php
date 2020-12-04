@@ -71,7 +71,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
     <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" id="esc" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -93,7 +93,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">User name</span>
                   </div>
-                  <input type="text" name="us_user" id="user-n" class="form-control" value="{{$usuario->us_user}}" disabled='disabled'>
+                  <input type="text" name="us_user" id="user-n" class="form-control" value="{{$usuario->us_user}}" disabled=''>
                 </div>  
                 <div class="input-group mb-2">
                   <div class="input-group-prepend">
@@ -138,6 +138,7 @@
             </div>
           </div>
           <button class="btn regisNE" id="btnRNE" onclick="desactivar();" >No Editar<i class="fas fa-ban"></i></button>
+          <button class="btn regisNE" id="esc" >Cancelar<i class="fas fa-ban"></i></button>
         </div>
       </div>
     </div>
