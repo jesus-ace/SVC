@@ -6,7 +6,7 @@
         <div class="buscador">
             <form>
                 <div class="input-group buscador">
-                    <input type="search"  class="busca" name="buscar" id="buscar" placeholder="Ingrese Usuario">
+                    <input type="search"  class="busca" name="buscar" id="buscar" placeholder="Ingrese cedula">
                     <span class=" input-group-btn">
                         <button type="submit" class="buscar"><i class='fas fa-search'></i></button>
                     </span>
@@ -15,7 +15,6 @@
         </div>
         <a class="btn regisV" id="btnRV"  href="{{ route('new-visitor') }}" >Visitante<i class="fas fa-plus"></i></a>
         <thead>
-            <th>#</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>c&eacute;dula</th>
@@ -25,17 +24,16 @@
             <th>acciones</th>
         </thead>
         <tbody>
-            @foreach( $visitor as $visitante)
+            @foreach( $visitor as $visitantes)
                 <tr>
-                    <td>{{$visitante->vi_id}}</td>
-                    <td>{{$visitante->vi_nombre}}</td>
-                    <td>{{$visitante->vi_apellido}}</td>
-                    <td>{{$visitante->vi_cedula}}</td>
-                    <td>{{$visitante->vi_telefono}}</td>
-                    <td>{{$visitante->vi_domicilio}}</td>
-                    <td>{{$visitante->vi_responsable}}</td>
+                    <td>{{$visitantes->vi_nombre}}</td>
+                    <td>{{$visitantes->vi_apellido}}</td>
+                    <td>{{$visitantes->vi_cedula}}</td>
+                    <td>{{$visitantes->vi_telefono}}</td>
+                    <td>{{$visitantes->vi_domicilio}}</td>
+                    <td>{{$visitantes->vi_responsable}}</td>
                     <td>ver mas
-                      <button type="button" data-toggle="modal" data-target="#modal{{$visitante->vi_id}}" class="far fa-eye"></button>
+                      <button type="button" data-toggle="modal" data-target="#modal{{$visitantes->vi_id}}" class="far fa-eye"></button>
                     </td>
                 </tr>   
             @endforeach
@@ -47,40 +45,40 @@
 </div> 
 @endsection
 @section('modal')
-<div class="modal fade" id="modal{{$visitante->vi_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal{{$visitantes->vi_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
-                <h3>{{$visitante->vi_nombre}} {{$visitante->vi_apellido}}</h3>
+                <h3>{{$visitantes->vi_nombre}} {{$visitantes->vi_apellido}}</h3>
                 <div class="acomodar">
                 <div class="info">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <span class="input-group-text">C&eacute;dula</span>
                         </div>
-                        <input type="text" name="vi_cedula" class="form-control" value="{{$visitante->vi_cedula}}" disabled='disabled'>
+                        <input type="text" name="vi_cedula" class="form-control" value="{{$visitantes->vi_cedula}}" disabled='disabled'>
                     </div>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Contacto</span>
                         </div>
-                        <input type="text" name="vi_telefono" class="form-control" value="{{$visitante->vi_telefono}}" disabled='disabled'>
+                        <input type="text" name="vi_telefono" class="form-control" value="{{$visitantes->vi_telefono}}" disabled='disabled'>
                     </div>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Domicilio</span>
                         </div>
-                        <input type="text" name="contacto" class="form-control" value="{{$visitante->vi_domicilio}}" disabled='disabled'>
+                        <input type="text" name="contacto" class="form-control" value="{{$visitantes->vi_domicilio}}" disabled='disabled'>
                     </div>
-                    <div class="input-group mb-2">
+                    <!---div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nro carnet</span>
                         </div>
                         <input type="number" name="contacto" class="form-control" value="20" disabled='disabled'>
-                    </div>
+                    </div-->
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <span class="input-group-text">&Aacute;rea de Ingreso</span>
@@ -91,7 +89,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Responsable</span>
                         </div>
-                        <input type="text" name="vi_responsable" class="form-control" value="{{$visitante->vi_responsable}}" disabled='disabled'>
+                        <input type="text" name="vi_responsable" class="form-control" value="{{$visitantes->vi_responsable}}" disabled='disabled'>
                     </div>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">

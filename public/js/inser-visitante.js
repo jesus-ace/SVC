@@ -1,4 +1,4 @@
-function btnSaveLoad() {
+/*function btnSaveLoad() {
     $("#btn_save").html('Guardando ...');
     $("#btn_save").attr("disabled", true);
 }
@@ -31,7 +31,7 @@ $(document).ready(function() {
             }
             return false;
         }
-    });
+    });*/
 
     $("#frm_foto").unbind('submit').bind('submit', function(){
 
@@ -43,60 +43,29 @@ $(document).ready(function() {
         var vi_dep_id = $('#vi_dep_id').val();
         var vi_responsable = $('#vi_responsable').val();
         var vi_mt_id = $('#vi_mt_id').val();
-        var radio = $("input[name='radio_select']:checked").val();
-
-        if (radio == 0) {
-            cxt.drawImage(video, 0, 0, 300, 150);
-            var data = canvas.toDataURL("image/jpeg");
-            var vi_photo = data.split(",", 2);
-            $.ajax({
-                type : "POST",
-                url : "backend/save_photo.php",
-                data : {vi_photo : info[1], vi_nombre: vi_nombre, vi_apellido: vi_apellido, vi_cedula: vi_cedula, vi_telefono: vi_telefono, vi_domicilio: vi_domicilio, vi_dep_id: vi_dep_id, vi_responsable: vi_responsable, vi_mt_id: vi_mt_id},
-                dataType : 'json',
-                beforeSend: function() {
-                    btnSaveLoad();
-                },
-                success : function(response) {
-                    btnSave();
-                    if (response.success == true) {
-                        swal("MENSAJE", response.messages , "success");
-                        $("#frm_foto")[0].reset();
-                        $("#radiosfoto").click();
-                    } else {
-                        swal("MENSAJE", response.messages , "error");
-                    }
-                }
-            });
-        } else if (radio == 1) {
-
-            $.ajax({
-                url: 'backend/save_img.php',
-                type: 'POST',
-                data: new FormData(this),
-                cache: false,
-                contentType: false,
-                processData: false,
-                beforeSend: function(){
-                    btnSaveLoad();
-                },
-                success: function(response){
-                    btnSave();
-                    if (response.success == true) {
-                        swal("MENSAJE", response.messages , "success");
-                        $("#frm_foto")[0].reset();
-                        $("#radiosfoto").click();
-                    } else {
-                        swal("MENSAJE", response.messages , "error");
-                    }
-                }
-            });
-
-        }
-
-        return false;
         
+        $.ajax({
+            url: 'backend/save_img.php',
+            type: 'POST',
+            data: new FormData(this),
+            cache: false,
+            contentType: false,
+            processData: false,
+            beforeSend: function(){
+                btnSaveLoad();
+            },
+            success: function(response){
+                btnSave();
+                if (response.success == true) {
+                        swal("MENSAJE", response.messages , "success");
+                        $("#frm_foto")[0].reset();
+                        $("#radiosfoto").click();
+                } 
+                else {
+                    swal("MENSAJE", response.messages , "error");
+                }
+                
+            }
+        });
+        return false; 
     });
-
-
-});

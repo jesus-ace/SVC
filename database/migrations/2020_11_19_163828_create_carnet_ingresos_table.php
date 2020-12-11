@@ -16,8 +16,6 @@ class CreateCarnetIngresosTable extends Migration
         Schema::create('carnet_ingresos', function (Blueprint $table) {
             $table->increments('car_id');
             $table->string('car_descripcion');
-            $table->integer('car_vi_id');
-            $table->foreign('car_vi_id')->references('vi_id')->on('visitantes');
             $table->timestamps();
         });
     }

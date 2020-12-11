@@ -13,7 +13,7 @@ class List_user extends Controller
         $busqueda = $request->get('buscar');
         $datos['users']= usuarios::where('us_estatus', '=', 1 )
                                 ->where('us_user', 'like', '%'.$busqueda.'%')
-                                ->paginate(5);
+                                ->paginate(8);
         return view('auth.list-vigilante', $datos);
     }
 

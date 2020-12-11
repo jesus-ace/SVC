@@ -12,6 +12,7 @@
 */
 
 use Illuminate\Support\Facades\Auth;
+//Ruta inicial login
 
 Route::get('/', function () {
     return view('auth.login');
@@ -32,14 +33,14 @@ Auth::routes(['/register' => false]);
 
 Route::get('/register', function () {
     return view('auth.register');
-})->name('register')->middleware('rolAdmin');
+})->name('register')->middleware('rolAdmin', 'estatus');
 
 Route::post('register', 'Auth\RegisterController@register', function () {
     return view('auth.regiter');
     
 })->middleware('rolAdmin');
 
-Route::get('/list-vigilante', 'List_user@index')->middleware('auth', 'rolAdmin');
+Route::get('/list-vigilante', 'List_user@index')->middleware('auth', 'rolAdmin', 'estatus');
 
 Route::patch('/list-vigilante{usuario}/update', 'List_user@update')->name('list_vigilante.update');
 
@@ -48,25 +49,26 @@ Route::patch('/list-vigilante{usuario}/update', 'List_user@update')->name('list_
 
 Route::get('/new-visitor', function(){
     return view('visitor.registro_visitantes');
-})->name('new-visitor')->middleware('auth');
+})->name('new-visitor')->middleware('auth', 'estatus');
 
+Route::post('new-visitor', 'VisitanteController@store');
 
 Route::get('/user-profiel', function(){
     return view('mconfig.user-profiel');
 })->middleware('auth', 'rolAdmin');
 
 
-Route::post('new-visitor', 'VisitanteController@store');
-
 Route::get('/list-visitor', 'VisitanteController@index', function(){
     return view('visitor.list-visitor');
-})->middleware('auth');
+})->middleware('auth', 'estatus');
 
 
 //rutas modulo configuración
+
 Route::get('/Auditoria', function(){
     return view('mconfig.auditoria');
-})->middleware('auth', 'rolAdmin');;
+})->middleware('auth', 'rolAdmin', 'estatus');
+
 Route::get('/permits', function(){
     return view('mconfig.permits');
-})->middleware('auth', 'rolAdmin');;
+})->middleware('auth', 'rolAdmin', 'estatus');;

@@ -557,7 +557,7 @@ input[type=password]{
     width: 360px;
     margin-top: 10px;
 }
-.photo img{
+.photo video{
     width: 260px;
     height:260px;
     margin-right: 10px;

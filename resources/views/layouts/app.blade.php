@@ -115,8 +115,8 @@
     <script src="/js/script.js"></script>
     <script src="/js/dashboard.js"></script>
     <script src="/js/validaciones.js"></script>
-    <script src="/js/sweetalert.js"></script>
-    <script src="/js/camara.js"></script>
+    <!--script src="/js/sweetalert.js"></script-->
+    <!--script src="/js/camara.js"></script-->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

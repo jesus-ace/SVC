@@ -14,9 +14,13 @@ class estatus
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next )
+    public function handle($request, Closure $next,$guard = null)
     {
-        if($request->user()->us_estatus == 0){
+        if(Auth::guard($guard)->check() && auth()->user()->us_estatus == 0){
+
+            Auth::guard()->logout();
+
+            $request->session()->invalidate();
             return redirect('/');
         }
         return $next($request);
