@@ -75,4 +75,22 @@
         </form>
     </div>
 </div>
+<script >
+    btnabrir = document.getElementById('abrir'),
+    brrLateral = document.getElementById('br-lateral'),
+	btnolcultar = document.getElementById('ocultar'),
+    /*Modulo Perfil de usuario*/
+    btnabrir.addEventListener("click", function(){
+        btnabrir.classList.add('hover');
+        brrLateral.classList.add('active');
+        upbars.classList.add('active');
+    
+    });
+    function ocultar(){
+        btnabrir.classList.remove('hover');
+        brrLateral.classList.remove('active');
+        upbars.classList.remove('active');
+    }
+</script>
+<script src="/js/script-u.js"></script>
 @endsection

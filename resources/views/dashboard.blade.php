@@ -129,4 +129,23 @@
             options: {}
         });
   </script>  
+  <script>
+    /*Modulo de dashboard*/
+    var btnabrir = document.getElementById('abrir');
+
+    btnabrir.addEventListener("click", function(){
+        btnabrir.classList.add('hover');
+        brrLateral.classList.add('active');
+        dashboard.classList.add('active');
+        statistics.classList.add('active');
+        fieldsetG.classList.add('active');
+    });
+    function ocultar(){
+        btnabrir.classList.remove('hover');
+        brrLateral.classList.remove('active');
+        dashboard.classList.remove('active');
+        statistics.classList.remove('active');
+        fieldsetG.classList.remove('active');
+    }
+  </script>
 @endsection

@@ -49,25 +49,25 @@
                                       <div class="input-group-prepend">
                                         <span class="input-group-text">C&eacute;dula:</span>
                                       </div>
-                                      <input type="text" name="us_cedula" class="form-control" id="cedula" value="{{$usuario->us_cedula}}" disabled='disabled'>
+                                      <input type="text" name="us_cedula" class="form-control" id="cedula" value="{{$usuario->us_cedula}}" >
                                     </div>
                                     <div class="input-group mb-2">
                                       <div class="input-group-prepend">
                                         <span class="input-group-text">User name</span>
                                       </div>
-                                      <input type="text" name="us_user" id="user-n" class="form-control" value="{{$usuario->us_user}}" disabled=''>
+                                      <input type="text" name="us_user" id="user-n" class="form-control" value="{{$usuario->us_user}}" >
                                     </div>  
                                     <div class="input-group mb-2">
                                       <div class="input-group-prepend">
                                         <span class="input-group-text">correo</span>
                                       </div>
-                                      <input type="text" name="us_correo" class="form-control" id="correo" value="{{$usuario->us_correo}}" disabled=''>
+                                      <input type="text" name="us_correo" class="form-control" id="correo" value="{{$usuario->us_correo}}" >
                                     </div>
                                     <div class="input-group mb-2">
                                       <div class="input-group-prepend">
                                         <span class="input-group-text">F.Registro</span>
                                       </div>
-                                      <input type="text" name="fr" id="Fr" class="form-control" value="{{$usuario->created_at}}" disabled=''>
+                                      <input type="text" name="fr" id="Fr" class="form-control" value="{{$usuario->created_at}}" >
                                     </div>
                                     <div class="input-group mb-2">
                                       <div class="input-group-prepend">
@@ -75,7 +75,7 @@
                                       </div>
                                       <input type="text" name="updated_at" id="Fr" class="form-control" value="{{$usuario->updated_at}}" disabled='disabled'>
                                     </div>
-                                    <button type="submit" class="btn regisE" id="btnRE" >Guardar<i class="fas fa-save"></i></button>
+                                    <button type="submit" class="btn regisE" id="edit{{$usuario->us_id}}">Guardar<i class="fas fa-save"></i></button>
                                   </form>
                                   <!--Formulario para eliminar usuario (cambia la columna us_estatus a 0 y con condiciones en la rutas no le permitira el acceso a las vistas)-->
                                   <form method="POST" action="{{ route('list_vigilante.update', $usuario) }}" class="Eliminar-usuario" id="formeliminar{{$usuario->us_id}}">
@@ -90,35 +90,12 @@
                                         <option value="0">Si</option>
                                       </select>
                                     </div>
-                                    <button type="submit" class="btn regisE" id="btnRA">Aceptar<i class="fas fa-save"></i></button>
+                                    <button type="submit" style="display: block;" class="btn regisE" id="btnRA">Aceptar<i class="fas fa-save"></i></button>
                                   </form>
                                 </div>
                               <div class="box-photo1">
                                   <img src="imagenes/{{$usuario->us_photo }}" alt="Foto de perfil">
-                                    <button type="button" class="Editar"  id="edit" onclick='activar();'>Editar<i class="far fa-edit"></i>
-                                      <script>
-                                        function activar()
-                                        {
-                                          document.getElementById('cedula').disabled = false;
-                                          document.getElementById('correo').disabled = false;
-                                          document.getElementById('user-n').disabled = false;
-                                          document.getElementById('edit').classList.add('active');
-                                          document.getElementById('delete').classList.add('active');
-                                          document.getElementById('btnRE').classList.add('active');
-                                          document.getElementById('btnRNE').classList.add('active');
-                                        }
-                                        function desactivar()
-                                        {
-                                          document.getElementById('cedula').disabled = true;
-                                          document.getElementById('correo').disabled = true;
-                                          document.getElementById('user-n').disabled = true;
-                                          document.getElementById('btnRE').classList.remove('active');
-                                          document.getElementById('btnRNE').classList.remove('active');
-                                          document.getElementById('edit').classList.remove('active');
-                                          document.getElementById('delete').classList.remove('active');
-                                        }
-                                      </script>
-                                    </button>
+                                    <button type="button" class="Editar"  id="edit" data-toggle="modal" data-target="#edit{{$usuario->us_id}}">Editar<i class="far fa-edit"></i></button>
                                     <button type="button" class="Eliminar" id="delete" data-toggle="modal" data-target="#formeliminar{{$usuario->us_id}}">Eliminar<i class="fas fa-user-slash"></i></button>
                                     <button type="button" class="btn regisNV" id="no-eliminar" >No Eliminar<i class="fas fa-ban"></i></button>
                                     <button class="btn regisNE" id="btnRNE" onclick="desactivar();" >No Editar<i class="fas fa-ban"></i></button>  
@@ -139,6 +116,31 @@
         {!!$users->render()!!}
     </section>
 </div>
+<script>
+  "use strict";
+
+  function activar()
+  {
+    document.getElementById('cedula').disabled = false;
+    document.getElementById('correo').disabled = false;
+    document.getElementById('user-n').disabled = false;
+    document.getElementById('edit').classList.add('active');
+    document.getElementById('delete').classList.add('active');
+    document.getElementById('btnRE').classList.add('active');
+    document.getElementById('btnRNE').classList.add('active');
+  }
+
+  function desactivar()
+  {
+    document.getElementById('cedula').disabled = true;
+    document.getElementById('correo').disabled = true;
+    document.getElementById('user-n').disabled = true;
+    document.getElementById('btnRE').classList.remove('active');
+    document.getElementById('btnRNE').classList.remove('active');
+    document.getElementById('edit').classList.remove('active');
+    document.getElementById('delete').classList.remove('active');
+  }
+</script>
 <!--script>
   var btnDelete = document.getElementById('delete'),
     FormEditar= document.getElementById('formeditar'),

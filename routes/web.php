@@ -49,7 +49,7 @@ Route::patch('/list-vigilante{usuario}/update', 'List_user@update')->name('list_
 
 Route::get('/new-visitor', 'VisitanteController@selects', function(){
     return view('visitor.registro_visitantes');
-})->name('new-visitor')->middleware('auth', 'estatus');
+})->name('new-visitor');//->middleware('auth', 'estatus');
 
 Route::post('new-visitor', 'VisitanteController@store');
 
