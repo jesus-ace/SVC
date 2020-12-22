@@ -10,6 +10,6 @@ class asistencia extends Model
     protected $primaryKey = 'asi_id';
 
     protected $fillable = [
-        'asi_dep_id', 'asi_car_id', 'asi_entrada', 'asi_salida',
+        'asi_dep_id', 'asi_car_id', 'asi_entrada', 'asi_salida', 'created_at', 
     ];
 }

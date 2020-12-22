@@ -25,10 +25,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
     <!--jquery-->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
 </head>
-<body  onload="mostrarHora();">
+<body  >
     <nav id="navbar">
         <img src="image/logo-minci.jpg" class="navbar-left img-responsive mppci">
         <!--p id="hora" class="horaocl"></p-->
@@ -108,15 +108,11 @@
         </div>
         @endauth
     </div>
-    <div>
-        @yield('modal')
-    </div>
     <!-- Scripts -->
-    <script src="/js/script.js"></script>
     <script src="/js/dashboard.js"></script>
     <script src="/js/validaciones.js"></script>
-    <!--script src="/js/sweetalert.js"></script-->
+    <script src="/js/sweetalert.js"></script>
     <!--script src="/js/camara.js"></script-->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!--script src="{{ asset('js/app.js') }}"></script-->
 </body>
 </html>

@@ -1,4 +1,4 @@
-var btnAbrirPopup = document.getElementById('btn-abrir-modal'),
+/*var btnAbrirPopup = document.getElementById('btn-abrir-modal'),
 	overlay = document.getElementById('overlay'),
 	popup = document.getElementById('popup'),
 	btnCerrarPopup = document.getElementById('btn-cerrar-popup');
@@ -13,7 +13,7 @@ btnCerrarPopup.addEventListener('click', function (e)
 	e.preventDefault();
 	overlay.classList.remove('active');
 	popup.classList.remove('active');
-});
+});*/
 //-----------------pop-up visitante------------------//
 var btnAbrirPopup = document.getElementById('btn-abrir-modal2'),
 	overlay = document.getElementById('overlay2'),
@@ -42,7 +42,7 @@ formularioV =document.getElementById('FormR');
 hora = document.getElementById('hora'),
 
 //habilitando campos para editar
-function activar()
+/*function activar()
 {
 	document.getElementById('cedula').disabled = false;
 	document.getElementById('contac').disabled = false;
@@ -59,6 +59,29 @@ function desactivar()
 	document.getElementById('btnRE').classList.remove('active');
 	document.getElementById('btnRNE').classList.remove('active');
 	document.getElementById('edit').classList.remove('active');
-}
+}*/
+
+/*function formDelete(){
+    var 
+        btnaceptar = document.getElementById('btnRA'),
+        btnEdit = document.getElementById('edit'),
+        btnDelete =  
+
+        FormEditar.classList.add('active');
+        FormEliminar.classList.add('active');
+        btnaceptar.classList.add('active');
+        btnesc.classList.add('active');
+        btnEdit.classList.add('active');
+        btnDelete.classList.add('active');
+}*/
+
+/*function volver(){
+    FormEditar.classList.remove('active');
+        FormEliminar.classList.remove('active');
+        btnaceptar.classList.remove('active');
+        btnesc.classList.remove('active');
+        document.getElementById('btnRE').classList.remove('active');
+        document.getElementById('btnRV').classList.add('active');
+}*/
 
 //---------------------------------------------------------------------------------------------------------------------------//

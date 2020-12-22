@@ -47,7 +47,7 @@ Route::patch('/list-vigilante{usuario}/update', 'List_user@update')->name('list_
 
 //rutas visitantes
 
-Route::get('/new-visitor', function(){
+Route::get('/new-visitor', 'VisitanteController@selects', function(){
     return view('visitor.registro_visitantes');
 })->name('new-visitor')->middleware('auth', 'estatus');
 

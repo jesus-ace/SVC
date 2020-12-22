@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\equipo;
 use App\visitante;
 use App\asistencia;
+use App\departamentos;
+use App\motivo;
+use App\carnet_ingreso;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
 
 class VisitanteController extends Controller
 {
@@ -19,10 +21,17 @@ class VisitanteController extends Controller
     }
 
     public function create()
-    {
+    {   
         return view('visitor.new-visitor');
     }
 
+    public function selects()
+    {   
+        $departamentos['departments'] = departamentos::paginate();
+        $motivos['reasons'] = motivo::paginate();
+        $card['ingreso'] = carnet_ingreso::paginate();
+        return view('visitor.registro_visitantes', $departamentos, $motivos);
+    }
     public function store()
     {
         $data= request()->validate([
@@ -31,11 +40,15 @@ class VisitanteController extends Controller
             'vi_cedula'      => 'required|integer|unique:visitantes',
             'vi_telefono'    => 'required',
             'vi_domicilio'   => 'required',
-            'vi_car_id'      => 'required|integer',
+            'vi_car_id'      => 'Required',
             'vi_responsable' => 'required',
             'vi_mt_id'       => 'required',
+            'created_at'     => 'timestamp',
+            'updated_at'     => 'timestamp',
+
             'eq_nombre'      => 'max:255',
             'eq_descripcion' => 'max:255',
+
             'asi_dep_id'     => 'Max:255',
             'asi_car_id'     => 'Max:255',
             'asi_entrada'    => 'Required',
@@ -57,7 +70,7 @@ class VisitanteController extends Controller
             'vi_eq_id'      =>$equipament->eq_id,
         ]);
         
-        asistencia::insert([
+        asistencia::create([
             'asi_dep_id'  =>$data['asi_dep_id'],
             'asi_car_id'  =>$data['vi_car_id'],
             'asi_entrada' =>$data['asi_entrada'],
@@ -66,11 +79,8 @@ class VisitanteController extends Controller
         return redirect('/list-visitor');
     } 
 
+    /*foreach departamentos */
+
 
 
 }
-
-    /*$datosenviados= request()->all();
-    $datosenviados= request()->except('_token');
-    visitante::insert($datosenviados);
-    return redirect('/list-visitor');*/

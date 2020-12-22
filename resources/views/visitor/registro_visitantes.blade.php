@@ -1,6 +1,57 @@
 @extends('layouts.app')
 
 @section('content')
+<!--script>
+
+ var promisifiedOldGUM = function(constraints, successCallback, errorCallback) {
+
+// First get ahold of getUserMedia, if present
+var getUserMedia = (navigator.getUserMedia ||
+    navigator.webkitGetUserMedia ||
+    navigator.mozGetUserMedia);
+
+// Some browsers just don't implement it - return a rejected promise with an error
+// to keep a consistent interface
+if(!getUserMedia) {
+  return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+}
+
+// Otherwise, wrap the call to the old navigator.getUserMedia with a Promise
+return new Promise(function(successCallback, errorCallback) {
+  getUserMedia.call(navigator, constraints, successCallback, errorCallback);
+});
+
+}
+
+// Older browsers might not implement mediaDevices at all, so we set an empty object first
+if(navigator.mediaDevices === undefined) {
+navigator.mediaDevices = {};
+}
+
+// Some browsers partially implement mediaDevices. We can't just assign an object
+// with getUserMedia as it would overwrite existing properties.
+// Here, we will just add the getUserMedia property if it's missing.
+if(navigator.mediaDevices.getUserMedia === undefined) {
+navigator.mediaDevices.getUserMedia = promisifiedOldGUM;
+}
+
+
+// Prefer camera resolution nearest to 1280x720.
+var constraints = { audio: true, video: { width: 1280, height: 720 } };
+
+navigator.mediaDevices.getUserMedia(constraints)
+.then(function(stream) {
+var video = document.querySelector('video');
+video.src = window.URL.createObjectURL(stream);
+video.onloadedmetadata = function(e) {
+  video.play();
+};
+})
+.catch(function(err) {
+console.log(err.name + ": " + err.message);
+});
+</script-->
+
 <div class="container" id="registro-visitor">
           <form class="registro" method="POST" action="{{ route('new-visitor') }}" enctype="multipart/form-data"> 
             <h3>REGISTROS DE VISITANTES</h3>
@@ -54,52 +105,9 @@
                     <span class="input-group-text">&Aacute;rea a ingresar</span>
                   </div>
                   <select name="asi_dep_id"  class="form-control select custom-select">
-                    <option value="">Seleccione &aacute;rea</option>
-                    <option value="1">Desarrollo de proyectos</option>
-                    <option value="2">Presidencia</option>
-                    <option value="3">Despacho de la presidencia</option>
-                    <option value="4">Atencion al ciudadano</option>
-                    <option value="6">Atencion al ciudadano (CPC)</option>
-                    <option value="7">Gerencia de talento humano</option>
-                    <option value="8">Gerencia de talento humano jubilados y pensionados</option>
-                    <option value="9">Auditoria Interna</option>
-                    <option value="10">Consultoria juridica</option>
-                    <option value="11">Seguridad integral</option>
-                    <option value="">Formacion socialista</option>
-                    <option value="">Desarrollo estrategico y comunicacional</option>
-                    <option value="">Vicepresidencia de gestion interna</option>
-                    <option value="">Planificacion presuspuesto y organizacion</option>
-                    <option value="">Administracion y contabilidad</option>
-                    <option value="">Servicios generales</option>
-                    <option value="">Mercadeo y asuntos publicos</option>
-                    <option value="">Finanzas</option>
-                    <option value="">Vicepresidencia de gestion productiva</option>
-                    <option value="">Sede oriente (Anzoategui)</option>
-                    <option value="">Sede llanos (Apure)</option>
-                    <option value="">Sede orinoco (Bolivar)</option>
-                    <option value="">Sede andes (Tachira)</option>
-                    <option value="">Sede occidentes (Zulia)</option>
-                    <option value="">Produccion Integral</option>
-                    <option value="">Produccion Integral (Ficcion y Animacion)</option>
-                    <option value="">Programacion</option>
-                    <option value="">Programacion</option>
-                    <option value="">Produccion independiente</option>
-                    <option value="">Comunicacion popular</option>
-                    <option value="">Imagen y promocion</option>
-                    <option value="">vicepresidencia de gestion para el DES .TEC</option>
-                    <option value="">Gerencia de tecnologia de informacion</option>
-                    <option value="">Gerencia de ingieneria</option>
-                    <option value="">Transporte</option>
-                    <option value="">Servicios a la produccion</option>
-                    <option value="">Gerencia de operaciones tecnicas</option>
-                    <option value="">123 TV</option>
-                    <option value="">Consejo de contenido editorial</option>
-                    <option value="">Vicepresidencia de gestion de operaciones</option>
-                    <option value="">Gerencia de comunicaciones</option>
-                    <option value="">Seguridad integral</option>
-                    <option value="">Gerencia de post produccion</option>
-                    <option value="">Vicepresidencia de gestion de operaciones y desarrollo tecnologico</option>
-                    <option value="">Gerencia de administracion y contabilidad</option>
+                    @foreach( $departments as $departamento)
+                      <option value="{{$departamento->dep_id}}">{{$departamento->dep_nombre}}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="input-group mb-3">
@@ -113,10 +121,9 @@
                     <span class="input-group-text">M&oacute;tivo</span>
                   </div>
                   <select name="vi_mt_id" id="vi_mt_id" class="form-control select custom-select">
-                    <option value="">Seleccione m&oacute;tivo</option>
-                    <option value="1">Entrervista de trabajo</option>
-                    <option value="2">Entrega de curriculum</option>
-                    <option value="3">Prueba psicologica</option>
+                    @foreach( $reasons as $motivo)
+                      <option value="{{$motivo->mt_id}}">{{$motivo->mt_motivo}}</option>
+                    @endforeach
                   </select>
                 </div>
                 <fieldset class="oculto" id="oculto" aria-hidden="true">
@@ -139,16 +146,17 @@
               </div>
               <div class="box-photo">
                 <div class="photo">
-                  <video id="video" playsinline autoplay></video>
+                  <video id="video" autoplay playsinline></video>
                 </div>
                 <button type="button" class="btn btn-secondary tfoto" id="snap">Tomar Foto <i class="fas fa-camera"></i></button>
-                <canvas id="canvas" width="240" height="240" name="vi_photo"></canvas>
+                <canvas id="canvas" width="240" height="240" name="vi_photo" style="display: none;"></canvas>
             </div>
             </div> 
-            <input type="text" name="asi_entrada" value="<?php echo date("h:i", strtotime("- 1 minute"));?>">
+            <input type="hidden" name="asi_entrada" value="<?php echo date("h:i", strtotime("- 1 minute"));?>">
             <button type="submit" class="btn save">Guardar <i class="fas fa-save"></i></button>
           </form> 
         </div>
+
   <script>
     //Script para mostrar registro de de equipos
     var btnRE = document.getElementById('RE'),
@@ -170,42 +178,26 @@
       container.classList.remove('active');
     });	
   </script>
-  <script>
-        const video = document.getElementById('video');
-        const canvas = document.getElementById('canvas');
-        const snap = document.getElementById("snap");
-        const errorMsgElement = document.querySelector('span#errorMsg');
 
-        const constraints = {
-            audio: true,
-            video: {
-                width: 260, height: 260
-            }
-        };
+<script> 
+navigator.mediaDevices.getUserMedia({ audio: false, video:{width: { ideal: 1280 }, height: { ideal: 720 }} })
+.then(function(stream) {
+  var video = document.getElementById('video');
+  // Older browsers may not have srcObject
+  if ("srcObject" in video) {
+    video.srcObject = stream;
+  } else {
+    // Avoid using this in new browsers, as it is going away.
+    video.src = window.URL.createObjectURL(stream);
+  }
+  video.onloadedmetadata = function(e) {
+    video.play();
+  };
+})
+.catch(function(err) {
+  console.log(err.name + ": " + err.message);
+});
+</script>
 
-        // Access webcam
-        async function init() {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia(constraints);
-                handleSuccess(stream);
-            } catch (e) {
-            errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
-            }
-        }
-
-        // Success
-        function handleSuccess(stream) {
-            window.stream = stream;
-            video.srcObject = stream;
-        }
-
-        // Load init
-        init();
-
-        // Draw image
-        var context = canvas.getContext('2d');
-        snap.addEventListener("click", function() {
-            context.drawImage(video, 0, 0, 640, 480);
-        });
-    </script>
+  
 @endsection

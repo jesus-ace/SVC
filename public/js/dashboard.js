@@ -120,22 +120,3 @@ var btnRE = document.getElementById('RE'),
 	    btnRE.classList.remove('active');
     });
 
-function eliminar(){
-    var FormEditar= document.getElementById('formeditar');
-        FormEliminar= document.getElementById('formeliminar');
-        btnaceptar = document.getElementById('btnRA');
-        btnesc = document.getElementById('esc');
-
-        FormEditar.classList.add('active');
-        FormEliminar.classList.add('active');
-        btnaceptar.classList.add('active');
-        btnesc.classList.add('active');
-}
-
-var btnesc = document.getElementById('esc')
-btnesc.addEventListener('click', function(e){
-        FormEditar.classList.remove('active');
-        FormEliminar.classList.remove('active');
-        btnaceptar.classList.remove('active');
-        btnesc.classList.remove('active');
-})
