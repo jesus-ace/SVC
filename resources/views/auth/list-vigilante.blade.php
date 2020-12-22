@@ -67,7 +67,7 @@
                                       <div class="input-group-prepend">
                                         <span class="input-group-text">F.Registro</span>
                                       </div>
-                                      <input type="text" name="fr" id="Fr" class="form-control" value="{{$usuario->created_at}}" >
+                                      <input type="text" name="fr" id="Fr" class="form-control" value="{{$usuario->created_at}}" disabled='disabled'>
                                     </div>
                                     <div class="input-group mb-2">
                                       <div class="input-group-prepend">
