@@ -116,6 +116,7 @@
         {!!$users->render()!!}
     </section>
 </div>
+
 <script>
   "use strict";
 

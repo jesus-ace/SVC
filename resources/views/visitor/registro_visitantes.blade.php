@@ -29,7 +29,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">Contacto</span>
                   </div>
-                    <input type="text" name="vi_telefono" id="vi_telefono" class="form-control" required>
+                    <input type="text" name="vi_telefono" id="vi_telefono" class="form-control" required maxlength="11">
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
@@ -42,11 +42,9 @@
                     <span class="input-group-text">Nro Carnet</span>
                   </div>
                   <select name="vi_car_id" id="vi_car_id" class="form-control select custom-select">
-                    <option value="">Seleccione carnet</option>
-                    <option value="1">Nro-1</option>
-                    <option value="2">Nro-2</option>
-                    <option value="3">Nro-3</option>
-                    <option value="4">Nro-4</option>
+                    @foreach( $ingreso as $card)
+                      <option value="{{$card->car_id}}">{{$card->car_id}}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="input-group mb-3">
@@ -77,13 +75,14 @@
                 </div>
                 <fieldset class="oculto" id="oculto" aria-hidden="true">
                   <legend>Registros de equipos</legend>
-                    <div class="input-group mb-3" >
+                  <input type="hidden" >
+                    <div class="input-group mb-3" id="divtipo">
                       <div class="input-group-prepend">
                         <span class="input-group-text">Tipo</span>
                       </div>
                         <input type="text" name="eq_nombre" id="eq_nombre" class="form-control">
                     </div>
-                    <div class="input-group mb-3 " >
+                    <div class="input-group mb-3 " id="divtexarea">
                       <div class="input-group-prepend ">
                         <span class="input-group-text">Descripci&oacute;n</span>
                       </div>
@@ -98,11 +97,12 @@
                   <video id="video" autoplay playsinline></video>
                 </div>
                 <button type="button" class="btn btn-secondary tfoto" id="snap">Tomar Foto <i class="fas fa-camera"></i></button>
-                <canvas id="canvas" width="240" height="240" name="vi_photo" style="display: none;"></canvas>
+                <canvas id="canvas"  width='320px' height='240px' name="vi_photo"  style='border: 1px solid #CCC; background-color: rgb(163, 53, 90);'></canvas>
+                <input type="hidden" id="base64" name="base64">
             </div>
             </div> 
             <input type="hidden" name="asi_entrada" value="<?php echo date("h:i", strtotime("- 1 minute"));?>">
-            <button type="submit" class="btn save">Guardar <i class="fas fa-save"></i></button>
+            <button type="submit" class="btn save" id="submit">Guardar <i class="fas fa-save"></i></button>
           </form> 
         </div>
 
@@ -112,13 +112,27 @@
         mostrar = document.getElementById('oculto'),
         btnocultar = document.getElementById('oculto2');
         container= document.getElementById('registro-visitor')
+        divInput =document.getElementById("divtipo")
+        divTextarea =document.getElementById("divtexarea")
 
     btnRE.addEventListener('click', function(){
   	  mostrar.classList.add('active');
 	    btnocultar.classList.add('active');
       btnRE.classList.add('active');
       container.classList.add('active');
+     var newelement1 = document.createElement('input');
+            newelement1 .setAttribute('name','eq_nombre');
+            newelement1 .setAttribute('class','form-control');
+            newelement1 .setAttribute('id','eq_nombre');
+
+            var newElement2  = document.createElement('textarea');
+            newElement2 .setAttribute('name','eq_descripcion');
+            newElement2 .setAttribute('class','form-control domi');
+
+            divInput.appendChild(newelement1);
+            divTextarea.appendChild(newElement2);
     })
+
     btnocultar.addEventListener('click', function(e){
 	    e.preventDefault();
 	    mostrar.classList.remove('active');
@@ -129,24 +143,41 @@
   </script>
 
 <script> 
-navigator.mediaDevices.getUserMedia({ audio: false, video:{width: { ideal: 1280 }, height: { ideal: 720 }} })
-.then(function(stream) {
-  var video = document.getElementById('video');
-  // Older browsers may not have srcObject
-  if ("srcObject" in video) {
-    video.srcObject = stream;
-  } else {
-    // Avoid using this in new browsers, as it is going away.
-    video.src = window.URL.createObjectURL(stream);
-  }
-  video.onloadedmetadata = function(e) {
-    video.play();
-  };
-})
-.catch(function(err) {
-  console.log(err.name + ": " + err.message);
-});
-</script>
+  document.getElementById('snap').addEventListener("click",function(){
+    var canvas = document.getElementById("canvas");
+    var image = canvas.toDataURL(); // data:image/png....
+    document.getElementById('base64').value = image;
+  },false);
 
+  navigator.mediaDevices.getUserMedia({ audio: false, video:{ width: {ideal : 320}, height:{ideal : 240} } })
+  .then(function(stream)
+  {
+    var video = document.getElementById('video');
+  
+    if ("srcObject" in video) 
+    {
+      video.srcObject = stream;
+    }  
+    else 
+    {
+      video.src = window.URL.createObjectURL(stream);
+    }
+    video.onloadedmetadata = function(e)
+    {
+      video.play();
+    };
+  }).catch(function(err) {
+      console.log(err.name + ": " + err.message);
+    });
+
+  const $canvas = document.getElementById('canvas');
+  var dataURL=canvas.toDataURL();
+  const snap = document.getElementById("snap");
+
+  var context = canvas.getContext('2d');
+    snap.addEventListener("click", function() {
+      context.drawImage(video, 0, 0, 320, 240);
+    }); 
+</script>
   
 @endsection

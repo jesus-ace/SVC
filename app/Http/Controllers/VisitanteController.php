@@ -27,13 +27,16 @@ class VisitanteController extends Controller
 
     public function selects()
     {   
-        $departamentos['departments'] = departamentos::paginate();
-        $motivos['reasons'] = motivo::paginate();
-        $card['ingreso'] = carnet_ingreso::paginate();
-        return view('visitor.registro_visitantes', $departamentos, $motivos);
+        $datos['departments'] = departamentos::paginate();
+        $datos['reasons'] = motivo::paginate();
+        $datos['ingreso'] = carnet_ingreso::orderBy('carnet_ingresos.car_id', 'asc')->paginate();
+        return view('visitor.registro_visitantes', $datos);
     }
-    public function store()
+
+    public function store(Request $request)
     {
+        //return $request->all();
+
         $data= request()->validate([
             'vi_nombre'      => 'required',
             'vi_apellido'    => 'required',
@@ -43,6 +46,8 @@ class VisitanteController extends Controller
             'vi_car_id'      => 'Required',
             'vi_responsable' => 'required',
             'vi_mt_id'       => 'required',
+            'vi_eq_id'       => 'integer',
+            'vi_photo'       => 'max:255',
             'created_at'     => 'timestamp',
             'updated_at'     => 'timestamp',
 
@@ -54,11 +59,31 @@ class VisitanteController extends Controller
             'asi_entrada'    => 'Required',
         ]);
         
-        $equipament = equipo::create([
-            'eq_nombre'      =>$data['eq_nombre'],
-            'eq_descripcion' =>$data['eq_descripcion'],
-        ]);
+       
+        $descripcion = "este usuario no posee equipo que registrar";
+        if($data['eq_nombre'] == null){
+            $equipament = equipo::create([
+                'eq_nombre'      =>$data['eq_nombre'],
+                'eq_descripcion' =>$descripcion,
+            ]);
+        }else{
+            $equipament = equipo::create([
+                'eq_nombre'      =>$data['eq_nombre'],
+                'eq_descripcion' =>$data['eq_descripcion'],
+            ]);
+        }
+        $namePhoto= $_POST['vi_cedula'];
+        $nombreImagenGuardada = "vis" . $namePhoto . ".png";//se le agregar nombrea la imagen
+        //$imagenCodificada = file_get_contents("php://input");
+        $imagenCodificadaLimpia = $_POST['base64'];
+        $base_to_php = explode(',', $imagenCodificadaLimpia);
+        $fotoo = base64_decode($base_to_php[1]);
+        $filepath = $_SERVER['DOCUMENT_ROOT'].'/imagenes/'. $nombreImagenGuardada;
+        //$imagenDecodificada = base64_decode($imagenCodificadaLimpia);//decodifica imagen
+        file_put_contents($filepath, $fotoo);
+
         visitante::insert([
+            'vi_photo'      =>$nombreImagenGuardada,
             'vi_nombre'     =>$data['vi_nombre'],
             'vi_apellido'   =>$data['vi_apellido'],
             'vi_cedula'     =>$data['vi_cedula'],

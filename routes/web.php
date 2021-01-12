@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('/welcome', function(){
     return view('/welcome');
-})->middleware('estatus');
+})->middleware('auth', 'estatus');
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 

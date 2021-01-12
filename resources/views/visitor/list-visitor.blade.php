@@ -25,80 +25,80 @@
         </thead>
         <tbody>
             @foreach( $visitor as $visitantes)
-                <tr>
-                    <td>{{$visitantes->vi_nombre}}</td>
-                    <td>{{$visitantes->vi_apellido}}</td>
-                    <td>{{$visitantes->vi_cedula}}</td>
-                    <td>{{$visitantes->vi_telefono}}</td>
-                    <td style="font-size: 12px;">{{$visitantes->vi_domicilio}}</td>
-                    <td>{{$visitantes->vi_responsable}}</td>
-                    <td>ver mas
-                      <button type="button" data-toggle="modal" data-target="#modal{{$visitantes->vi_id}}" class="far fa-eye"></button>
-                      <div class="modal fade" id="modal{{$visitantes->vi_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
-                            <div class="modal-body">
-                              <h3>{{$visitantes->vi_nombre}} {{$visitantes->vi_apellido}}</h3>
-                                <div class="acomodar">
-                                  <div class="contenido">
-                                    <div class="input-group mb-2">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text">C&eacute;dula</span>
-                                      </div>
-                                      <input type="text" name="vi_cedula" class="form-control" value="{{$visitantes->vi_cedula}}" disabled='disabled'>
-                                    </div>
-                                    <div class="input-group mb-2">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text">Contacto</span>
-                                      </div>
-                                      <input type="text" name="vi_telefono" class="form-control" value="{{$visitantes->vi_telefono}}" disabled='disabled'>
-                                    </div>
-                                    <div class="input-group mb-2">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text">Domicilio</span>
-                                      </div>
-                                      <input type="text" name="contacto" class="form-control" value="{{$visitantes->vi_domicilio}}" disabled='disabled'>
-                                    </div>
-                                    <!---div class="input-group mb-2">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text">Nro carnet</span>
-                                      </div>
-                                      <input type="number" name="contacto" class="form-control" value="20" disabled='disabled'>
-                                    </div-->
-                                    <div class="input-group mb-2">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text">&Aacute;rea de Ingreso</span>
-                                      </div>
-                                      <input type="text" name="contacto" class="form-control" value="tecnolog&iacute;a" disabled='disabled'>
-                                    </div>
-                                    <div class="input-group mb-2">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text">Responsable</span>
-                                      </div>
-                                      <input type="text" name="vi_responsable" class="form-control" value="{{$visitantes->vi_responsable}}" disabled='disabled'>
-                                    </div>
-                                    <div class="input-group mb-2">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text">Hora de ingreso</span>
-                                      </div>
-                                      <input type="text" name="contacto" class="form-control" value="12:30pm" disabled='disabled'>
-                                    </div>
-                                    <button type="button" class="salida">Marcar salida</button>
-                                  </div>
-                                  <div class="box-photo1">
-                                    <div class="photo1">
-                                      <img src="image/pruebas2.jpeg" alt="">
-                                  </div>
-                                </div>
+              <tr>
+                <td>{{$visitantes->vi_nombre}}</td>
+                <td>{{$visitantes->vi_apellido}}</td>
+                <td>{{$visitantes->vi_cedula}}</td>
+                <td>{{$visitantes->vi_telefono}}</td>
+                <td style="font-size: 12px;">{{$visitantes->vi_domicilio}}</td>
+                <td>{{$visitantes->vi_responsable}}</td>
+                <td>ver mas
+                  <button type="button" data-toggle="modal" data-target="#modal{{$visitantes->vi_id}}" class="far fa-eye"></button>
+                  <div class="modal fade" id="modal{{$visitantes->vi_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                        <h3>{{$visitantes->vi_nombre}} {{$visitantes->vi_apellido}}</h3>
+                        <div class="acomodar">
+                          <div class="contenido">
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">C&eacute;dula</span>
                               </div>
+                              <input type="text" name="vi_cedula" class="form-control" value="{{$visitantes->vi_cedula}}" disabled='disabled'>
+                            </div>
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">Contacto</span>
+                              </div>
+                              <input type="text" name="vi_telefono" class="form-control" value="{{$visitantes->vi_telefono}}" disabled='disabled'>
+                            </div>
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">Domicilio</span>
+                              </div>
+                              <input type="text" name="contacto" class="form-control" value="{{$visitantes->vi_domicilio}}" disabled='disabled'>
+                            </div>
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">Nro carnet</span>
+                              </div>
+                              <input type="number" name="contacto" class="form-control" value="20" disabled='disabled'>
+                            </div>
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">&Aacute;rea de Ingreso</span>
+                              </div>
+                              <input type="text" name="contacto" class="form-control" value="tecnolog&iacute;a" disabled='disabled'>
+                            </div>
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">Responsable</span>
+                              </div>
+                              <input type="text" name="vi_responsable" class="form-control" value="{{$visitantes->vi_responsable}}" disabled='disabled'>
+                            </div>
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">Hora de ingreso</span>
+                              </div>
+                              <input type="text" name="contacto" class="form-control" value="12:30pm" disabled='disabled'>
+                            </div>
+                            <button type="button" class="salida">Marcar salida</button>
+                          </div>
+                          <div class="box-photo1">
+                            <div class="photo1">
+                              <img src="image/pruebas2.jpeg" alt="">
                             </div>
                           </div>
                         </div>
-                    </td>
-                </tr>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
                 
             @endforeach
         </tbody>
