@@ -20,7 +20,6 @@
     <div class="info-user"id="info-user">
         <button class="panel-info pi1" id="pi1">Informaci&oacute; Personal</button > 
         <button class="panel-info" id="pi2">Acciones que realiza</button >
-        <button class="panel-info" id="pi3">Cambio de contra&ntilde;a</button >
     </div>
     <hr>
     <div class="information" id="information">
@@ -47,31 +46,6 @@
                     Consultar visitantes
                     <input type="checkbox" checked disabled>
                 </label>
-        </form>
-    </div>
-    <div class="cambio-contraseña" id="cambiocontra">
-        <form>
-            <div class="inputs">
-                <div class="input-group mb-3 ilogin">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">C&eacute;dula <i class="fas fa-user"></i></span>
-                    </div>
-                    <input type="text" name="User_name" id="name"    display: none; class="form-control" required>
-                </div>
-                <div class="input-group mb-3 ilogin">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> New Password <i class="fas fa-unlock-alt"></i> </span> 
-                    </div>
-                    <input type="password" name="contra" id="name" class="form-control" required>
-                </div>
-                <div class="input-group mb-3 ilogin">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> Verificar Password <i class="fas fa-unlock-alt"></i> </span> 
-                    </div>
-                    <input type="password" name="contra" id="name" class="form-control" required>
-                </div>
-            </div>
-            <button type="submit" class="btn ingresar">Acceptar<i class="fas fa-save"></i></button>
         </form>
     </div>
 </div>

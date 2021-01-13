@@ -90,7 +90,7 @@
                           </div>
                           <div class="box-photo1">
                             <div class="photo1">
-                              <img src="image/pruebas2.jpeg" alt="">
+                              <img src="imagenes/{{$visitantes->vi_photo}}" alt="">
                             </div>
                           </div>
                         </div>
