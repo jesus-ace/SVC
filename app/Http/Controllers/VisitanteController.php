@@ -16,7 +16,10 @@ class VisitanteController extends Controller
     public function index(Request $request){
         //$datos['visitor'] = visitante::paginate(8);
         $busqueda = $request->get('buscar');
-        $datos['visitor']= visitante::where('vi_nombre', 'like', '%'.$busqueda.'%')->paginate(8);
+        $datos['visitor']= visitante::where('vi_nombre', 'like', '%'.$busqueda.'%')
+                                    ->orWhere('vi_cedula', '=', $busqueda)
+                                    ->paginate(8);
+
         return view('visitor.list-visitor', $datos);
     }
 

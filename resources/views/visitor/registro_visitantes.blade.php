@@ -97,7 +97,7 @@
                   <video id="video" autoplay playsinline></video>
                 </div>
                 <button type="button" class="btn btn-secondary tfoto" id="snap">Tomar Foto <i class="fas fa-camera"></i></button>
-                <canvas id="canvas"  width='320px' height='240px' name="vi_photo"  style='border: 1px solid #CCC; background-color: rgb(163, 53, 90);'></canvas>
+                <canvas id="canvas"  width='320px' height='240px' name="vi_photo"  style='border: 1px solid #CCC;'></canvas>
                 <input type="hidden" id="base64" name="base64">
             </div>
             </div> 
@@ -120,7 +120,7 @@
 	    btnocultar.classList.add('active');
       btnRE.classList.add('active');
       container.classList.add('active');
-     var newelement1 = document.createElement('input');
+    /**var newelement1 = document.createElement('input');
             newelement1 .setAttribute('name','eq_nombre');
             newelement1 .setAttribute('class','form-control');
             newelement1 .setAttribute('id','eq_nombre');
@@ -130,7 +130,7 @@
             newElement2 .setAttribute('class','form-control domi');
 
             divInput.appendChild(newelement1);
-            divTextarea.appendChild(newElement2);
+            divTextarea.appendChild(newElement2);*/
     })
 
     btnocultar.addEventListener('click', function(e){
@@ -142,21 +142,24 @@
     });	
   </script>
 
-<script> 
-  document.getElementById('snap').addEventListener("click",function(){
-    var canvas = document.getElementById("canvas");
-    var image = canvas.toDataURL(); // data:image/png....
-    document.getElementById('base64').value = image;
-  },false);
+  <script>
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    context.font = "30px Arial";
+    context.fillText("Supuesta foto", 70, 125);
 
-  navigator.mediaDevices.getUserMedia({ audio: false, video:{ width: {ideal : 320}, height:{ideal : 240} } })
-  .then(function(stream)
+    document.getElementById('snap').addEventListener("click",function(){
+      var canvas = document.getElementById("canvas");
+      var image = canvas.toDataURL(); // data:image/png....
+      document.getElementById('base64').value = image;
+    },false);
+
+  navigator.mediaDevices.getUserMedia({ audio: false, video:{ width: {ideal : 320}, height:{ideal : 240} } }).then(function(stream)
   {
     var video = document.getElementById('video');
-  
     if ("srcObject" in video) 
     {
-      video.srcObject = stream;
+    video.srcObject = stream;
     }  
     else 
     {
@@ -166,18 +169,22 @@
     {
       video.play();
     };
-  }).catch(function(err) {
-      console.log(err.name + ": " + err.message);
-    });
-
+  })
+  .catch(function(err) 
+  {
+    console.log(err.name + ": " + err.message);
+  });
   const $canvas = document.getElementById('canvas');
   var dataURL=canvas.toDataURL();
   const snap = document.getElementById("snap");
 
   var context = canvas.getContext('2d');
-    snap.addEventListener("click", function() {
-      context.drawImage(video, 0, 0, 320, 240);
-    }); 
+  snap.addEventListener("click", function()
+  {
+    context.drawImage(video, 0, 0, 320, 240);
+    var image = canvas.toDataURL(); // data:image/png....
+    document.getElementById('base64').value = image;
+  },false); 
 </script>
   
 @endsection

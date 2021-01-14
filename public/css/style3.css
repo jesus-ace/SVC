@@ -678,8 +678,9 @@ font-size: 24px;
     display: block;
 }
 canvas{
-    width: 800px;
+    width: 320px;
     height: 240px;
+    margin-left: 22px;
 }
 .Editar-usuario.active{
     display: none;
