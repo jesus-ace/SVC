@@ -1,0 +1,32 @@
+body{
+    background: url(../fondocopia.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@media only screen and (max-width:900px){
+    body{
+        background: url(../fondo768x1024.png) no-repeat center center fixed;
+        -webkit-background-size: cover; 
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+@media only screen and (max-width:480px){
+    body{
+        background: url(../fondo360x640.png) no-repeat center center fixed;
+        -webkit-background-size: cover; 
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+.input-group-text {
+    width: 150px;
+    background-color: rgb(107, 55, 125);
+    border: solid 1px rgb(107, 55, 125);
+    color: #ffff;
+}
