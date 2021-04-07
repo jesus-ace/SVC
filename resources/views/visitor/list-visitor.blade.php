@@ -13,7 +13,7 @@ $actual_h =  $fecha_b->toTimeString();
     <div class="row px-5 mb-5 mt-5">
       <div class="col-12">
         <h3>Listado de Visitante</h3>
-        <table class="col-12">
+        <table class="col-12 col-md-12">
           <div class="buscador">
               <form>
                   <div class="input-group buscador">
@@ -85,6 +85,7 @@ $actual_h =  $fecha_b->toTimeString();
                                   <span class="input-group-text">&Aacute;rea a ingresar</span>
                                 </div>
                                 <select name="asi_dep_id" class="form-control select custom-select">
+                                  <option value="{{$visitantes->dep_id}}">{{$visitantes->dep_nombre}}</option>
                                   @foreach( $departments as $departamento)
                                   <option value="{{$departamento->dep_id}}">{{$departamento->dep_nombre}}</option>
                                   @endforeach
@@ -97,7 +98,7 @@ $actual_h =  $fecha_b->toTimeString();
                                 <select name="asi_car_id" id="asi_car_id" class="form-control select custom-select">
                                   <option value="{{$visitantes->vi_car_id}}">{{$visitantes->vi_car_id}}</option>
                                   @foreach( $card as $car_ingreso)
-                                  <option value="{{$car_ingreso->car_id}}">{{$car_ingreso->car_id}}</option>
+                                    <option value="{{$car_ingreso->car_id}}">{{$car_ingreso->car_id}}</option>
                                   @endforeach
                                 </select>
                               </div>
@@ -108,12 +109,12 @@ $actual_h =  $fecha_b->toTimeString();
                                 <input type="text" name="asi_entrada" class="form-control" value="{{$visitantes->asi_entrada}}" disabled='disabled'>
                               </div>
                                 @if($visitantes->asi_salida == null &&  $visitantes->asi_fecha_salida == null)
-                                  <form action="{{ route('list_visitor.update', $visitantes->asi_id)}} " method="POST">
+                                  <form action="{{ route('list_visitor.update', $visitantes->asi_id, $visitantes->car_id)}} " method="POST">
                                     {{ csrf_field() }}
                                     {{method_field('PATCH')}}
                                     <input type="text" name="asi_salida" class="form-control" value="<?php echo $actual_h;?>" hidden>
                                     <input Type="text" name="asi_fecha_salida" value="<?php echo $actual;?>" hidden >
-                                    <input type="text" name="car_status" value="0" hidden>
+                                    <input type="text" name="vi_car_id" value="{{$visitantes->vi_car_id}}" hidden>
                                     <button type="submit" class="salida">Marcar Salida</button>
                                   </form>
                                 @else

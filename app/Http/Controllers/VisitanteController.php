@@ -13,8 +13,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User;
-use Session;
 use Illuminate\Support\Facades\Auth;
+use Session;
+use DB;
 
 class VisitanteController extends Controller{
     public function index(Request $request){
@@ -132,7 +133,7 @@ class VisitanteController extends Controller{
         $visitor->vi_eq_id = $equipament->eq_id;
         $visitor->vi_photo = $nombreImagenGuardada;
         $visitor->save();
-
+        
         asistencia::create([
             'asi_dep_id'  =>$data['asi_dep_id'],
             'asi_car_id'  =>$data['vi_car_id'],
@@ -140,6 +141,12 @@ class VisitanteController extends Controller{
             'asi_fecha_entrada' =>$fecha_a->toDateString(),
         ]);
         
+        $status = TRUE;
+        $card_status = DB::table('carnet_ingresos')
+          ->where('car_id', '=', $data['vi_car_id'])
+          ->update(['car_status' => $status]); 
+        
+
         //Auditoria
         $user_agent = $_SERVER['HTTP_USER_AGENT'];
         $navegador = $this->getBrowser($user_agent);
@@ -161,7 +168,16 @@ class VisitanteController extends Controller{
     public function mark_exit(Request $request, asistencia $visitantes){
         
         $visitantes->update($request->all());
+
+        $data_update = request([
+            'vi_car_id'
+        ]);
         
+        $status_false = FALSE;
+        $card_status = DB::table('carnet_ingresos')
+          ->where('car_id', '=', $data_update['vi_car_id'])
+          ->update(['car_status' => $status_false]); 
+
         $fecha_b = new Carbon; 
         $user_agent = $_SERVER['HTTP_USER_AGENT'];
         $navegador = $this->getBrowser($user_agent);
