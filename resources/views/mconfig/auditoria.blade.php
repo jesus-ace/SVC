@@ -33,14 +33,14 @@
                                 <td>{{$auditoria->au_maquina}}</td>
                                 <td style="font-size: 8px;">{{$auditoria->au_so}}</td>
                                 <td>{{$auditoria->au_navegador}}</td>
-                                <td style="font-size: 12px;">{{$auditoria->us_cedula}}</td>
+                                <td style="font-size: 12px;">{{$auditoria->us_user}}</td>
                                 <td style="font-size: 12px;">{{$auditoria->au_tipo}}</td>
                                 <td>{{$auditoria->au_fecha}}</td>
                             </tr>
                         @endforeach
                         </tbody>
                 </table>
-                <div class="paginacion mt-2">
+            <div class="paginacion mt-2">
                     {!!$audit->render()!!}
                 </div>
             </div>
