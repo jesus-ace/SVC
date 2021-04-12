@@ -81,6 +81,8 @@ Route::get('/list-visitor', 'VisitanteController@index', function(){
 
 Route::patch('/list-visitor{visitantes}/update', 'VisitanteController@mark_exit')->name('list_visitor.update');
 
+Route::post('/list-visitor', 'VisitanteController@mark_entry')->name('mark_entry');
+
 /*  
    ////////////////////////////////////////
   //   **rutas modulo configuración**   //

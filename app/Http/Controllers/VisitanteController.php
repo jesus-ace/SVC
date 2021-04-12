@@ -29,7 +29,7 @@ class VisitanteController extends Controller{
                                     ->where('vi_nombre', 'like', '%'.$busqueda.'%')
                                     ->orWhere('vi_cedula', '=', $busqueda)
                                     ->orderBy('vi_id', 'asc')
-                                    ->paginate(5); 
+                                    ->paginate(10); 
         $datos['card'] = carnet_ingreso::orderBy('carnet_ingresos.car_id', 'asc')->paginate(100);
         $datos['departments'] = departamentos::paginate(100);
         return view('visitor.list-visitor', $datos);
@@ -192,6 +192,38 @@ class VisitanteController extends Controller{
         $aud->au_ip_maquina = $_SERVER['REMOTE_ADDR'];
         $aud->au_us_id = auth()->user()->us_rol_id;
         $aud->save();
+        return redirect('/list-visitor');
+    }
+
+    public function mark_entry(Request $request){
+        $fecha_a = new Carbon;
+
+        $data_mark_entry = request()->validate([
+            'asi_dep_id' => 'required|integer',
+            'asi_car_id' => 'required|integer',
+        ]);
+        
+        asistencia::create([
+            'asi_dep_id'  =>$data_mark_entry['asi_dep_id'],
+            'asi_car_id'  =>$data_mark_entry['asi_car_id'],
+            'asi_entrada' =>$fecha_a->toTimeString(),
+            'asi_fecha_entrada' =>$fecha_a->toDateString(),
+        ]);
+
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+        $navegador = $this->getBrowser($user_agent);
+
+        $aud = new auditoria;
+        $audId = 'au_id';
+        $aud->au_tipo = strtoupper('Le Dio Entrada a un Visitante');
+        $aud->au_so = PHP_OS.'-'.php_uname();
+        $aud->au_navegador = $navegador;
+        $aud->au_fecha = $fecha_b->toDateTimeString();
+        $aud->au_maquina = gethostname();
+        $aud->au_ip_maquina = $_SERVER['REMOTE_ADDR'];
+        $aud->au_us_id = auth()->user()->us_rol_id;
+        $aud->save();
+
         return redirect('/list-visitor');
     }
 

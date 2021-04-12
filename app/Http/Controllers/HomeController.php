@@ -33,8 +33,7 @@ class HomeController extends Controller
                                     ->JOIN("asistencias", "carnet_ingresos.car_id", "=", "asistencias.asi_car_id")
                                     ->JOIN("departamentos", "departamentos.dep_id", "=", "asistencias.asi_dep_id")
                                     ->SELECT("vi_nombre", "vi_apellido", "vi_photo", "car_id", "asi_entrada", "asi_salida", "dep_nombre", "vi_responsable")
-                                    ->Where('asi_salida', '=', null )
-                                    ->orWhere('asi_salida', '=', '00:00:00' )
+                                    ->WhereNull('asi_salida')
                                     ->Where('asi_fecha_entrada', '=', $actual)
                                     ->orderBy('asi_entrada', 'desc')
                                     ->paginate(3);

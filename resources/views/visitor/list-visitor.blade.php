@@ -80,7 +80,7 @@ $actual_h =  $fecha_b->toTimeString();
                                 </div>
                                 <input type="text" name="vi_responsable" class="form-control" value="{{$visitantes->vi_responsable}}" disabled='disabled'>
                               </div>
-                              <div class="input-group mb-3">
+                              <!--div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">&Aacute;rea a ingresar</span>
                                 </div>
@@ -90,7 +90,7 @@ $actual_h =  $fecha_b->toTimeString();
                                   <option value="{{$departamento->dep_id}}">{{$departamento->dep_nombre}}</option>
                                   @endforeach
                                 </select>
-                              </div>
+                              </div-->
                               <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">Nro carnet</span>
@@ -109,7 +109,7 @@ $actual_h =  $fecha_b->toTimeString();
                                 <input type="text" name="asi_entrada" class="form-control" value="{{$visitantes->asi_entrada}}" disabled='disabled'>
                               </div>
                                 @if($visitantes->asi_salida == null &&  $visitantes->asi_fecha_salida == null)
-                                  <form action="{{ route('list_visitor.update', $visitantes->asi_id, $visitantes->car_id)}} " method="POST">
+                                  <form action="{{ route('list_visitor.update', $visitantes->asi_id)}} " method="POST">
                                     {{ csrf_field() }}
                                     {{method_field('PATCH')}}
                                     <input type="text" name="asi_salida" class="form-control" value="<?php echo $actual_h;?>" hidden>
@@ -118,16 +118,24 @@ $actual_h =  $fecha_b->toTimeString();
                                     <button type="submit" class="salida">Marcar Salida</button>
                                   </form>
                                 @else
-                                  <form action="{{ route('list_visitor.update', $visitantes->asi_id)}} " method="POST">
+                                  <form action="{{ route('mark_entry')}} " method="POST">
                                     {{ csrf_field() }}
-                                    {{method_field('PATCH')}}
-                                    <input type="text" name="asi_entrada" class="form-control" value="<?php echo $actual_h;?>" hidden>
-                                    <input type="text" name="asi_salida" class="form-control" value="00:00" hidden>
+                                    <div class="input-group mb-3">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text">&Aacute;rea a ingresar</span>
+                                      </div>
+                                      <select name="asi_dep_id" class="form-control select custom-select">
+                                        <option value="{{$visitantes->dep_id}}">{{$visitantes->dep_nombre}}</option>
+                                        @foreach( $departments as $departamento)
+                                        <option value="{{$departamento->dep_id}}">{{$departamento->dep_nombre}}</option>
+                                        @endforeach
+                                      </select>
+                                    </div>
+                                    <input type="text" name="asi_car_id" class="form-control" value="{{$visitantes->vi_car_id}}" hidden>
                                     <button type="submit" class="marcar_entrada">Marcar Entrada</button>
                                   </form>
                               @endif
                             </div>
-                            
                             <div class="box-photo1">
                               <div class="photo1">
                                 <img src="imagenes/{{$visitantes->vi_photo}}" alt="">

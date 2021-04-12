@@ -22,7 +22,7 @@
                           <th>Nombre Maquina</th>
                           <th>Sistema Operativo</th>
                           <th>Navegador </th>
-                          <th>Id Usuario</th>
+                          <th>Usuario</th>
                           <th>Accion Realizada</th>
                           <th>Fecha</th>
                         </thead>
@@ -33,7 +33,7 @@
                                 <td>{{$auditoria->au_maquina}}</td>
                                 <td style="font-size: 8px;">{{$auditoria->au_so}}</td>
                                 <td>{{$auditoria->au_navegador}}</td>
-                                <td style="font-size: 12px;">{{$auditoria->us_nombre}} {{$auditoria->us_apellido}}</td>
+                                <td style="font-size: 12px;">{{$auditoria->us_cedula}}</td>
                                 <td style="font-size: 12px;">{{$auditoria->au_tipo}}</td>
                                 <td>{{$auditoria->au_fecha}}</td>
                             </tr>
