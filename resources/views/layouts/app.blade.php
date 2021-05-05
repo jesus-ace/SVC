@@ -13,6 +13,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/chosen.css">
+    <link rel="stylesheet" href="css/chose.css">
     <link rel="stylesheet" href="css/sweetalert.css">
     <link rel="stylesheet" href="css/editor.css">
     <link rel="stylesheet" href="css/style.css">
@@ -114,6 +116,7 @@
     <script src="js/dashboard.js"></script>
     <script src="js/validaciones.js"></script>
     <script src="js/sweetalert.js"></script>
+    <script src="js/chosen.jquery.js"></script>
     <!--script src="{{ asset('js/app.js') }}"></script-->
 </body>
 

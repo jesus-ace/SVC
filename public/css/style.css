@@ -1203,3 +1203,58 @@ legend{
     top: -140px; 
     left: 10px;
 }
+.tasks-list-item {
+    line-height: auto;
+    cursor: pointer;
+}
+.tasks-list-cb:checked ~ .tasks-list-mark::before {
+    display: block;
+}
+.tasks-list-item {
+    display: list-item;
+    line-height: auto;
+    padding: 12px 15px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.tasks-list-cb:checked ~ .tasks-list-mark {
+    border-color: rgb(107, 55, 125);
+}
+.tasks-list-mark {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c4cbd2;
+        border-top-color: rgb(196, 203, 210);
+        border-right-color: rgb(196, 203, 210);
+        border-bottom-color: rgb(196, 203, 210);
+        border-left-color: rgb(196, 203, 210);
+    border-radius: 4px;
+}
+.tasks-list-mark::before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -5px 0 0 -6px;
+    height: 8px;
+    width: 12px;
+    border: solid rgb(107, 55, 125);
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+    border-width: 0 0 4px 4px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
