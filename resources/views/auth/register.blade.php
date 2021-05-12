@@ -30,7 +30,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">C&eacute;dula</span>
                   </div>
-                  <input type="text" name="us_cedula" class="form-control" value="{{ old('us_cedula') }}" required
+                  <input type="text" name="us_cedula" class="form-control" value="{{ old('us_cedula') }}" maxlength="9" required
                     onkeypress="return solonumeros(event)">
                 </div>
                 <div class="input-group mb-3">
@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn ingresar mb-3"">Registrar<i class="fas fa-save"></i></button>
+        <button type="submit" class="btn ingresar mb-3">Registrar<i class="fas fa-save"></i></button>
       </form>
       <div class="lateral d-none d-sm-block col-sm-5">
         <div class="texto col-12">

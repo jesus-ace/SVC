@@ -52,7 +52,7 @@
                                         <div class="input-group-prepend">
                                           <span class="input-group-text">C&eacute;dula:</span>
                                         </div>
-                                        <input type="text" name="us_cedula" class="form-control" id="cedula" value="{{$usuario->us_cedula}}" >
+                                        <input type="text" name="us_cedula" class="form-control" id="cedula" value="{{$usuario->us_cedula}}" onkeypress="return solonumeros(event)" maxlength="9" >
                                       </div>
                                       <div class="input-group mb-2">
                                         <div class="input-group-prepend">
@@ -261,4 +261,5 @@
     document.getElementById('delete').classList.remove('active');
   }
 </script>
+<script src="/js/validaciones.js"></script>
 @endsection

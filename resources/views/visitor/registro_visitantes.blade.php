@@ -2,118 +2,6 @@
 
 @section('content')
 
-<!--div class="row align-items-center h-100 mx-auto">
-    <div class="col-11   justify-content-center px-0 d-flex bg-login mt-5">
-      <form class="registro col-11 col-sm-11 " method="POST" action="{{ route('new-visitor') }}" enctype="multipart/form-data">
-        <h3>REGISTROS DE VISITANTES</h3>
-        {{ csrf_field() }}
-        <div class="d-flex">
-          <div class="container px-0 col-7" id="formulario">
-            <div class="row">
-              <div class="col-12">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">Nombre</span>
-                  </div>
-                  <input type="text" name="vi_nombre" id="vi_nombre" class="form-control" required>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">Apellido</span>
-                  </div>
-                  <input type="text" name="vi_apellido" id="vi_apellido" class="form-control" required>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">C&eacute;dula</span>
-                  </div>
-                  <input type="text" name="vi_cedula" id="vi_cedula" class="form-control" required>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">Contacto</span>
-                  </div>
-                  <input type="text" name="vi_telefono" id="vi_telefono" class="form-control" required maxlength="11">
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">Domicilio</span>
-                  </div>
-                  <textarea name="vi_domicilio" id="vi_domicilio" class="form-control domi" aria-label="With textarea" required></textarea>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">Nro Carnet</span>
-                  </div>
-                  <select name="vi_car_id" id="vi_car_id" class="form-control select custom-select">
-                    @foreach( $ingreso as $card)
-                    <option value="{{$card->car_id}}">{{$card->car_id}}</option>
-                    @endforeach
-                  </select>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">&Aacute;rea a ingresar</span>
-                  </div>
-                  <select name="asi_dep_id" class="form-control select custom-select">
-                    @foreach( $departments as $departamento)
-                    <option value="{{$departamento->dep_id}}">{{$departamento->dep_nombre}}</option>
-                    @endforeach
-                  </select>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">Responsable</span>
-                  </div>
-                  <input type="text" name="vi_responsable" id="vi_responsable" class="form-control" required>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">M&oacute;tivo</span>
-                  </div>
-                  <select name="vi_mt_id" id="vi_mt_id" class="form-control select custom-select">
-                    @foreach( $reasons as $motivo)
-                    <option value="{{$motivo->mt_id}}">{{$motivo->mt_motivo}}</option>
-                    @endforeach
-                  </select>
-                </div>
-                <fieldset class="oculto " id="oculto" aria-hidden="true">
-                  <legend>Registros de equipos</legend>
-                  <input type="hidden">
-                  <div class="input-group mb-3" id="divtipo">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">Tipo</span>
-                    </div>
-                    <input type="text" name="eq_nombre" id="eq_nombre" class="form-control">
-                  </div>
-                  <div class="input-group mb-3 " id="divtexarea">
-                    <div class="input-group-prepend ">
-                      <span class="input-group-text">Descripci&oacute;n</span>
-                    </div>
-                    <textarea name="eq_descripcion" class="form-control domi" aria-label="With textarea" placeholder="Descripcion"></textarea>
-                  </div>
-                </fieldset>
-                <button type="button" id="RE" class="btn RE">Registro de equipos<i class="fas fa-laptop"></i> <i class="fas fa-tools"></i> </button>
-                <button type="button" id="oculto2" class="btn CL">Ocultar<i class="far fa-eye-slash"></i></i> </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-5 justify-content-center">
-            <div class="photo">
-              <video id="video" autoplay playsinline></video>
-            </div>
-            <button type="button" class="btn btn-secondary tfoto d-flex justify-content-center mx-auto" id="snap">Tomar Foto <i class="fas fa-camera"></i></button>
-            <canvas id="canvas" width='320px' height='240px' class="justify-content-center img-responsive" style='border: 1px solid #CCC;'></canvas>
-            <input type="hidden" id="base64" name="base64">
-          </div>
-        </div>
-        <button type="submit" class="btn save " id="submit">Guardar <i class="fas fa-save"></i></button>
-      </form>
-    </div>
-</div-->
-
-<!--Formulario nuevo-->
-
 <div class="row justify-content-center align-items-center h-100 mx-auto mt-5 px-0">
   <div class="col-11   justify-content-center px-0  bg-login">
     <form class="registro col-11 col-md-11 " method="POST" action="{{ route('new-visitor') }}" enctype="multipart/form-data">
@@ -127,19 +15,19 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">Nombre</span>
                 </div>
-                <input type="text" name="vi_nombre" id="vi_nombre" class="form-control" required>
+                <input type="text" name="vi_nombre" id="vi_nombre" class="form-control" required onkeypress="return sololetras(event)">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">Apellido</span>
                 </div>
-                <input type="text" name="vi_apellido" id="vi_apellido" class="form-control" required>
+                <input type="text" name="vi_apellido" id="vi_apellido" class="form-control" required onkeypress="return sololetras(event)">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">C&eacute;dula</span>
                 </div>
-                <input type="text" name="vi_cedula" id="vi_cedula" class="form-control" required>
+                <input type="text" name="vi_cedula" id="vi_cedula" class="form-control" required onkeypress="return solonumeros(event)" maxlength="9">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -180,7 +68,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">Responsable</span>
                 </div>
-                <input type="text" name="vi_responsable" id="vi_responsable" class="form-control" required>
+                <input type="text" name="vi_responsable" id="vi_responsable" class="form-control" required onkeypress="return sololetras(event)">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -291,5 +179,5 @@
     document.getElementById('base64').value = image;
   }, false);
 </script>
-
+<script src="/js/validaciones.js"></script>
 @endsection
