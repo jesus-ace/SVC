@@ -1,6 +1,10 @@
 *{
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
+=======
+    box-sizing: border-box;
+>>>>>>> version-developer-1.23
 }
 html {
     font-size: 16px;
@@ -9,7 +13,11 @@ html {
 body{
     background-color: rgba(34, 18, 41, 0.137);
     width: 100%;
+<<<<<<< HEAD
     height: 100%
+=======
+    /*height: 100%;*/
+>>>>>>> version-developer-1.23
 }
 body.active{
     background-color: rgb(255, 255, 255);
@@ -35,7 +43,11 @@ nav{
 }
 .logo-menu{
     width: 200px;
+<<<<<<< HEAD
     margin-left: 100px;
+=======
+    margin-left: 55px;
+>>>>>>> version-developer-1.23
     padding: 5px;
 }
 .logo-menu:hover{
@@ -77,8 +89,14 @@ nav{
 .fa-sort-down,
 .fa-plus
 {
+<<<<<<< HEAD
     font-size: 20px;
     margin-inline: 2px;
+=======
+    font-size: 18px;
+    margin-inline: 5px;
+    margin-top: 2px;
+>>>>>>> version-developer-1.23
 }
 .dropbtn {
     color: white;
@@ -125,10 +143,16 @@ nav{
     margin:10%  auto;
     border-radius: 20px 22px 22px 20px;
     display: flex;
+<<<<<<< HEAD
 }
 .container-login.active{
     display: none;
 }
+=======
+    justify-content: space-evenly;
+}
+
+>>>>>>> version-developer-1.23
 .form-login{
     width: 505px;
     position: relative;
@@ -138,12 +162,22 @@ nav{
     justify-content: center;
 }
 .ingresar{
+<<<<<<< HEAD
     width: 25%;
     position: relative;
     top: -10px;
     margin:auto;
     display: flex;
     justify-content: center;
+=======
+    /*width: 25%;
+    position: relative;
+    top: -10px;
+    margin:auto;*/
+    display: flex;
+    justify-content: center;
+    margin: auto;
+>>>>>>> version-developer-1.23
     font-size: 15px;
     background-color: rgb(163, 53, 90);
     color: #fff;
@@ -155,6 +189,7 @@ nav{
 }
 .lateralL{
     width: 400px;
+<<<<<<< HEAD
     border-radius:0 20px 20px 0px;
     background: rgb(109,51,129);
     background: linear-gradient(0deg, rgba(109,51,129,0.92) 0%, rgba(87,69,226,1) 100%);
@@ -170,6 +205,25 @@ nav{
     position: relative;
     left: 25px;
     top: -155px;
+=======
+    border-radius:0 14px 14px 0px;
+    background: rgb(109,51,129);
+    background: linear-gradient(0deg, rgba(109,51,129,0.92) 0%, rgba(87,69,226,1) 100%);
+    background-repeat: no-repeat, repeat;
+    background-position:center center;
+    color:#fff;
+}
+.textoL{
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 95px;
+}
+.imagen-fondoL{
+    position: absolute;
+    /*left: 45px;*/
+    top: 46px;
+>>>>>>> version-developer-1.23
     color: rgba(34, 18, 41, 0.137);
 }
 .fa-address-card{
@@ -177,13 +231,17 @@ nav{
 }
 /*Estilos de Bienvenida*/
 .lateral{
+<<<<<<< HEAD
     width: 505px;
+=======
+>>>>>>> version-developer-1.23
     border-radius:0 20px 20px 0px;
     background: rgb(109,51,129);
     background: linear-gradient(0deg, rgba(109,51,129,0.92) 0%, rgba(87,69,226,1) 100%);
     color:#fff;
 }
 .bienvenida{
+<<<<<<< HEAD
     width: 100%;
     max-width: 900px;
     height: 500px;
@@ -200,6 +258,23 @@ nav{
 }
 .imagen-bienvenida{
     margin: 120px 238px 0 200px;
+=======
+    /*width: 100%;
+    max-width: 900px;
+    height: 500px;*/
+    background: rgb(109,51,129);
+    background: linear-gradient(0deg, rgba(109,51,129,0.92) 0%, rgba(87,69,226,1) 100%);
+    /*margin:70px  auto;*/
+    border-radius: 20px;
+}
+
+.bienvenida:hover{
+    box-shadow: 0px 0px 10px 0px rgb(52, 0, 95);
+}
+.imagen-bienvenida{
+    /*margin: 120px 238px 0 200px;*/
+    object-fit: cover;
+>>>>>>> version-developer-1.23
 }
 .texto-bienvenida{
     margin: 10px 238px 0 200px;
@@ -207,6 +282,23 @@ nav{
 .texto-bienvenida h1{
     height: 40px;
 }
+<<<<<<< HEAD
+=======
+@media only screen and (max-width:590px){
+    .bienvenida{
+        width: 95%; 
+        padding:20px;
+    }
+    .bienvenida img{
+        width: 95%; 
+        margin: 114px 226px 0 190px;
+    }
+    .bienvenida .texto-bienvenida h1{
+        font-size: 17px;
+    }
+}
+
+>>>>>>> version-developer-1.23
 .ensa{
     width: 210px;
     height: 50px;
@@ -240,7 +332,11 @@ nav{
 	}
 }
 /*Estilos de  lista de los ultimos ingresos y salida*/
+<<<<<<< HEAD
 .entrada-salida{
+=======
+/*.entrada-salida{
+>>>>>>> version-developer-1.23
     width: 100%;
     max-width: 850px;
     height: auto;
@@ -248,6 +344,7 @@ nav{
     border-radius: 20px;
     justify-content: center;
     display: flex;
+<<<<<<< HEAD
 }
 .entrada{
     width: 505px;
@@ -265,6 +362,24 @@ nav{
 }
 .foto img{
 
+=======
+}*/
+.entrada{
+    /*width: 505px;*/
+    color:#fff;
+}
+.ENTRA{
+    /*width: 100%;
+    max-width: 400px;*/
+    height: 80px;
+    /*margin: 10px auto;*/
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 50px;
+    background-color: #82d894;
+}
+.foto{
+>>>>>>> version-developer-1.23
     width: 60px;
     height: 60px;
     padding: 5px;
@@ -274,6 +389,7 @@ nav{
     background-color: rgba(0, 0, 0, 0.192);
     border-radius: 10px 2px 10px 2px ;
 }
+<<<<<<< HEAD
 .salir{
     width: 505px;
     color:#fff;
@@ -287,6 +403,25 @@ nav{
     padding: 5px;
     border-radius: 50px;
     background-color: rgba(255, 8, 0, 0.507);
+=======
+.foto img{
+    object-fit: cover;
+}
+.salir{
+    /*width: 505px;*/
+    color:#fff;
+}
+.SALI{
+    /*width: 100%;
+    max-width: 400px;*/
+    height: 80px;
+    /*margin: 10px ;*/
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 50px;
+    /*background-color: rgba(255, 8, 0, 0.507);*/
+    background-color: #f78682;
+>>>>>>> version-developer-1.23
     
 }
 h6{
@@ -310,15 +445,26 @@ h6{
 /*.container-login1.active{
     display: flex;
 }*/
+<<<<<<< HEAD
 .form-registroV{
+=======
+/*.form-registroV{
+>>>>>>> version-developer-1.23
     width: 505px;
     padding: 10px;
     margin-top: 8%;
     justify-content: center;
+<<<<<<< HEAD
 }
 
 .texto{
     margin-top: 200px;
+=======
+}*/
+
+.texto{
+    top: 160px;
+>>>>>>> version-developer-1.23
     position: relative;
     z-index: 1;
 }
@@ -329,15 +475,49 @@ h5{
     color: rgba(235, 226, 226, 0.863)
 }
 .imagen-fondo{
+<<<<<<< HEAD
     margin: auto;
     position: relative;
     left: 60px;
     top: -184px;
+=======
+    /*margin: auto;*/
+    position: relative;
+    /*left: 60px;*/
+    /*top: -184px;*/
+>>>>>>> version-developer-1.23
     color: rgba(34, 18, 41, 0.137);
 }
 .fa-users{
     font-size: 240px;
 }
+<<<<<<< HEAD
+=======
+@media only screen and (max-width:800px){
+
+    .fa-users{
+        font-size: 180px;
+    }
+
+    .logo-menu{
+        width: 160px;
+        margin-left: 40px;
+        padding: 5px;
+    }
+}
+@media only screen and (max-width:700px){
+
+    .fa-users{
+        font-size: 160px;
+    }
+
+    .logo-menu{
+        width: 130px;
+        margin-left: 40px;
+        padding: 5px;
+    }
+}
+>>>>>>> version-developer-1.23
 .container-login1{
     animation: entradaBienvenida .6s ease-in .4s both; 
 }
@@ -359,11 +539,22 @@ h5{
     width: 150px;
     height: 30px;
     margin-bottom: 10px;
+<<<<<<< HEAD
     margin-left:95px;
     float: left;
     font-size: 14px;
     background-color: rgb(163, 53, 90);
     color: #fff;   
+=======
+    /*margin-left:95px;*/
+    /*float: left;*/
+    font-size: 14px;
+    font-weight: 300;
+    padding: 2px;
+    background-color: rgb(163, 53, 90);
+    color: #fff;   
+    justify-content: space-evenly;
+>>>>>>> version-developer-1.23
 }
 .regisV:hover{
     cursor: pointer;
@@ -486,7 +677,11 @@ h5{
     animation: entradaBienvenida .6s ease-in .4s both; 
 }
 /*Estilos Registro de visitante*/
+<<<<<<< HEAD
 .container{
+=======
+.container-v{
+>>>>>>> version-developer-1.23
     width: 100%;
     max-width: 1100px;
     height: 790px;
@@ -495,10 +690,20 @@ h5{
     margin-top:70px;
     padding: 5px;
     display: block;
+<<<<<<< HEAD
     overflow-x: hidden;
 }
 .container.active{
     height: 990px;
+=======
+}
+.container-v .active{
+    height: 1000px;
+}
+.bg-login{
+    background-color: #ffff;
+    border-radius:15px;
+>>>>>>> version-developer-1.23
 }
 .container-lista-vistante{
     width: 100%;
@@ -516,10 +721,17 @@ h5{
 
 .registro{
     border: rgb(107, 55, 125) solid 2px;
+<<<<<<< HEAD
     width: 80%;
     border-radius:15px;
     margin: 20px auto;
     padding: 10px;
+=======
+    /*width: 80%;*/
+    border-radius:15px;
+    margin: 20px auto;
+    /*padding: 10px;*/
+>>>>>>> version-developer-1.23
 }
 h3,
 h1{
@@ -537,18 +749,25 @@ h1{
     display: flex;
 }
 
+<<<<<<< HEAD
 .inputs{
     width: 480px;
     padding: 15px;
     margin: auto;
     float: left;
 }
+=======
+
+>>>>>>> version-developer-1.23
 .input-group{
     background: rgb(107, 55, 125);
     border-radius: 5px;
 }
 .input-group-text{
+<<<<<<< HEAD
     width: 150px;
+=======
+>>>>>>> version-developer-1.23
     background-color: rgb(107, 55, 125);
     border: solid 1px rgb(107, 55, 125);
     color: #ffff;
@@ -564,6 +783,7 @@ input[type=password]{
 }
 .domi{
     border: solid rgb(107, 55, 125)1px;
+<<<<<<< HEAD
     padding: 3px;
 }
 .select{
@@ -591,6 +811,28 @@ input[type=password]{
     justify-content: center;
     font-size: 15px;
 }
+=======
+}
+.select{
+    border: solid rgb(107, 55, 125) 1px;
+}
+
+.photo{
+    /*width: 320px;
+    height:240px;*/
+    /*margin-right: 10px;*/
+    background-color: lightblue;
+    /*display: flex;
+    justify-content: center;*/
+    /*margin: auto;*/
+}
+.tfoto{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+>>>>>>> version-developer-1.23
 .tfoto:hover{
     box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
     color: black;
@@ -611,9 +853,15 @@ input[type=password]{
     margin-inline: 4px;
 }
 .save{
+<<<<<<< HEAD
     width: 25%;
     margin:auto;
     margin-top: 5px;
+=======
+    margin:auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+>>>>>>> version-developer-1.23
     display: flex;
     justify-content: center;
     font-size: 15px;
@@ -630,10 +878,18 @@ input[type=password]{
 /*Listado visitante*/
 
 table{
+<<<<<<< HEAD
     width: 100%;
     max-width: 900px;
     margin: 20px auto;
     border-radius: 5px;
+=======
+    /*width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;*/
+    border-radius: 5px;
+    font-weight: 300;
+>>>>>>> version-developer-1.23
 }
 .lista{
     border: solid 2px rgb(107, 55, 125);
@@ -647,8 +903,13 @@ thead{
 }
 th,
 td{
+<<<<<<< HEAD
     width:auto;
     height: 20px;
+=======
+    /*width:auto;
+    height: 20px;*/
+>>>>>>> version-developer-1.23
     text-align: center;
     border: solid 1px rgb(107, 55, 125);
     padding: 5px;
@@ -776,6 +1037,10 @@ border-bottom-right-radius: 4px;
 .photo1 img{
     width: 180px;
     height:200px;
+<<<<<<< HEAD
+=======
+    object-fit: cover;
+>>>>>>> version-developer-1.23
     margin-top: 5px;
     margin:auto;
     background-color: lightblue;
@@ -797,6 +1062,21 @@ border-bottom-right-radius: 4px;
 .salida:hover{
     box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
 }
+<<<<<<< HEAD
+=======
+
+.marcar_entrada{
+    margin-top: 5px;
+    width: 360px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(108, 248, 115);
+}
+.marcar_entrada:hover{
+    box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
+}
+>>>>>>> version-developer-1.23
 /*------------*/
 
 
@@ -810,7 +1090,11 @@ border-bottom-right-radius: 4px;
 }
 .RE{
     float: left;
+<<<<<<< HEAD
     width: 50%;
+=======
+    /*width: 50%;*/
+>>>>>>> version-developer-1.23
     margin:auto;
     display: flex;
     justify-content: center;
@@ -827,7 +1111,11 @@ border-bottom-right-radius: 4px;
 }
 .CL{
     float: left;
+<<<<<<< HEAD
     width: 45%;
+=======
+    /*width: 45%;*/
+>>>>>>> version-developer-1.23
     margin:5px auto ;
     margin-inline: 2px;
     display: none;
@@ -859,6 +1147,7 @@ legend{
 }
 
 /*Estilos de la pagina de ingreso*/
+<<<<<<< HEAD
 
 @media screen and (max-width:814px ) {
     .container-login1{
@@ -937,6 +1226,8 @@ legend{
     }
 	
 }
+=======
+>>>>>>> version-developer-1.23
 #hora{
     width: 100px;
     font-family: Helvetica;
@@ -990,7 +1281,11 @@ legend{
     height: 33px;
     border-radius: 4px 20px 4px 22px ;
     float: right;
+<<<<<<< HEAD
     margin-right: 50px;
+=======
+    /*margin-right: 50px;*/
+>>>>>>> version-developer-1.23
 }
 .busca{
     width: 200px;
@@ -1203,3 +1498,89 @@ legend{
 .salida:hover{
     box-shadow: 0px 0px 8px 0px rgb(52, 0, 95);
 }
+<<<<<<< HEAD
+=======
+
+.thumbnail {
+    position: relative; 
+    z-index: 0; 
+}
+.thumbnail:hover{ 
+    background-color: transparent; 
+    z-index: 50; 
+}
+.thumbnail span{ /* Estilos para la imagen agrandada */
+    position: absolute;
+    background-color: #ffffff;
+    padding: 5px;
+    left: -100px;
+    border: 5px double gray;
+    visibility: hidden;
+    color: #ffffff;
+    text-decoration: none;
+}
+.thumbnail span img{ 
+    border-width: 0; 
+    padding: 2px; 
+}
+.thumbnail:hover span{ 
+    visibility: visible; 
+    top: -140px; 
+    left: 10px;
+}
+.tasks-list-item {
+    line-height: auto;
+    cursor: pointer;
+}
+.tasks-list-cb:checked ~ .tasks-list-mark::before {
+    display: block;
+}
+.tasks-list-item {
+    display: list-item;
+    line-height: auto;
+    padding: 12px 15px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.tasks-list-cb:checked ~ .tasks-list-mark {
+    border-color: rgb(107, 55, 125);
+}
+.tasks-list-mark {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c4cbd2;
+        border-top-color: rgb(196, 203, 210);
+        border-right-color: rgb(196, 203, 210);
+        border-bottom-color: rgb(196, 203, 210);
+        border-left-color: rgb(196, 203, 210);
+    border-radius: 4px;
+}
+.tasks-list-mark::before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -5px 0 0 -6px;
+    height: 8px;
+    width: 12px;
+    border: solid rgb(107, 55, 125);
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+    border-width: 0 0 4px 4px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+>>>>>>> version-developer-1.23

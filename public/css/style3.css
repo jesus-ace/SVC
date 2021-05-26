@@ -40,11 +40,19 @@ button{
 /*#ocultar.active{
     display: block;
 }*/
+<<<<<<< HEAD
 .contenedor{
     width: 100%;
     height: 1000px;
     display: flex;
     width: auto;
+=======
+.wrapper{
+    /*width: 100%;
+    /*height: 1000px;*/
+    display: flex;
+    /*width: auto;*/
+>>>>>>> version-developer-1.23
 }
 .side-bar{
     background: rgb(110, 51, 129);
@@ -60,14 +68,29 @@ button{
     background-size: cover;
 }
 .side-bar.active{
+<<<<<<< HEAD
     animation: abrirlateral .5s ease .0s forwards; 
     display: block;
     float: right;
+=======
+    /*animation: abrirlateral .5s ease .0s forwards; */
+    display: block;
+    position: absolute;
+    right: 1px;
+    bottom: 0;
+    top: 108px;
+    z-index: 1;
+    /*float: right;*/
+>>>>>>> version-developer-1.23
 }
 .bar-profile img{
     margin-top: 10px;
     width: 80px;
     height: 80px;
+<<<<<<< HEAD
+=======
+    object-fit: cover;
+>>>>>>> version-developer-1.23
     border-radius: 20px 5px 20px 5px; 
     border: 1px solid black;
 }
@@ -76,6 +99,10 @@ button{
     text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> version-developer-1.23
 .modulor,
 .moduloe,
 .moduloc,
@@ -225,6 +252,7 @@ button{
 		opacity: 1;
 	}
 }
+<<<<<<< HEAD
 .statistics{
     width: 1660px;
 
@@ -232,14 +260,20 @@ button{
 .statistics.active{
     width: auto;
 }
+=======
+
+>>>>>>> version-developer-1.23
 .by-areas1,
 .by-areas2,
 .by-areas3{
     width: 280px;
     height: 100px;
     padding: 5px;
+<<<<<<< HEAD
     margin: 10px auto;
     margin-left: 25px;
+=======
+>>>>>>> version-developer-1.23
     border-radius: 10px;
 }
 .by-areas1{
@@ -255,12 +289,21 @@ button{
     background: rgba( 51, 224, 255 , 0.329);
 }
 .fieldset{
+<<<<<<< HEAD
     width: auto;
     height: auto;
     margin: 10px 20px;
     border: solid 1px  rgb(110, 51, 129);
     border-radius: 5px;
     padding: 10px;
+=======
+    /*width: auto;
+    height: auto;
+    margin: 10px 20px;*/
+    border: solid 1px  rgb(110, 51, 129);
+    border-radius: 5px;
+    /*padding: 10px;*/
+>>>>>>> version-developer-1.23
 }
 .legend{
     margin-left: 5px;
@@ -271,9 +314,13 @@ button{
 /*.dashboard.active{
     overflow-y: scroll;
 }*/
+<<<<<<< HEAD
 .dashboard{
     display: block;
 }
+=======
+
+>>>>>>> version-developer-1.23
 
 .dashboard.active::-webkit-scrollbar{
     width: 10px;
@@ -282,6 +329,7 @@ button{
     border-radius: 5px;
     background: rgba(0,0,0,.1);
 }
+<<<<<<< HEAD
 .graphics{
     width: auto;
     height: auto;
@@ -294,18 +342,29 @@ button{
     border-radius: 5px;
     padding: 10px;
 }
+=======
+
+>>>>>>> version-developer-1.23
 .fieldsetG.active{
     height: auto;
 }
 .graphic{
     width: 240px;
 }
+<<<<<<< HEAD
 .by-area {
+=======
+/*.by-area {
+>>>>>>> version-developer-1.23
     float: left;
     width: 520px;
     height: auto;
     margin-left: 20px;
+<<<<<<< HEAD
 }
+=======
+}*/
+>>>>>>> version-developer-1.23
 
 .image1,
 .image2,
@@ -335,12 +394,20 @@ button{
 .photo-profile img{
     width: 200px;
     height:200px;
+<<<<<<< HEAD
+=======
+    object-fit: cover;
+>>>>>>> version-developer-1.23
     border-radius: 60px 5px 60px 5px; 
     position: relative;
     top: -95px;
     left: 40px;
     border: solid 1px #fff;
     text-align: center;
+<<<<<<< HEAD
+=======
+    display: block;
+>>>>>>> version-developer-1.23
 }
 .name-lastname{
     width: 600px;
@@ -444,7 +511,11 @@ label{
     background: rgba(255, 255, 255, 0.308);
     transform: scaleX(1);
 }
+<<<<<<< HEAD
 .menu.hover{
+=======
+.menu.active{
+>>>>>>> version-developer-1.23
     width: 38px;
     height: 35px;
     border-radius: 50%;
@@ -629,6 +700,10 @@ font-size: 24px;
 .photo-us img{
     width: 110px;
     height: 110px;
+<<<<<<< HEAD
+=======
+    object-fit: cover;
+>>>>>>> version-developer-1.23
     border-radius: 25px 5px 25px 5px;
     margin: 10px 0 0 10px;
 }
@@ -677,11 +752,19 @@ font-size: 24px;
 .Xarea.active{
     display: block;
 }
+<<<<<<< HEAD
 canvas{
     width: 320px;
     height: 240px;
     margin-left: 22px;
 }
+=======
+/*canvas{
+    width: 320px;
+    height: 240px;
+    margin-left: 22px;
+}*/
+>>>>>>> version-developer-1.23
 .Editar-usuario.active{
     display: none;
 }
@@ -698,11 +781,14 @@ canvas{
 	text-align: center;
 }
 
+<<<<<<< HEAD
 .video_container {
 	width: 100%;
 	padding: 25px;
 }
 
+=======
+>>>>>>> version-developer-1.23
 .none {
 	display: none;
 }
@@ -727,4 +813,43 @@ canvas{
 }
 .form-check-input{
     display: none;
+<<<<<<< HEAD
+=======
+}
+
+/*cfsfsfs*/
+.more-info-exit {
+    width: 100%;
+    max-width: 400px;
+    height: 140px;
+    margin-top: -50px;
+    margin-left:10px; 
+    background-color: #f78682;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display:none; 
+    transition: all .5s;
+    font-size: 15px;
+  }
+
+.more-info-entry{
+    width: 100%;
+    max-width: 400px;
+    height: 140px;
+    margin-top: -50px;
+    margin-left:12.5px; 
+    background-color: #82d894;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display:none; 
+    transition: all .5s;
+    font-size: 15px;
+}
+  /* Visible texto */
+figure:hover > figcaption {
+    padding-top: 40px;
+    padding-left: 45px;
+    display:block;
+    transition: all .5s;
+>>>>>>> version-developer-1.23
 }

@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\visitante;
 use App\departamentos;
+<<<<<<< HEAD
 
+=======
+use Carbon\Carbon;
+>>>>>>> version-developer-1.23
 
 class HomeController extends Controller
 {
@@ -25,6 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $entrada['entry']= visitante::JOIN("carnet_ingresos", "carnet_ingresos.car_id", "=", "visitantes.vi_car_id")
                                     ->JOIN("asistencias", "carnet_ingresos.car_id", "=", "asistencias.asi_car_id")
                                     ->SELECT("vi_nombre", "car_id", "asi_entrada")
@@ -32,6 +37,31 @@ class HomeController extends Controller
 
         //$departamento = departamentos:: SELECT("dep_nombre");                          
         return view('dashboard',$entrada);
+=======
+        $fecha_a = new Carbon; 
+        $actual= $fecha_a->toDateString();
+
+        
+        $entrada['entry']= visitante::JOIN("carnet_ingresos", "carnet_ingresos.car_id", "=", "visitantes.vi_car_id")
+                                    ->JOIN("asistencias", "carnet_ingresos.car_id", "=", "asistencias.asi_car_id")
+                                    ->JOIN("departamentos", "departamentos.dep_id", "=", "asistencias.asi_dep_id")
+                                    ->SELECT("vi_nombre", "vi_apellido", "vi_photo", "car_id", "asi_entrada", "asi_salida", "dep_nombre", "vi_responsable")
+                                    ->WhereNull('asi_salida')
+                                    ->Where('asi_fecha_entrada', '=', $actual)
+                                    ->orderBy('asi_entrada', 'desc')
+                                    ->paginate(3);
+
+        $salida['exit']= visitante::JOIN("carnet_ingresos", "carnet_ingresos.car_id", "=", "visitantes.vi_car_id")
+                                    ->JOIN("asistencias", "carnet_ingresos.car_id", "=", "asistencias.asi_car_id")
+                                    ->JOIN("departamentos", "departamentos.dep_id", "=", "asistencias.asi_dep_id")
+                                    ->SELECT("vi_nombre", "vi_apellido", "vi_photo", "car_id", "asi_entrada", "asi_salida", "dep_nombre", "vi_responsable")
+                                    ->Where('asi_fecha_salida', '=', $actual)
+                                    ->orderBy('asi_salida', 'desc')
+                                    ->paginate(3);
+
+        //$departamento = departamentos:: SELECT("dep_nombre");                          
+        return view('dashboard',$entrada, $salida);
+>>>>>>> version-developer-1.23
     }
 
 }

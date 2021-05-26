@@ -38,6 +38,7 @@ class usuarios extends Authenticatable
     }
 
     public function rol(){
+<<<<<<< HEAD
         return $this->hasMany('App\rol');
     }
     
@@ -46,5 +47,9 @@ class usuarios extends Authenticatable
         return $this->hasMany('App\auditoria');
     }
 
+=======
+        return $this->belongsTo('App\rol');
+    }
+>>>>>>> version-developer-1.23
 
 }

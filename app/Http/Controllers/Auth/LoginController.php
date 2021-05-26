@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 use Auth;
 
+<<<<<<< HEAD
+=======
+
+use App\auditoria;
+use Carbon\Carbon;
+
+>>>>>>> version-developer-1.23
 class LoginController extends Controller
 {
     /*
@@ -30,7 +37,11 @@ class LoginController extends Controller
      */
     
 
+<<<<<<< HEAD
         protected $redirectTo = '/welcome';
+=======
+        protected $redirectTo = 'welcome';
+>>>>>>> version-developer-1.23
     /**
      * Create a new controller instance.
      *
@@ -41,9 +52,56 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+<<<<<<< HEAD
     protected function validateLogin(Request $request)
     {
         Auth::attempt(['us_user' => $request->us_user, 'us_password' => $request->us_password]);
     }
 
+=======
+    public function getBrowser($user_agent){
+       
+        if(strpos($user_agent,'MSIE') !== FALSE)
+            return'Internet explorer';
+        elseif(strpos($user_agent,'Edge') !== FALSE) //Microsoft Edge
+            return'Microsoft Edge';
+        elseif(strpos($user_agent,'Trident') !== FALSE) //IE 11
+            return'Internet explorer';
+        elseif(strpos($user_agent,'Opera Mini') !== FALSE)
+            return "Opera Mini";
+        elseif(strpos($user_agent,'Opera') || strpos($user_agent,'OPR') !== FALSE)
+            return "Opera";
+        elseif(strpos($user_agent,'Firefox') !== FALSE)
+            return'Mozilla Firefox';
+        elseif(strpos($user_agent,'Chrome') !== FALSE)
+            return'Google Chrome';
+        elseif(strpos($user_agent,'Safari') !== FALSE)
+            return "Safari";
+        else
+            return'No hemos podido detectar su navegador';
+    }
+
+    protected function validateLogin(Request $request)
+    {
+        Auth::attempt(['us_user' => $request->us_user, 'us_password' => $request->us_password]);
+
+        $fecha_a = new Carbon; 
+        
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+        $navegador = $this->getBrowser($user_agent);
+
+        $aud = new auditoria;
+        $audId = 'au_id';
+        $aud->au_tipo = strtoupper('Ingreso al Sistema');
+        $aud->au_so = PHP_OS.'-'.php_uname();
+        $aud->au_navegador = $navegador;
+        $aud->au_fecha = $fecha_a->toDateTimeString();
+        $aud->au_maquina = gethostname();
+        $aud->au_ip_maquina = $_SERVER['REMOTE_ADDR'];
+        $aud->au_us_id = auth()->user()->us_id;
+        $aud->save();
+    }
+
+
+>>>>>>> version-developer-1.23
 }

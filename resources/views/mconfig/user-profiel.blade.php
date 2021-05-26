@@ -11,7 +11,11 @@
         <h2>Sistema de control de entrada y salida de visitantes</h2>
     </div>
     <div class="photo-profile">
+<<<<<<< HEAD
         <img src="/imagenes/{{ Auth::user()->us_photo }}" alt="Foto de perfil">
+=======
+        <img src="imagenes/{{ Auth::user()->us_photo }}" alt="Foto de perfil">
+>>>>>>> version-developer-1.23
     </div>
     <div class="name-lastname">
         <h4 class="nombre">{{ Auth::user()->us_nombre }} {{ Auth::user()->us_apellido }}</h4>
@@ -49,6 +53,7 @@
         </form>
     </div>
 </div>
+<<<<<<< HEAD
 <script >
     btnabrir = document.getElementById('abrir'),
     brrLateral = document.getElementById('br-lateral'),
@@ -66,5 +71,7 @@
         upbars.classList.remove('active');
     }
 </script>
+=======
+>>>>>>> version-developer-1.23
 <script src="/js/script-u.js"></script>
 @endsection
