@@ -16,10 +16,7 @@ class CreateCarnetIngresosTable extends Migration
         Schema::create('carnet_ingresos', function (Blueprint $table) {
             $table->increments('car_id');
             $table->string('car_descripcion');
-<<<<<<< HEAD
-=======
             $table->boolean('car_status');
->>>>>>> version-developer-1.23
             $table->timestamps();
         });
     }

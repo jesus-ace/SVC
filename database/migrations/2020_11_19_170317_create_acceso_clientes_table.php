@@ -17,17 +17,10 @@ class CreateAccesoClientesTable extends Migration
             $table->increments('acl_id');
             $table->string('acl_ip');
             $table->string('acl_descripcion');
-<<<<<<< HEAD
             $table->integer('acl_us_id')->unsigned();
             $table->integer('acl_estatus');
             $table->string('acl_pantalla');
             $table->foreign('acl_us_id')->references('us_id')->on('usuarios')->onDelete('cascade');
-=======
-            $table->integer('acl_us_id');
-            $table->integer('acl_estatus');
-            $table->string('acl_pantalla');
-            $table->foreign('acl_us_id')->references('us_id')->on('usuarios');
->>>>>>> version-developer-1.23
             $table->timestamps();
         });
     }
