@@ -22,11 +22,11 @@ class CreateVisitantesTable extends Migration
             $table->string('vi_domicilio');
             $table->integer('vi_car_id');
             $table->string('vi_responsable');
-            $table->integer('vi_mt_id');
-            $table->integer('vi_eq_id', null);
+            $table->integer('vi_mt_id')->unsigned();
+            $table->integer('vi_eq_id', null)->unsigned();
             $table->string('vi_photo', null);
-            $table->foreign('vi_mt_id')->references('mt_id')->on('motivos');
-            $table->foreign('vi_eq_id')->references('eq_id')->on('equipos');
+            $table->foreign('vi_mt_id')->references('mt_id')->on('motivos')->onDelete('cascade');
+            $table->foreign('vi_eq_id')->references('eq_id')->on('equipos')->onDelete('cascade');
             $table->timestamps();
         });
     }

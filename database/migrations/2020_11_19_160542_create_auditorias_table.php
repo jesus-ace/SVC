@@ -18,9 +18,9 @@ class CreateAuditoriasTable extends Migration
             $table->string('au_maquina');
             $table->string('au_so');
             $table->string('au_navegador');
-            $table->integer('au_us_id');
+            $table->integer('au_us_id')->unsigned();
             $table->date('au_fecha');
-            $table->foreign('au_us_id')->references('us_id')->on('usuarios');
+            $table->foreign('au_us_id')->references('us_id')->on('usuarios')->onDelete('cascade');
             $table->timestamps();
         });
     }

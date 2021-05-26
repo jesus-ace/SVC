@@ -23,10 +23,10 @@ class CreateUsuariosTable extends Migration
             $table->string('us_password');
             $table->string('us_estatus')->nullable();
             $table->string('us_photo')->nullable();
-            $table->integer('us_rol_id')->nullable();
-            $table->integer('us_tu_id')->nullable();
-            $table->foreign('us_rol_id')->references('rol_id')->on('rols');
-            $table->foreign('us_tu_id')->references('tu_id')->on('tipo_usuarios');
+            $table->integer('us_rol_id')->unsigned();
+            $table->integer('us_tu_id')->unsigned();
+            $table->foreign('us_rol_id')->references('rol_id')->on('rols')->onDelete('cascade');
+            $table->foreign('us_tu_id')->references('tu_id')->on('tipo_usuarios')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

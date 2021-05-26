@@ -15,12 +15,12 @@ class CreateAsistenciasTable extends Migration
     {
         Schema::create('asistencias', function (Blueprint $table) {
             $table->increments('asi_id');
-            $table->integer('asi_dep_id');
-            $table->integer('asi_car_id');
+            $table->integer('asi_dep_id')->unsigned();
+            $table->integer('asi_car_id')->unsigned();
             $table->time('asi_entrada');
             $table->time('asi_salida');
-            $table->foreign('asi_dep_id')->references('dep_id')->on('departamentos');
-            $table->foreign('asi_car_id')->references('car_id')->on('carnet_ingresos');
+            $table->foreign('asi_dep_id')->references('dep_id')->on('departamentos')->onDelete('cascade');
+            $table->foreign('asi_car_id')->references('car_id')->on('carnet_ingresos')->onDelete('cascade');
             $table->timestamps();
         });
     }
