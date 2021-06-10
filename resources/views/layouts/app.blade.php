@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-<<<<<<< HEAD
-=======
-
->>>>>>> version-developer-1.23
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
