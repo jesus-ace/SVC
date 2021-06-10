@@ -8,13 +8,10 @@ use Illuminate\Http\Request;
 
 use Auth;
 
-<<<<<<< HEAD
-=======
 
 use App\auditoria;
 use Carbon\Carbon;
 
->>>>>>> version-developer-1.23
 class LoginController extends Controller
 {
     /*
@@ -37,11 +34,7 @@ class LoginController extends Controller
      */
     
 
-<<<<<<< HEAD
-        protected $redirectTo = '/welcome';
-=======
         protected $redirectTo = 'welcome';
->>>>>>> version-developer-1.23
     /**
      * Create a new controller instance.
      *
@@ -52,13 +45,6 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-<<<<<<< HEAD
-    protected function validateLogin(Request $request)
-    {
-        Auth::attempt(['us_user' => $request->us_user, 'us_password' => $request->us_password]);
-    }
-
-=======
     public function getBrowser($user_agent){
        
         if(strpos($user_agent,'MSIE') !== FALSE)
@@ -103,5 +89,4 @@ class LoginController extends Controller
     }
 
 
->>>>>>> version-developer-1.23
 }

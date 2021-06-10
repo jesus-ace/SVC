@@ -5,46 +5,12 @@ namespace App\Http\Controllers;
 use App\equipo;
 use App\visitante;
 use App\asistencia;
-<<<<<<< HEAD
-=======
 use App\auditoria;
->>>>>>> version-developer-1.23
 use App\departamentos;
 use App\motivo;
 use App\carnet_ingreso;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-
-class VisitanteController extends Controller
-{
-    public function index(Request $request){
-        //$datos['visitor'] = visitante::paginate(8);
-        $busqueda = $request->get('buscar');
-        $datos['visitor']= visitante::where('vi_nombre', 'like', '%'.$busqueda.'%')
-                                    ->orWhere('vi_cedula', '=', $busqueda)
-                                    ->paginate(8);
-
-        return view('visitor.list-visitor', $datos);
-    }
-
-    public function create()
-    {   
-        return view('visitor.new-visitor');
-    }
-
-    public function selects()
-    {   
-        $datos['departments'] = departamentos::paginate();
-        $datos['reasons'] = motivo::paginate();
-        $datos['ingreso'] = carnet_ingreso::orderBy('carnet_ingresos.car_id', 'asc')->paginate();
-        return view('visitor.registro_visitantes', $datos);
-    }
-
-    public function store(Request $request)
-    {
-        //return $request->all();
-=======
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
@@ -107,7 +73,6 @@ class VisitanteController extends Controller{
         /*dd($request->all());*/
 
         $fecha_a = new Carbon;
->>>>>>> version-developer-1.23
 
         $data= request()->validate([
             'vi_nombre'      => 'required',
@@ -128,16 +93,6 @@ class VisitanteController extends Controller{
 
             'asi_dep_id'     => 'Max:255',
             'asi_car_id'     => 'Max:255',
-<<<<<<< HEAD
-            'asi_entrada'    => 'Required',
-        ]);
-        
-       
-        $descripcion = "este usuario no posee equipo que registrar";
-        if($data['eq_nombre'] == null){
-            $equipament = equipo::create([
-                'eq_nombre'      =>$data['eq_nombre'],
-=======
             /*'asi_entrada'    => 'Required',*/
         ]);
         
@@ -147,7 +102,6 @@ class VisitanteController extends Controller{
         if($data['eq_nombre'] == null){
             $equipament = equipo::create([
                 'eq_nombre'      =>$nombre_eq,
->>>>>>> version-developer-1.23
                 'eq_descripcion' =>$descripcion,
             ]);
         }else{
@@ -156,30 +110,6 @@ class VisitanteController extends Controller{
                 'eq_descripcion' =>$data['eq_descripcion'],
             ]);
         }
-<<<<<<< HEAD
-        $namePhoto= $_POST['vi_cedula'];
-        $nombreImagenGuardada = "vis" . $namePhoto . ".png";//se le agregar nombrea la imagen
-        //$imagenCodificada = file_get_contents("php://input");
-        $imagenCodificadaLimpia = $_POST['base64'];
-        $base_to_php = explode(',', $imagenCodificadaLimpia);
-        $fotoo = base64_decode($base_to_php[1]);
-        $filepath = $_SERVER['DOCUMENT_ROOT'].'/imagenes/'. $nombreImagenGuardada;
-        //$imagenDecodificada = base64_decode($imagenCodificadaLimpia);//decodifica imagen
-        file_put_contents($filepath, $fotoo);
-
-        visitante::insert([
-            'vi_photo'      =>$nombreImagenGuardada,
-            'vi_nombre'     =>$data['vi_nombre'],
-            'vi_apellido'   =>$data['vi_apellido'],
-            'vi_cedula'     =>$data['vi_cedula'],
-            'vi_telefono'   =>$data['vi_telefono'],
-            'vi_domicilio'  =>$data['vi_domicilio'],
-            'vi_car_id'     =>$data['vi_car_id'],
-            'vi_responsable'=>$data['vi_responsable'],
-            'vi_mt_id'      =>$data['vi_mt_id'],
-            'vi_eq_id'      =>$equipament->eq_id,
-        ]);
-=======
 
         /* Codigo para guardar foto  */
         $namePhoto= $_POST['vi_cedula'];
@@ -203,22 +133,10 @@ class VisitanteController extends Controller{
         $visitor->vi_eq_id = $equipament->eq_id;
         $visitor->vi_photo = $nombreImagenGuardada;
         $visitor->save();
->>>>>>> version-developer-1.23
         
         asistencia::create([
             'asi_dep_id'  =>$data['asi_dep_id'],
             'asi_car_id'  =>$data['vi_car_id'],
-<<<<<<< HEAD
-            'asi_entrada' =>$data['asi_entrada'],
-        ]);
-        
-        return redirect('/list-visitor');
-    } 
-
-    /*foreach departamentos */
-
-
-=======
             'asi_entrada' =>$fecha_a->toTimeString(),
             'asi_fecha_entrada' =>$fecha_a->toDateString(),
         ]);
@@ -308,6 +226,5 @@ class VisitanteController extends Controller{
 
         return redirect('/list-visitor');
     }
->>>>>>> version-developer-1.23
 
 }

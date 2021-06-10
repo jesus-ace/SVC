@@ -1,18 +1,11 @@
-<<<<<<< HEAD
-.body{
-    background-image: url(/image/fondocopia.jpg);
-=======
 body{
     background: url(../fondocopia.jpg) no-repeat center center fixed;
->>>>>>> version-developer-1.23
     -webkit-background-size: cover; 
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
-<<<<<<< HEAD
-=======
 @media only screen and (max-width:900px){
     body{
         background: url(../fondo768x1024.png) no-repeat center center fixed;
@@ -37,4 +30,3 @@ body{
     border: solid 1px rgb(107, 55, 125);
     color: #ffff;
 }
->>>>>>> version-developer-1.23

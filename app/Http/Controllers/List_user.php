@@ -5,11 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\usuarios;
-<<<<<<< HEAD
-=======
 use App\auditoria;
 use Carbon\Carbon;
->>>>>>> version-developer-1.23
 
 class List_user extends Controller
 {
@@ -18,19 +15,11 @@ class List_user extends Controller
         $busqueda = $request->get('buscar');
         $datos['users']= usuarios::where('us_estatus', '=', 1 )
                                 ->where('us_user', 'like', '%'.$busqueda.'%')
-<<<<<<< HEAD
-=======
                                 //->orWhere('us_cedula', '=', $busqueda)
->>>>>>> version-developer-1.23
                                 ->paginate(8);
         return view('auth.list-vigilante', $datos);
     }
 
-<<<<<<< HEAD
-    public function edit($id)
-    {
-        $datos= usuarios::findOrFail($id);
-=======
     public function getBrowser($user_agent){
        
         if(strpos($user_agent,'MSIE') !== FALSE)
@@ -73,15 +62,12 @@ class List_user extends Controller
         $aud->au_us_id = auth()->user()->us_rol_id;
         $aud->save();
 
->>>>>>> version-developer-1.23
         return view('list-vigilante',compact('registros'));
     }
 
     public function update(Request $request, usuarios $usuario)
     {
         $usuario->update($request->all());
-<<<<<<< HEAD
-=======
 
         $fecha_a = new Carbon; 
         
@@ -99,7 +85,6 @@ class List_user extends Controller
         $aud->au_us_id = auth()->user()->us_rol_id;
         $aud->save();
 
->>>>>>> version-developer-1.23
         return redirect('/list-vigilante');
     }
 }

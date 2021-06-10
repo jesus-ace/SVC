@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\visitante;
 use App\departamentos;
-<<<<<<< HEAD
-
-=======
 use Carbon\Carbon;
->>>>>>> version-developer-1.23
 
 class HomeController extends Controller
 {
@@ -29,15 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        $entrada['entry']= visitante::JOIN("carnet_ingresos", "carnet_ingresos.car_id", "=", "visitantes.vi_car_id")
-                                    ->JOIN("asistencias", "carnet_ingresos.car_id", "=", "asistencias.asi_car_id")
-                                    ->SELECT("vi_nombre", "car_id", "asi_entrada")
-                                    ->orderBy('asistencias.created_at', 'asc')->paginate(3);
-
-        //$departamento = departamentos:: SELECT("dep_nombre");                          
-        return view('dashboard',$entrada);
-=======
         $fecha_a = new Carbon; 
         $actual= $fecha_a->toDateString();
 
@@ -61,7 +48,6 @@ class HomeController extends Controller
 
         //$departamento = departamentos:: SELECT("dep_nombre");                          
         return view('dashboard',$entrada, $salida);
->>>>>>> version-developer-1.23
     }
 
 }

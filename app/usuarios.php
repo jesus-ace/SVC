@@ -38,18 +38,7 @@ class usuarios extends Authenticatable
     }
 
     public function rol(){
-<<<<<<< HEAD
-        return $this->hasMany('App\rol');
-    }
-    
-    public function auditoria()
-    {
-        return $this->hasMany('App\auditoria');
-    }
-
-=======
         return $this->belongsTo('App\rol');
     }
->>>>>>> version-developer-1.23
 
 }
