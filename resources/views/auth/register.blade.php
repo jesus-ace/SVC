@@ -69,6 +69,7 @@
     </div>
   </div>
 </div>
-<script src="/js/validaciones.js"></script>
-<script src="/js/dashboard.js"></script>
+  @section('js')
+    <script src="/js/validaciones.js"></script>
+  @endsection
 @endsection

@@ -179,5 +179,10 @@
     document.getElementById('base64').value = image;
   }, false);
 </script>
-<script src="/js/validaciones.js"></script>
+
+  @section('js')
+    <script src="/js/validaciones.js"></script>
+  @endsection
+
+
 @endsection

@@ -158,6 +158,8 @@ $actual_h =  $fecha_b->toTimeString();
     </div>
   </div>
 </div>
-
+  @section('js')
+    <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  @endsection
 @endsection
 

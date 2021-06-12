@@ -1,12 +1,15 @@
 @extends('layouts.app')
 @section('content')
-<div class="row bg-login justify-content-center align-items-center h-100 mx-auto mt-5 px-0">
-  <div class="col-auto">
-    <div class="row px-5 mb-5 mt-5">
-      <div class="col-12">
-        <h3>Listado de Usuarios</h3>
-        <table class="col-12">
-          <div class="buscador">
+  @section('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+  @endsection
+  <div class="row bg-login justify-content-center align-items-center h-100 mx-auto mt-5 px-0">
+    <div class="col-auto">
+      <div class="row px-5 mb-5 mt-5">
+        <div class="col-12">
+          <h3>Listado de Usuarios</h3>
+          <table class="col-12" id="user-table">
+            <!--div class="buscador">
               <form>
                   <div class="input-group buscador">
                       <input type="search"  class="busca" name="buscar" id="buscar" placeholder="Ingrese User Name">
@@ -15,17 +18,18 @@
                       </span>
                   </div>
               </form>
-          </div>
-          <a class="btn regisV" id="btnRV"  href="{{route('register')}}" >USUARIOS<i class="fas fa-plus"></i></a>
-          <thead>
+            </div-->
+            <a class="btn regisV" id="btnRV"  href="{{route('register')}}" >USUARIOS<i class="fas fa-plus"></i></a>
+            <thead>
               <th>Nombre</th>
               <th>Apellido</th>
               <th>C&eacute;dula</th>
               <th>Correo</th>
               <th>User name</th>
+              <th>Rol</th>
               <th>Acciones</th>
-          </thead>
-          <tbody>
+            </thead>
+            <tbody>
               @foreach( $users as $usuario)
                   <tr>
                       <td>{{$usuario->us_nombre}}</td>
@@ -33,6 +37,7 @@
                       <td>{{$usuario->us_cedula}}</td>
                       <td>{{$usuario->us_correo}}</td>
                       <td>{{$usuario->us_user}}</td>
+                      <td>{{$usuario->rol_id}}</td>
                       <td>ver mas
                         <div class="modal fade" id="modal{{$usuario->us_id}}" aria-hidden="true">
                           <div class="modal-dialog">
@@ -113,17 +118,23 @@
                       </td>
                   </tr>   
               @endforeach
-          </tbody>
-      </table>
-      <div class="paginacion mt-2">
-        {!!$users->render()!!}
-      </div>
+            </tbody>
+          </table>
+          <!--div class="paginacion mt-2">
+            {!!$users->render()!!}
+          </div-->
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<script>
+  <script>
+    $(document).ready( function () {
+      $('#myTable').DataTable({
+        "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "All"]]
+      });
+    } );
+  </script>
+<!---script>
   function activar()
   {
     document.getElementById('cedula').disabled = false;
@@ -145,6 +156,8 @@
     document.getElementById('edit').classList.remove('active');
     document.getElementById('delete').classList.remove('active');
   }
-</script>
-<script src="/js/validaciones.js"></script>
+</script-->
+@section('js')
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  @endsection
 @endsection

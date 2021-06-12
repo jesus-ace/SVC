@@ -6,6 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class usuarios extends Authenticatable
 {
@@ -20,7 +22,14 @@ class usuarios extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'us_nombre', 'us_apellido', 'us_cedula', 'us_user', 'us_correo', 'us_password', 'us_estatus',
+        'us_nombre', 
+        'us_apellido', 
+        'us_cedula', 
+        'us_user', 
+        'us_correo', 
+        'us_password', 
+        'us_estatus',
+        'us_rol_id'
     ];
 
     /**
@@ -37,8 +46,10 @@ class usuarios extends Authenticatable
         return $this->us_password;
     }
 
-    public function rol(){
-        return $this->belongsTo('App\rol');
+    public function rols()
+    {
+        return $this->belongsTo(rol::class, 'us_rol_id', 'rol_id');
     }
+
 
 }

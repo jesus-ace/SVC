@@ -12,12 +12,10 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/chosen.css">
-    <link rel="stylesheet" href="css/chose.css">
-    <link rel="stylesheet" href="css/sweetalert.css">
-    <link rel="stylesheet" href="css/editor.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
+
+    @yield('css')
 
 
 
@@ -76,7 +74,7 @@
                     Listados<i class="fas fa-list"></i>
                     <ul class="ul">
                         @if(Auth:: user()->us_rol_id==1)
-                        <li><a href="{{ url('/list-vigilante') }}" id="list-vigilant" class="opc">Usuarios<i class="fas fa-user-shield"></i></a></li>
+                        <li><a href="{{ url('/ListUser') }}" id="list-vigilant" class="opc">Usuarios<i class="fas fa-user-shield"></i></a></li>
                         <li><a href="{{ url('/list-visitor') }}" id="list-visitors" class="opc">Visitantes<i class="fas fa-walking"></i></a></li>
                         @else
                         <li><a id="list-visitors" href="{{ url('/list-visitor') }}" class="opc">Visitantes<i class="fas fa-walking"></i></a></li>
@@ -113,9 +111,7 @@
     </div>
     <!-- Scripts -->
     <script src="js/dashboard.js"></script>
-    <script src="js/validaciones.js"></script>
-    <script src="js/sweetalert.js"></script>
-    <script src="js/chosen.jquery.js"></script>
+    @yield('js')
     <!--script src="{{ asset('js/app.js') }}"></script-->
 </body>
 

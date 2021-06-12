@@ -52,9 +52,9 @@ Route::post('register', 'Auth\RegisterController@register', function () {
     
 })->middleware('rolAdmin');
 
-Route::get('/list-vigilante', 'List_user@index')->middleware('auth', 'rolAdmin', 'estatus');
+Route::get('/ListUser', 'List_user@index')->middleware('auth', 'rolAdmin', 'estatus');
 
-Route::patch('/list-vigilante{usuario}/update', 'List_user@update')->name('list_vigilante.update');
+Route::patch('/ListUser{usuario}/update', 'List_user@update')->name('list_vigilante.update');
 
 
 /*  
