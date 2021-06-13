@@ -30,109 +30,31 @@
               <th>Acciones</th>
             </thead>
             <tbody>
-              @foreach( $users as $usuario)
-                  <tr>
-                      <td>{{$usuario->us_nombre}}</td>
-                      <td>{{$usuario->us_apellido}}</td>
-                      <td>{{$usuario->us_cedula}}</td>
-                      <td>{{$usuario->us_correo}}</td>
-                      <td>{{$usuario->us_user}}</td>
-                      <td>{{$usuario->rol_id}}</td>
-                      <td>ver mas
-                        <div class="modal fade" id="modal{{$usuario->us_id}}" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" id="esc"  class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              </div>
-                              <div class="modal-body">
-                                <h3>{{$usuario->us_nombre}} {{$usuario->us_apellido}}</h3>
-                                <div class="acomodar">
-                                  <div class="contenido">
-                                    <!--Formulario par editar un usuario -->
-                                    <form id='formeditar' class="Editar-usuario" method="POST" action="{{ route('list_vigilante.update', $usuario) }}">
-                                      {{ csrf_field() }}
-                                      {{method_field('PATCH')}}
-                                      <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text">C&eacute;dula:</span>
-                                        </div>
-                                        <input type="text" name="us_cedula" class="form-control" id="cedula" value="{{$usuario->us_cedula}}" onkeypress="return solonumeros(event)" maxlength="9" >
-                                      </div>
-                                      <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text">User name</span>
-                                        </div>
-                                        <input type="text" name="us_user" id="user-n" class="form-control" value="{{$usuario->us_user}}" >
-                                      </div>  
-                                      <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text">correo</span>
-                                        </div>
-                                        <input type="text" name="us_correo" class="form-control" id="correo" value="{{$usuario->us_correo}}" >
-                                      </div>
-                                      <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text">F.Registro</span>
-                                        </div>
-                                        <input type="text" name="fr" id="Fr" class="form-control" value="{{$usuario->created_at}}" disabled='disabled'>
-                                      </div>
-                                      <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text">U. Modificaci&oacute;n</span>
-                                        </div>
-                                        <input type="text" name="updated_at" id="Fr" class="form-control" value="{{$usuario->updated_at}}" disabled='disabled'>
-                                      </div>
-                                      <button type="submit" class="btn regisE" id="edit{{$usuario->us_id}}">Guardar<i class="fas fa-save"></i></button>
-                                    </form>
-                                    <!--Formulario para eliminar usuario (cambia la columna us_estatus a 0 y con condiciones en la rutas no le permitira el acceso a las vistas)-->
-                                    <form method="POST" action="{{ route('list_vigilante.update', $usuario) }}" class="Eliminar-usuario" id="formeliminar{{$usuario->us_id}}">
-                                      {{ csrf_field() }}
-                                      {{method_field('PATCH')}}
-                                      <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text">¿Eliminar?</span>
-                                        </div>
-                                        <select name="us_estatus" id="us_estatus" class="form-control select custom-select">
-                                          <option value="{{$usuario->us_estatus}}">No</option>
-                                          <option value="0">Si</option>
-                                        </select>
-                                      </div>
-                                      <button type="submit" style="display: block;" class="btn regisE" id="btnRA">Aceptar<i class="fas fa-save"></i></button>
-                                    </form>
-                                  </div>
-                                <div class="box-photo1">
-                                    <img src="imagenes/{{$usuario->us_photo }}" alt="Foto de perfil">
-                                      <button type="button" class="Editar"  id="edit" data-toggle="modal" data-target="#edit{{$usuario->us_id}}">Editar<i class="far fa-edit"></i></button>
-                                      <button type="button" class="Eliminar" id="delete" data-toggle="modal" data-target="#formeliminar{{$usuario->us_id}}">Eliminar<i class="fas fa-user-slash"></i></button>
-                                      <button type="button" class="btn regisNV" id="no-eliminar" >No Eliminar<i class="fas fa-ban"></i></button>
-                                      <button class="btn regisNE" id="btnRNE" onclick="desactivar();" >No Editar<i class="fas fa-ban"></i></button>  
-                                </div>
-                                <button class="btn regisNE" id="esc" >Cancelar<i class="fas fa-ban"></i></button>
-                              </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button type="button" data-toggle="modal" data-target="#modal{{$usuario->us_id}}" class="far fa-eye"></button>
-                      </td>
-                  </tr>   
-              @endforeach
+              <tr>
+                
+              </tr>   
             </tbody>
           </table>
-          <!--div class="paginacion mt-2">
-            {!!$users->render()!!}
-          </div-->
         </div>
       </div>
     </div>
   </div>
   <script>
     $(document).ready( function () {
-      $('#myTable').DataTable({
-        "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "All"]]
+      $('#user-table').DataTable({
+        'serverSide':true,
+        "ajax": "{{ url('api/list_user')}}",
+        "columns":[
+          {data:"us_id"},
+          {data:"us_nombre"},
+          {data:"us_apellido"},
+          {data:"us_cedula"},
+          {data:"us_user"},
+          {data:"us_correo"},
+          {data:"us_id_rol"},
+        ]
       });
-    } );
+    });
   </script>
 <!---script>
   function activar()
@@ -157,7 +79,5 @@
     document.getElementById('delete').classList.remove('active');
   }
 </script-->
-@section('js')
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-  @endsection
 @endsection

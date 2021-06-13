@@ -12,19 +12,8 @@ use Carbon\Carbon;
 class List_user extends Controller
 {
     public function index(Request $request){
-        //$datos['user'] = usuarios::paginate(10);
-        /*$busqueda = $request->get('buscar');*/
-        /*$datos['users']= usuarios::where('us_estatus', '=', 1 )
-                                ->where('us_user', 'like', '%'.$busqueda.'%')
-                                //->orWhere('us_cedula', '=', $busqueda)
-                                ->paginate(8);
-        return view('auth.list-vigilante', $datos);*/
-        return view('auth.ListUser', [
-                        'users' => usuarios::with(['rols'])
-                                ->orderBy('us_id', 'desc')
-                                ->paginate()
-                                         
-        ]);
+        return usuarios::with(['rols'])
+                        ->orderBy('us_id', 'desc')->get()->toJson();                 
     }
 
     public function getBrowser($user_agent){
