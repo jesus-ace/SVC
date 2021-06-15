@@ -11,4 +11,8 @@ class motivo extends Model
     protected $fillable = [
         'mt_motivo', 'mt_otros',
     ];
+
+    public function visitantes(){
+        return $this->hasOne(Visitante::class, 'vi_mt_id');
+    }
 }

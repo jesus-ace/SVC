@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\equipo;
-use App\visitante;
+use App\Equipo;
+use App\Visitante;
 use App\asistencia;
 use App\auditoria;
 use App\departamentos;
@@ -18,12 +18,20 @@ use Session;
 use DB;
 
 class VisitanteController extends Controller{
+
     public function index(Request $request){
+        return Visitante::with([
+            'equipos',
+            'motivos',
+            ])->orderBy('vi_id', 'desc')->get();                 
+    }
+
+    /*public function index(Request $request){
     
         //$datos['visitor'] = visitante::paginate(8);
 
         $busqueda = $request->get('buscar');
-        $datos['visitor']= visitante::JOIN("carnet_ingresos", "carnet_ingresos.car_id", "=", "visitantes.vi_car_id")
+        $datos['visitor']= Visitante::JOIN("carnet_ingresos", "carnet_ingresos.car_id", "=", "visitantes.vi_car_id")
                                     ->JOIN("asistencias", "asistencias.asi_car_id", "=", "visitantes.vi_car_id")
                                     ->JOIN("departamentos", "asistencias.asi_dep_id", "=", "departamentos.dep_id")
                                     ->where('vi_nombre', 'like', '%'.$busqueda.'%')
@@ -33,7 +41,7 @@ class VisitanteController extends Controller{
         $datos['card'] = carnet_ingreso::orderBy('carnet_ingresos.car_id', 'asc')->paginate(100);
         $datos['departments'] = departamentos::paginate(100);
         return view('visitor.list-visitor', $datos);
-    }
+    }*/
     public function create(){   
         return view('visitor.new-visitor');
     }

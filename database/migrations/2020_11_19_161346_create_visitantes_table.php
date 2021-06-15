@@ -20,7 +20,6 @@ class CreateVisitantesTable extends Migration
             $table->integer('vi_cedula')->unique();
             $table->string('vi_telefono');
             $table->string('vi_domicilio');
-            $table->integer('vi_car_id');
             $table->string('vi_responsable');
             $table->integer('vi_mt_id')->unsigned();
             $table->integer('vi_eq_id', null)->unsigned();

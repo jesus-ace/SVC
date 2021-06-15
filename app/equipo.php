@@ -11,10 +11,11 @@ class equipo extends Model
     protected $primaryKey = 'eq_id';
 
     protected $fillable = [
-        'eq_nombre', 'eq_descripcion', 'eq_id',
+        'eq_nombre', 
+        'eq_descripcion',
     ];
 
-    public function equipament(){
-        return $this->hasOne(Visitante::class);
+    public function visitantes(){
+        return $this->hasOne(Visitante::class, 'vi_eq_id');
     }
 }
