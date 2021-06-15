@@ -6,14 +6,18 @@ $actual = $fecha_b->toDateString();
 $actual_h =  $fecha_b->toTimeString();
 
 ?>
+
 @extends('layouts.app')
 @section('content')
+  @section('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+  @endsection
 <div class="row bg-login justify-content-center align-items-center h-100 mx-auto mt-5 px-0">
   <div class="col-auto">
     <div class="row px-5 mb-5 mt-5">
       <div class="col-12">
         <h3>Listado de Visitante</h3>
-        <table class="col-12 col-md-12">
+        <table class="col-12 col-md-12" id="visitor-table">
           <div class="buscador">
               <form>
                   <div class="input-group buscador">
@@ -158,8 +162,10 @@ $actual_h =  $fecha_b->toTimeString();
     </div>
   </div>
 </div>
-  @section('js')
-    <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-  @endsection
+
+<!--script src="js/datatable/datatables.min.js"></script>
+<-script>
+  $('#visitor-table').DataTable();
+</script-->
 @endsection
 

@@ -21,13 +21,14 @@
             </div-->
             <a class="btn regisV" id="btnRV"  href="{{route('register')}}" >USUARIOS<i class="fas fa-plus"></i></a>
             <thead>
+              <th>id</th>
               <th>Nombre</th>
               <th>Apellido</th>
               <th>C&eacute;dula</th>
               <th>Correo</th>
               <th>User name</th>
               <th>Rol</th>
-              <th>Acciones</th>
+              <!--th>Acciones</th-->
             </thead>
             <tbody>
               <tr>
@@ -43,7 +44,8 @@
     $(document).ready( function () {
       $('#user-table').DataTable({
         'serverSide':true,
-        "ajax": "{{ url('api/list_user')}}",
+        "axios":"{{ url('api/list_user')}} ",
+        "dataType": "json",
         "columns":[
           {data:"us_id"},
           {data:"us_nombre"},
@@ -79,5 +81,5 @@
     document.getElementById('delete').classList.remove('active');
   }
 </script-->
-    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="js/datatable/datatables.min.js"></script>
 @endsection

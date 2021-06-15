@@ -117,7 +117,8 @@ class VisitanteController extends Controller{
         $imagenCodificadaLimpia = $_POST['base64'];
         $base_to_php = explode(',', $imagenCodificadaLimpia);
         $fotoo = base64_decode($base_to_php[1]);
-        $filepath = $_SERVER['DOCUMENT_ROOT'].'/SVC/public/imagenes/'. $nombreImagenGuardada;
+        $filepath = $_SERVER['DOCUMENT_ROOT'].'/imagenes/'. $nombreImagenGuardada;
+        echo $filepath;
         file_put_contents($filepath, $fotoo);
         
 

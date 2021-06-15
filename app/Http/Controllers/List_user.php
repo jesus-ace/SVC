@@ -13,7 +13,7 @@ class List_user extends Controller
 {
     public function index(Request $request){
         return usuarios::with(['rols'])
-                        ->orderBy('us_id', 'desc')->get()->toJson();                 
+                        ->orderBy('us_id', 'desc')->get();                 
     }
 
     public function getBrowser($user_agent){
