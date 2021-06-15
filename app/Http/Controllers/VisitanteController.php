@@ -23,6 +23,7 @@ class VisitanteController extends Controller{
         return Visitante::with([
             'equipos',
             'motivos',
+            'carnet_ingresos'
             ])->orderBy('vi_id', 'desc')->get();                 
     }
 

@@ -31,55 +31,29 @@
               <!--th>Acciones</th-->
             </thead>
             <tbody>
-              <tr>
+              <!--tr>
                 
-              </tr>   
+              </tr-->   
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
+  <script src="js/datatable/datatables.min.js"></script>
   <script>
     $(document).ready( function () {
       $('#user-table').DataTable({
         'serverSide':true,
-        "axios":"{{ url('api/list_user')}} ",
-        "dataType": "json",
-        "columns":[
-          {data:"us_id"},
+        ajax:{
+          url:"/api/list_user",
+          type : 'GET',
+          dataType : 'json',
+        },
+        columns:[
           {data:"us_nombre"},
-          {data:"us_apellido"},
-          {data:"us_cedula"},
-          {data:"us_user"},
-          {data:"us_correo"},
-          {data:"us_id_rol"},
         ]
       });
     });
   </script>
-<!---script>
-  function activar()
-  {
-    document.getElementById('cedula').disabled = false;
-    document.getElementById('correo').disabled = false;
-    document.getElementById('user-n').disabled = false;
-    document.getElementById('edit').classList.add('active');
-    document.getElementById('delete').classList.add('active');
-    document.getElementById('btnRE').classList.add('active');
-    document.getElementById('btnRNE').classList.add('active');
-  }
-
-  function desactivar()
-  {
-    document.getElementById('cedula').disabled = true;
-    document.getElementById('correo').disabled = true;
-    document.getElementById('user-n').disabled = true;
-    document.getElementById('btnRE').classList.remove('active');
-    document.getElementById('btnRNE').classList.remove('active');
-    document.getElementById('edit').classList.remove('active');
-    document.getElementById('delete').classList.remove('active');
-  }
-</script-->
-    <script src="js/datatable/datatables.min.js"></script>
 @endsection

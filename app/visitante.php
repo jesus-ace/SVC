@@ -25,7 +25,7 @@ class visitante extends Model
     
     public function carnet_ingresos()
     {
-        return $this->belongsTo(carnet_ingreso::class, 'vi_car_id ', 'car_id ');
+        return $this->belongsTo(carnet_ingreso::class, 'vi_car_id', 'car_id');
     }
 
     public function motivos()

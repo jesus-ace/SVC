@@ -17,6 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/list_user', 'List_user@index'); 
+Route::get('/list_user', 'List_user@index')->name('list_user'); 
 
 Route::get('/list_visitor', 'VisitanteController@index'); 

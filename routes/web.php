@@ -41,6 +41,7 @@ Route::get('/dashboard', 'HomeController@index')->name('dashboard');
  ////////////////////////////
 */
 
+
 Auth::routes(['/register' => false]);
 
 Route::get('/register', function () {
