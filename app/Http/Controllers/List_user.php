@@ -12,8 +12,11 @@ use Carbon\Carbon;
 class List_user extends Controller
 {
     public function index(Request $request){
-        return usuarios::with(['rols'])
-                        ->orderBy('us_id', 'desc')->get();                 
+        return datatables()->eloquent(
+             usuarios::with(['rols'])
+                    ->orderBy('us_id', 'desc')
+        )->toJson();
+       
     }
 
     public function getBrowser($user_agent){
@@ -38,7 +41,7 @@ class List_user extends Controller
             return'No hemos podido detectar su navegador';
     }
 
-    public function edit($id)
+    /*public function edit($id)
     {
         $datos= usuarios::findOrFail($id);
 
@@ -58,11 +61,37 @@ class List_user extends Controller
         $aud->au_us_id = auth()->user()->us_rol_id;
         $aud->save();
 
-        return view('list-vigilante',compact('registros'));
+        //return view('list-vigilante',compact('registros'));
+    }*/
+
+    public function edit(Request $request, $id){
+        if($request -> validate([
+            'us_nombre' =>'required',
+            'us_apellido' =>'required',
+            'us_cedula' =>'required',
+            'us_user' =>'required',
+            'us_correo' =>'required'
+        ])){
+            try{
+                $users = usuarios::find($id);
+                $users->us_nombre=$request->input('us_nombre');
+                $users->us_apellido =$request->input('us_apellido');
+                $users->us_user =$request->input('us_user');
+                $users->us_correo =$request->input('us_correo');
+                $users->save();
+
+                return response('EL usuario se a editado exitosamente', 200);
+            }
+            catch(\Exception $err){
+                return response(json_encode($err), 500);
+            }
+        }
+        else{
+            return response (json_encode($err), 500);
+        }
     }
 
-    public function update(Request $request, usuarios $usuario)
-    {
+    public function update(Request $request, usuarios $usuario){
         $usuario->update($request->all());
 
         $fecha_a = new Carbon; 

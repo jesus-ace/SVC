@@ -57,9 +57,6 @@ Route::get('/ListUser', function(){
     return view ('auth.ListUser');
 })->middleware('auth', 'rolAdmin', 'estatus');
 
-Route::patch('/ListUser{usuario}/update', 'List_user@update')->name('list_vigilante.update');
-
-
 /*  
    //////////////////////////////
   //   **rutas visitantes**   //
