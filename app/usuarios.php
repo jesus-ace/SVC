@@ -29,6 +29,7 @@ class usuarios extends Authenticatable
         'us_correo', 
         'us_password', 
         'us_estatus',
+        'us_tu_id',
         'us_rol_id'
     ];
 

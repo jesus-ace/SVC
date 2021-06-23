@@ -12,6 +12,7 @@
             <div class="col-12 px-0">
                 {{ csrf_field() }}
                 <input type="hidden" name="us_estatus" class="form-control" value="1" required>
+                <input type="hidden" name="us_tu_id" class="form-control" value="1" required>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text">Nombres</span>

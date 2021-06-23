@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/list-vigilante';
+    protected $redirectTo = '/ListUser';
 
     /*
      Create a new controller instance.
@@ -73,13 +73,15 @@ class RegisterController extends Controller
             'us_correo' => $data['us_correo'],
             'us_user' => $data['us_user'],
             'us_estatus' => $data['us_estatus'],
+            'us_rol_id'=> 2,
+            'us_tu_id' => $data['us_tu_id'],
             'us_password' => bcrypt($data['us_password']),
         ]);
     }
 
     public function __construct()
     {
-        $this->middleware('auth' );
+        //$this->middleware('auth' );
         $this->middleware('rolAdmin');
     }
 

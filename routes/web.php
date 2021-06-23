@@ -12,20 +12,18 @@
 */
 
 use Illuminate\Support\Facades\Auth;
-/*  
-   ////////////////////////////////
-  //   **Ruta inicial login**   //
- ////////////////////////////////
-*/
+/**
+ * Ruta inicial login
+ */
+  
+
 
 Route::get('/', function () {
     return view('auth.login');
 });
 
-/*  
-   ///////////////////////////////////
-  //   **pantallas principales**   //
- ///////////////////////////////////
+/* 
+*pantallas principales
 */
 
 
@@ -55,7 +53,7 @@ Route::post('register', 'Auth\RegisterController@register', function () {
 
 Route::get('/ListUser', function(){
     return view ('auth.ListUser');
-})->middleware('auth', 'rolAdmin', 'estatus');
+})->middleware('auth', 'rolAdmin', 'estatus')->name('ListUser');;
 
 /*  
    //////////////////////////////
