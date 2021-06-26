@@ -14,37 +14,17 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
-use Session;
-use DB;
+use Faker\Factory as Faker;
 
 class VisitanteController extends Controller{
 
     public function index(Request $request){
-        return Visitante::with([
+        return datatables()->eloquent( Visitante::with([
             'equipos',
             'motivos',
             'carnet_ingresos'
-            ])->orderBy('vi_id', 'desc')->get();                 
-    }
-
-    /*public function index(Request $request){
-    
-        //$datos['visitor'] = visitante::paginate(8);
-
-        $busqueda = $request->get('buscar');
-        $datos['visitor']= Visitante::JOIN("carnet_ingresos", "carnet_ingresos.car_id", "=", "visitantes.vi_car_id")
-                                    ->JOIN("asistencias", "asistencias.asi_car_id", "=", "visitantes.vi_car_id")
-                                    ->JOIN("departamentos", "asistencias.asi_dep_id", "=", "departamentos.dep_id")
-                                    ->where('vi_nombre', 'like', '%'.$busqueda.'%')
-                                    ->orWhere('vi_cedula', '=', $busqueda)
-                                    ->orderBy('vi_id', 'asc')
-                                    ->paginate(10); 
-        $datos['card'] = carnet_ingreso::orderBy('carnet_ingresos.car_id', 'asc')->paginate(100);
-        $datos['departments'] = departamentos::paginate(100);
-        return view('visitor.list-visitor', $datos);
-    }*/
-    public function create(){   
-        return view('visitor.new-visitor');
+            ])->orderBy('vi_id', 'asc')
+        )->toJson();                 
     }
 
     public function selects(){   
@@ -143,18 +123,20 @@ class VisitanteController extends Controller{
         $visitor->vi_eq_id = $equipament->eq_id;
         $visitor->vi_photo = $nombreImagenGuardada;
         $visitor->save();
+
+        $faker = Faker::create();
         
         asistencia::create([
             'asi_dep_id'  =>$data['asi_dep_id'],
             'asi_car_id'  =>$data['vi_car_id'],
-            'asi_entrada' =>$fecha_a->toTimeString(),
-            'asi_fecha_entrada' =>$fecha_a->toDateString(),
+            'asi_entrada' =>$faker->time,
+            'asi_fecha_entrada' =>$faker->date,
         ]);
         
-        $status = TRUE;
+        /*$status = TRUE;
         $card_status = DB::table('carnet_ingresos')
           ->where('car_id', '=', $data['vi_car_id'])
-          ->update(['car_status' => $status]); 
+          ->update(['car_status' => $status]); */
         
 
         //Auditoria

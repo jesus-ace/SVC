@@ -22,7 +22,7 @@ class VisitorSeeder extends Seeder
                 'vi_car_id ' => '1', 
                 'vi_responsable' => 'Jesus Acevedo', 
                 'vi_mt_id' => '1', 
-                'vi_eq_id' => '1', 
+                'vi_eq_id' => '', 
                 'vi_photo' => "vis27030303",
             ],
             [
@@ -34,7 +34,7 @@ class VisitorSeeder extends Seeder
                 'vi_car_id ' => '2', 
                 'vi_responsable' => 'Jesus Acevedo', 
                 'vi_mt_id' => '1', 
-                'vi_eq_id' => '1', 
+                'vi_eq_id' => '', 
                 'vi_photo' => "vis27040404",
             ],
             [
@@ -46,7 +46,7 @@ class VisitorSeeder extends Seeder
                 'vi_car_id ' => '3', 
                 'vi_responsable' => 'Jesus Acevedo', 
                 'vi_mt_id' => '1', 
-                'vi_eq_id' => '1', 
+                'vi_eq_id' => '', 
                 'vi_photo' => "vis27622022",
             ],
             [
@@ -58,7 +58,7 @@ class VisitorSeeder extends Seeder
                 'vi_car_id ' => '4', 
                 'vi_responsable' => 'Jesus Acevedo', 
                 'vi_mt_id' => '1', 
-                'vi_eq_id' => '1', 
+                'vi_eq_id' => '', 
                 'vi_photo' => "vis27647020",
             ],
             [
@@ -70,7 +70,7 @@ class VisitorSeeder extends Seeder
                 'vi_car_id ' => '5', 
                 'vi_responsable' => 'Jesus Acevedo', 
                 'vi_mt_id' => '1', 
-                'vi_eq_id' => '1', 
+                'vi_eq_id' => '', 
                 'vi_photo' => "vis27647022",
             ],
         ];

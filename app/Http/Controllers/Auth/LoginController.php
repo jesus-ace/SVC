@@ -71,7 +71,7 @@ class LoginController extends Controller
     {
         Auth::attempt(['us_user' => $request->us_user, 'us_password' => $request->us_password]);
 
-        $fecha_a = new Carbon; 
+        /*$fecha_a = new Carbon; 
         
         $user_agent = $_SERVER['HTTP_USER_AGENT'];
         $navegador = $this->getBrowser($user_agent);
@@ -85,7 +85,7 @@ class LoginController extends Controller
         $aud->au_maquina = gethostname();
         $aud->au_ip_maquina = $_SERVER['REMOTE_ADDR'];
         $aud->au_us_id = auth()->user()->us_id;
-        $aud->save();
+        $aud->save();*/
     }
 
 
