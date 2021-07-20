@@ -27,3 +27,4 @@ Route::put('/List_user/{id}', 'List_user@edit');
 /*
 * Rutas para las acciones de visitantes
 */
+Route::get('/list_visitor', 'VisitanteController@index')->name('list_user'); 

@@ -22,7 +22,7 @@ class CreateVisitantesTable extends Migration
             $table->string('vi_domicilio');
             $table->string('vi_responsable');
             $table->integer('vi_mt_id')->unsigned();
-            $table->integer('vi_eq_id', null)->unsigned();
+            $table->integer('vi_eq_id')->unsigned()->nullable();
             $table->string('vi_photo', null);
             $table->foreign('vi_mt_id')->references('mt_id')->on('motivos')->onDelete('cascade');
             $table->foreign('vi_eq_id')->references('eq_id')->on('equipos')->onDelete('cascade');

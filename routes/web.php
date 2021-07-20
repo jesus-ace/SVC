@@ -44,7 +44,7 @@ Auth::routes(['/register' => false]);
 
 Route::get('/register', function () {
     return view('auth.register');
-})->name('register')->middleware('rolAdmin', 'estatus');
+})->name('register')/*->middleware('rolAdmin', 'estatus')*/;
 
 Route::post('register', 'Auth\RegisterController@register', function () {
     return view('auth.regiter');
@@ -53,7 +53,7 @@ Route::post('register', 'Auth\RegisterController@register', function () {
 
 Route::get('/ListUser', function(){
     return view ('auth.ListUser');
-})->middleware('auth', 'rolAdmin', 'estatus')->name('ListUser');;
+})/*->middleware('auth', 'rolAdmin', 'estatus')->name('ListUser')*/;
 
 /*  
    //////////////////////////////
@@ -73,7 +73,7 @@ Route::get('/user-profiel', function(){
 })->middleware('auth', 'rolAdmin');
 
 
-Route::get('/list-visitor', 'VisitanteController@index', function(){
+Route::get('/list-visitor', function(){
     return view('visitor.list-visitor');
 })->middleware('auth', 'estatus');
 

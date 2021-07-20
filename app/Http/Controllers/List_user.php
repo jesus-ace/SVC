@@ -14,7 +14,7 @@ class List_user extends Controller
     public function index(Request $request){
         return datatables()->eloquent(
              usuarios::with(['rols'])
-                    ->orderBy('us_id', 'desc')
+                    ->orderBy('us_id', 'asc')
         )->toJson();
        
     }
