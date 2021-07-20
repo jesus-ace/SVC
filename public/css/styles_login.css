@@ -1,0 +1,75 @@
+@import url('styles.css');
+
+/*Animación de los input*/
+.wrapper .input-data{
+  position: relative;
+}
+
+.card{
+  border: none !important;
+}
+
+.icon{
+	position: absolute;
+	right: 0;
+	z-index: 10;
+	color: var(--secondary-main);
+}
+
+.wrapper .input-data input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid silver;
+  color: var(--primary-main);
+}
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
+  transform: translateY(-20px);
+}
+.wrapper .input-data label{
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  transition: all 0.3s ease;
+}
+.input-data .underline{
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+}
+.input-data .underline:before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: var(--primary-main);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before{
+  transform: scaleX(1);
+}
+
+.bg-image{
+	background: url(../image/ondaLogin.svg) right;
+	background-repeat: no-repeat;
+	background-color: white;
+}
+
+.logoContainer{
+	padding-top: 8rem!important;
+}
+
+@media (min-width: 1px) and (max-width: 576px){
+
+.bg-image{
+	background: url(../image/ondaMovil.svg) bottom;
+	background-repeat: no-repeat;
+  background-color: white;
+}
+}

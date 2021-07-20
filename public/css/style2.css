@@ -1,32 +1,74 @@
-body{
-    background: url(../fondocopia.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover; 
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
-@media only screen and (max-width:900px){
-    body{
-        background: url(../fondo768x1024.png) no-repeat center center fixed;
-        -webkit-background-size: cover; 
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
+:root {
+	/*Paleta de colores*/
+	--dark-main: #110C28;
+	--primary-main: #5A45EA;
+	--secondary-main: #F13190;
+	--light-main: #A4AEFF;
+	--deeplight-main: #E0DADA;
 }
-@media only screen and (max-width:480px){
-    body{
-        background: url(../fondo360x640.png) no-repeat center center fixed;
-        -webkit-background-size: cover; 
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
+
+body{
+	font-family: 'Mukta' !important;
+	background: url('../image/fondo.jpg');
+	background-size: 100% 100%;
+	width: 100%;
+	height: auto;
+	/*text-align: center;*/
+	background-attachment: fixed;
+	/*overflow: hidden;*/
 }
-.input-group-text {
-    width: 150px;
-    background-color: rgb(107, 55, 125);
-    border: solid 1px rgb(107, 55, 125);
-    color: #ffff;
+
+::selection{
+	background-color: var(--light-main);
+	color: white;
 }
+
+.tamaño-form{
+	width: 50rem !important;
+}
+/*color de texto*/
+.text-color-primary{
+	color: var(--primary-main) !important;
+}
+
+.text-color-secondary{
+	color: var(--secondary-main) !important;
+}
+
+/*botones personalizados*/
+.btn:focus{
+	box-shadow: none !important;
+}
+.btn-color-secondary{
+	background-color: var(--secondary-main) !important;
+}
+
+.btn-color-secondary:hover{
+	background-color: white !important;
+	border: 2px solid var(--secondary-main) !important;
+	color: var(--secondary-main) !important;
+}
+
+.btn-secondary-reverse{
+	background-color: white !important;
+	color: var(--secondary-main) !important;
+}
+
+.btn-secondary-reverse:hover{
+	background-color: var(--secondary-main) !important;
+	border: 2px solid white !important;
+	color: white !important;
+}
+
+input:focus{
+    outline:none !important;
+} 
+
