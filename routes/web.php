@@ -27,7 +27,7 @@ Route::get('/', function () {
 */
 
 
-Route::get('welcome', function(){
+Route::get('/welcome', function(){
     return view('welcome');
 })->middleware('auth', 'estatus');
 

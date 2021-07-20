@@ -34,7 +34,7 @@ class LoginController extends Controller
      */
     
 
-        protected $redirectTo = '/';
+        protected $redirectTo = '/welcome';
     /**
      * Create a new controller instance.
      *
@@ -87,6 +87,5 @@ class LoginController extends Controller
         $aud->au_us_id = auth()->user()->us_id;
         $aud->save();*/
     }
-
 
 }
