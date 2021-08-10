@@ -40,11 +40,8 @@
 									<label for="contraseña" class="text-muted fw-normal">Contraseña</label>
 								</div>
 							</div>
-							<div class="mt-4">
+							<div class="mt-4 mb-4">
 								<input class="btn container-fluid fw-bolder btn-color-secondary text-white" type="submit" value="INGRESAR">
-							</div>
-							<div class="mt-3 text-center">
-								<a href="#" class="text-muted">¿Olvidó su contraseña?</a>
 							</div>
 						</div>
 					</div>
