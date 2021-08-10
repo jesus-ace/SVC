@@ -10,7 +10,6 @@
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 		<!-- Google fonts -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Mukta">
-        <link rel="stylesheet" href="css/style2.css">
 		<link rel="stylesheet" href="css/styles_login.css">
 	</head>
 	<body>
@@ -47,7 +46,7 @@
 					</div>
 					<div class="col-12 col-sm-6 col-xs-12 columna2">
 						<div class="text-center logoContainer px-5">
-							<img src="image/logoVive.svg" alt="Vive Evoluciona">
+							<img src="img/logoVive.svg" alt="Vive Evoluciona">
 							<h2 class="text-white mt-3 h5">Sistema de control de entrada y salida de visitantes</h2>
 						</div>
 					</div>
@@ -56,6 +55,5 @@
 		</div>
 		<!-- Bootstrap 5 Js -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-		<script src="js/script.js"></script>
 	</body>
 </html>
