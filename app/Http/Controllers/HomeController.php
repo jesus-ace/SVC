@@ -13,10 +13,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('auth');
-    }
+    }*/
 
     /**
      * Show the application dashboard.
@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $fecha_a = new Carbon; 
+        /*$fecha_a = new Carbon; 
         $actual= $fecha_a->toDateString();
 
         
@@ -44,10 +44,11 @@ class HomeController extends Controller
                                     ->SELECT("vi_nombre", "vi_apellido", "vi_photo", "car_id", "asi_entrada", "asi_salida", "dep_nombre", "vi_responsable")
                                     ->Where('asi_fecha_salida', '=', $actual)
                                     ->orderBy('asi_salida', 'desc')
-                                    ->paginate(3);
+                                    ->paginate(3);*/
 
         //$departamento = departamentos:: SELECT("dep_nombre");                          
-        return view('dashboard',$entrada, $salida);
+        //return view('dashboard',$entrada, $salida);
+        return view('dashboard');
     }
 
 }

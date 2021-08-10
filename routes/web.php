@@ -31,6 +31,7 @@ Route::get('/welcome', function(){
     return view('welcome');
 })/*->middleware('auth', 'estatus')*/;
 
+
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
 /*  

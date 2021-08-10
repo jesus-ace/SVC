@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.sidebar')
 
 @section('content')
 <style>
@@ -47,14 +47,14 @@
       <div class="entrada-salida d-none d-md-flex col-6  px-0 mx-0" id="es">
         <div class="entrada col-6">
           <h3>Entrada</h3>
-          @foreach( $entry as $entrada)
+          
             <figure>
               <div class="ENTRA row">
                 <div class="foto col-2">
                     <a href="#thumb" class="thumbnail">
-                      <img class="fotus" src="imagenes/{{$entrada->vi_photo}}"  width="60px" height="60px" style="border-radius: 10px 2px 10px 2px; top:-5px;">
+                      <img class="fotus" src="imagenes/"  width="60px" height="60px" style="border-radius: 10px 2px 10px 2px; top:-5px;">
                       <span>
-                        <img src="imagenes/{{$entrada->vi_photo}}" width="180px" height="160px">
+                        <img src="imagenes/" width="180px" height="160px">
                       </span>
                     </a>
                 </div>
@@ -65,29 +65,29 @@
                       <th class="EN-SA_th">Hora Entrada</th>
                     </thead>
                     <tbody class="EN-SA_td">
-                      <td class="EN-SA_td">{{$entrada->car_id}}</td>
-                      <td class="EN-SA_td">{{$entrada->asi_entrada}}</td>
+                      <td class="EN-SA_td"></td>
+                      <td class="EN-SA_td"></td>
                     </tbody>
                   </table>
                 </div>
               </div>
               <figcaption class="more-info-entry">
-                <strong>Nombre y Apellido:</strong> {{$entrada->vi_nombre}} {{$entrada->vi_apellido}} <br>
-                <strong>Departamento de Ingreso:</strong> {{$entrada->dep_nombre}} <br>
-                <strong>Responsable:</strong> {{$entrada->vi_responsable}}.
+                <strong>Nombre y Apellido:</strong> <br>
+                <strong>Departamento de Ingreso:</strong> <br>
+                <strong>Responsable:</strong> 
               </figcaption>
             </figure>                    
-          @endforeach
+          
         </div>
         <div class="salir col-6">
           <h3>Salida</h3>
-          @foreach( $exit as $salida)
+          
             <figure>
               <div class="SALI row">
                 <div class="foto col-2">
                   <a href="#thumb" class="thumbnail">
-                    <img class="fotus" src="imagenes/{{$salida->vi_photo}}"  width="60px" height="60px" style="border-radius: 10px 2px 10px 2px; top:-5px;">
-                    <span><img src="imagenes/{{$salida->vi_photo}}" width="180px" height="160px"></span>
+                    <img class="fotus" src="imagenes/"  width="60px" height="60px" style="border-radius: 10px 2px 10px 2px; top:-5px;">
+                    <span><img src="imagenes/" width="180px" height="160px"></span>
                   </a>    
                 </div>
                 <div class="col-8">
@@ -97,19 +97,19 @@
                       <th class="EN-SA_th"> Hora Salida</th>
                     </thead>
                     <tbody class="EN-SA_td">
-                      <td class="EN-SA_td">{{$salida->car_id}}</td>
-                      <td class="EN-SA_td">{{$salida->asi_salida}}</td>
+                      <td class="EN-SA_td"></td>
+                      <td class="EN-SA_td"></td>
                     </tbody>
                   </table>
                 </div>
               </div>
               <figcaption class="more-info-exit">
-                <strong>Nombre y Apellido:</strong>  {{$salida->vi_nombre}} {{$salida->vi_apellido}} <br>
-                <strong>Departamento de Ingreso:</strong> {{$salida->dep_nombre}} <br>
-                <strong>Responsable:</strong> {{$salida->vi_responsable}}.
+                <strong>Nombre y Apellido:</strong> <br>
+                <strong>Departamento de Ingreso:</strong>  <br>
+                <strong>Responsable:</strong> 
               </figcaption>
             </figure>
-          @endforeach
+          
       </div>
     </div>            
   </fieldset>
