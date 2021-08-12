@@ -118,10 +118,12 @@
 		<!-- Contenido del menu principal -->
 		<div class="p-1 my-container active-cont active-cont-movil">
 			<div class="m-0 vh-100 row justify-content-center align-items-center">
-				<div class="card p-2 tamaño-form shadow-lg">
+				{{-- <div class="card p-2 tamaño-form shadow-lg"> --}}
+				<main class="p-5">
 					@yield('content')
 					{{-- @auth --}}
-				</div>
+				</main>
+				{{-- </div> --}}
 			</div>
 		</div>
 	</body>

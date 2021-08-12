@@ -179,3 +179,11 @@ p{
 .form-check-input{
   box-shadow: none !important;
 }
+
+.total{
+  margin-right: 10rem;
+}
+
+.persons{
+  border-left:  6px solid var(--secondary-main);
+}
