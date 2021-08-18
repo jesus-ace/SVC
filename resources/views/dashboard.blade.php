@@ -114,18 +114,20 @@
 	<section class="container-fluid mt-5">
 		<h1 class="fw-bold text-color-primary ms-5">Información general</h1>
 		<div class="row mx-3">
-			<div class="col-md-6 col-xs-12 col-12 card shadow-lg mx-1 mt-4">
+			<div class="col-1"></div>
+			<div class="col-md-5 col-sm-5 col-xs-12 col-12 card shadow-lg mt-2 mx-4">
 				<h3 class="fw-bold ms-4 mt-4">Acceso por área</h3>
 				<div id="chart">
 				</div>
 			</div>
-			<div class="col-md-6 col-xs-12 col-12 card shadow-lg mx-1 mt-4">
+			
+			<div class="col-md-5 col-sm-5 col-xs-12 col-12 card shadow-lg mt-2 mx-4">
 				<h3 class="fw-bold ms-4 mt-4">Últimos Accesos</h3>
 				<div class="row bg-light-main p-3">
-					<div class="col-md-4 col-xs-12 col-12 text-center bg-light rounded">
+					<div class="col-md-4 col-12 text-center bg-light rounded">
 						<img src="img/prueba.png" width="125" height="125" alt="user-card">
 					</div>
-					<div class="col-md-8 col-xs-12 col-12">
+					<div class="col-md-8 col-xs-12 col-12 ">
 						<h4 class="text-center fw-bold">Nombre</h4>
 						<ul>
 							<li>Hora Entrada:</li>
@@ -137,7 +139,7 @@
 					<div class="col-md-4 col-xs-12 col-12 text-center bg-light rounded">
 						<img src="img/prueba.png" width="125" height="125" alt="user-card">
 					</div>
-					<div class="col-md-8 col-xs-12 col-12">
+					<div class="col-md-8 col-xs-12 col-12 ">
 						<h4 class="text-center fw-bold">Nombre</h4>
 						<ul>
 							<li>Hora Entrada:</li>
@@ -146,6 +148,7 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-1"></div>
 		</div>
 	</section>
 </main>
