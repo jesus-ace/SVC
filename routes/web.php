@@ -29,10 +29,10 @@ Route::get('/', function () {
 
 Route::get('/welcome', function(){
     return view('welcome');
-})/*->middleware('auth', 'estatus')*/;
+})->middleware('auth', 'estatus');
 
 
-Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard')->middleware('auth', 'estatus');
 
 /*  
    ////////////////////////////
@@ -45,7 +45,7 @@ Auth::routes(['/register' => false]);
 
 Route::get('/register', function () {
     return view('auth.register');
-})->name('register')/*->middleware('rolAdmin', 'estatus')*/;
+})->name('register')->middleware('rolAdmin', 'estatus');
 
 Route::post('register', 'Auth\RegisterController@register', function () {
     return view('auth.regiter');
@@ -54,7 +54,7 @@ Route::post('register', 'Auth\RegisterController@register', function () {
 
 Route::get('/ListUser', function(){
     return view ('auth.ListUser');
-})/*->middleware('auth', 'rolAdmin', 'estatus')->name('ListUser')*/;
+})->middleware('auth', 'rolAdmin', 'estatus')->name('ListUser');
 
 /*  
    //////////////////////////////
@@ -65,7 +65,7 @@ Route::get('/ListUser', function(){
 
 Route::get('/new-visitor', 'VisitanteController@selects', function(){
     return view('visitor.registro_visitantes');
-})->name('new-visitor')/*->middleware('auth', 'estatus')*/;
+})->name('new-visitor')->middleware('auth', 'estatus');
 
 Route::post('new-visitor', 'VisitanteController@store');
 
@@ -76,7 +76,7 @@ Route::get('/user-profiel', function(){
 
 Route::get('/list-visitor', function(){
     return view('visitor.list-visitor');
-})/*->middleware('auth', 'estatus')*/;
+})->middleware('auth', 'estatus');
 
 Route::patch('/list-visitor{visitantes}/update', 'VisitanteController@mark_exit')->name('list_visitor.update');
 
