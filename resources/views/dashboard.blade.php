@@ -123,7 +123,7 @@
 			
 			<div class="col-md-5 col-sm-5 col-xs-12 col-12 card shadow-lg mt-2 mx-4">
 				<h3 class="fw-bold ms-4 mt-4">Últimos Accesos</h3>
-				<div class="row bg-light-main p-3">
+				<div class="row bg-light-main p-3 m-1 rounded">
 					<div class="col-md-4 col-12 text-center bg-light rounded">
 						<img src="img/prueba.png" width="125" height="125" alt="user-card">
 					</div>
@@ -135,7 +135,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="row bg-light-main p-3 mt-3">
+				<div class="row bg-light-main p-3 mt-3 m-1 rounded">
 					<div class="col-md-4 col-xs-12 col-12 text-center bg-light rounded">
 						<img src="img/prueba.png" width="125" height="125" alt="user-card">
 					</div>
