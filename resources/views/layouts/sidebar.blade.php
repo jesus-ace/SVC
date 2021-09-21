@@ -29,35 +29,36 @@
 					Configuración
 					</button>
 					<ul class="dropdown-menu mt-2 without-border shadow" aria-labelledby="dropdownMenuOffset">
-						{{-- @if(Auth:: user()->us_rol_id==1) --}}
-						<li>
-							<a class="dropdown-item" href="{{ url('/user-profiel') }}">
-								<i class="fas fa-user mx-2"></i>Usuario
-							</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="{{url('/permits')}}">
-								<i class="fas fa-users-cog mx-2"></i>Roles
-							</a>
-						</li>
-						<li>
-							<a href="{{url('/Auditoria')}}" class="dropdown-item">
-								<i class="fas fa-user-tag mx-2"></i>Auditoria
-							</a>
-						</li>
-						<li>
+						@if(Auth:: user()->us_rol_id==1)
+							<li>
+								<a class="dropdown-item" href="{{ url('/user-profiel') }}">
+									<i class="fas fa-user mx-2"></i>Usuario
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="{{url('/permits')}}">
+									<i class="fas fa-users-cog mx-2"></i>Roles
+								</a>
+							</li>
+							<li>
+								<a href="{{url('/Auditoria')}}" class="dropdown-item">
+									<i class="fas fa-user-tag mx-2"></i>Auditoria
+								</a>
+							</li>
+							<li>
 							<!-- Falta este -->
-							<a class="dropdown-item" href="#">
+								<a class="dropdown-item" href="#">
 								<i class="fas fa-cog mx-2"></i>Configuración</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-							<i class="fas fa-sign-out-alt mx-2"></i>Cerrar Sesión</a>
-							<form action="{{ route('logout') }}" method="POST" style="display: none;">
-								{{ csrf_field() }}
-							</form>
-						</li>
-						{{-- @endif --}}
+							</li>
+							<li>
+								<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+								<i class="fas fa-sign-out-alt mx-2"></i>Cerrar Sesión</a>
+								<form action="{{ route('logout') }}" method="POST" style="display: none;">
+									{{ csrf_field() }}
+									<input type="submit"></input>
+								</form>
+							</li>
+						@endif
 					</ul>
 				</div>
 			</div>
@@ -107,10 +108,13 @@
 						<p class="text-hidden">Listados</p>
 					</a>
 					<ul class="dropdown-menu without-border z-index shadow">
-						{{-- @if(Auth:: user()->us_rol_id==1) --}}
-						<a class="dropdown-item" href="{{ url('/ListUser') }}">Usuarios</a>
-						<a class="dropdown-item" href="{{ url('/list-visitor') }}">Visitantes</a>
-						{{-- @endif --}}
+						@if(Auth:: user()->us_rol_id==1)
+							<a class="dropdown-item" href="{{ url('/ListUser') }}">Usuarios</a>
+							<a class="dropdown-item" href="{{ url('/list-visitor') }}">Visitantes</a>
+						@endif
+						@if(Auth:: user()->us_rol_id >1)
+							<a class="dropdown-item" href="{{ url('/list-visitor') }}">Visitantes</a>
+						@endif
 					</ul>
 				</div>
 			</div>
