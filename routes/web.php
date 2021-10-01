@@ -93,4 +93,6 @@ Route::get('/Auditoria', 'AuditoriaController@index')->middleware('auth', 'rolAd
 
 Route::get('/permits', function(){
     return view('mconfig.permits');
-})/*->middleware('auth', 'rolAdmin', 'estatus')*/;
+})->middleware('auth', 'rolAdmin', 'estatus');
+
+Route::get('/testTask', 'statisticsController@getDepAsi');
