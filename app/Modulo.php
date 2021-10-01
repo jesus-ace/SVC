@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class acciones extends Model
+class Modulo extends Model
 {
     //
 }

@@ -4,13 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class carnet_ingreso extends Model
+class CarnetIngreso extends Model
 {
     //
     protected $table = 'carnet_ingresos';
     protected $primaryKey = 'car_id';
 
     public function visitantes(){
-        return $this->hasOne(Visitante::class, 'vi_car_id');
+        return $this->hasMany(Visitante::class, 'vi_id');
+    }
+
+    public function asistencias(){
+        return $this->hasMany(Asistencia::class, 'asi_id');
     }
 }

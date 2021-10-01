@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class usuarios extends Authenticatable
+class Usuarios extends Authenticatable
 {
     use Notifiable;
     protected $table = 'usuarios';

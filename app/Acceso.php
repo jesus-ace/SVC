@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class departamento_x_usuario extends Model
+class Acceso extends Model
 {
     //
 }

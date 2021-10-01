@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class auditoria extends Model
+class Auditoria extends Model
 {
     protected $table = 'auditorias';
     protected $primaryKey = 'au_id';

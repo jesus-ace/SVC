@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class motivo extends Model
+class Motivo extends Model
 {
     protected $primaryKey = 'mt_id';
     

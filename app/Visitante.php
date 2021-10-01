@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class visitante extends Model
+class Visitante extends Model
 {
     //
     protected $table = 'visitantes';
@@ -25,7 +25,7 @@ class visitante extends Model
     
     public function carnet_ingresos()
     {
-        return $this->belongsTo(carnet_ingreso::class, 'vi_car_id', 'car_id');
+        return $this->belongsTo(carnetIngreso::class, 'vi_car_id', 'car_id');
     }
 
     public function motivos()
